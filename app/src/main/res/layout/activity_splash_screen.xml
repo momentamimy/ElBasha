@@ -27,12 +27,14 @@
         android:layout_height="match_parent" />
 
     <ImageView
+        android:layout_marginTop="25dp"
         android:id="@+id/char_body"
         android:background="@drawable/char_body"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <ImageView
+        android:layout_marginTop="10dp"
         android:id="@+id/char_head"
         android:background="@drawable/char_head"
         android:layout_width="match_parent"
