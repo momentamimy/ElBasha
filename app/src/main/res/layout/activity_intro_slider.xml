@@ -17,14 +17,12 @@
             android:id="@+id/logo1"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@drawable/logo1"
             />
         <ImageView
             android:layout_marginTop="20dp"
             android:id="@+id/logo2"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@drawable/logo2"
             />
     </RelativeLayout>
 

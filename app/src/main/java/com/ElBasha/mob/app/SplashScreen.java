@@ -1,6 +1,8 @@
 package com.ElBasha.mob.app;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
 import android.support.v4.app.ActivityOptionsCompat;
@@ -9,18 +11,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.Fade;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.race604.drawable.wave.WaveDrawable;
+
+
 public class SplashScreen extends AppCompatActivity {
 
     Animation downtoup,fadeout;
 
     TextView Text;
-    RelativeLayout Logo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,28 +50,31 @@ public class SplashScreen extends AppCompatActivity {
         fadeout = AnimationUtils.loadAnimation(this,R.anim.fadeout);
 
         Text=findViewById(R.id.esaal);
-        Logo=findViewById(R.id.logo);
 
         Text.setAnimation(downtoup);
-        Logo.setAnimation(fadeout);
+
+        WaveDrawable mWaveDrawable = new WaveDrawable(this,R.drawable.progress_logo);
+
+// Use as common drawable
+        ImageView imageView=findViewById(R.id.progress_logo);
+
+        ValueAnimator animator = ValueAnimator.ofFloat(0, 1);
+        animator.setRepeatMode(ValueAnimator.RESTART);
+        animator.setRepeatCount(0);
+        animator.setDuration(3000);
+        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        mWaveDrawable.setIndeterminateAnimator(animator);
+        mWaveDrawable.setIndeterminate(true);
+        imageView.setBackground(mWaveDrawable);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, IntroSliderActivity.class);
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
-                        SplashScreen.this, Logo, ViewCompat.getTransitionName(Logo));
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    startActivity(intent, options.toBundle());
-                    finish();
-                }
-                else
-                {
                     startActivity(new Intent(getApplicationContext(), IntroSliderActivity.class));
                     overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                     finish();
-                }
+
             }
         }, 3000);
 

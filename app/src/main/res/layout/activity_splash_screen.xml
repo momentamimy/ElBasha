@@ -11,15 +11,44 @@
 <RelativeLayout
     android:id="@+id/logo"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="300dp"
     android:transitionName="Transition_Animation">
-    <TextView
-        android:layout_marginTop="40dp"
-        android:id="@+id/logo1"
+
+    <ImageView
+        android:id="@+id/circle_bgd"
+        android:background="@drawable/circle_bgd"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@drawable/logo"
-        />
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/progress_logo"
+        android:background="@drawable/progress_logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/char_body"
+        android:background="@drawable/char_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/char_head"
+        android:background="@drawable/char_head"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/left_arm"
+        android:background="@drawable/left_arm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/right_arm"
+        android:background="@drawable/right_arm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </RelativeLayout>
     <TextView
         android:layout_marginTop="30dp"
@@ -32,4 +61,6 @@
         android:textColor="@android:color/white"
         android:text="إسأل الباشا"
         android:fontFamily="@font/aref_regular"/>
+
+
 </RelativeLayout>
