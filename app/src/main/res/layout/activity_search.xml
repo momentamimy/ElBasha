@@ -5,41 +5,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/money_bgd"
     tools:context=".SearchActivity">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/textcard"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:layout_gravity="center"
-        android:layoutDirection="rtl"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
+        android:layout_height="wrap_content"
+        app:cardPreventCornerOverlap="false"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         >
 
-        <RelativeLayout
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:textColor="@android:color/white"
-                android:id="@+id/toolbar_title"
-                android:text="الباشا"
-                android:fontFamily="@font/aref_regular"
-                />
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_keyboard_arrow_right_white_24dp"/>
+            android:layout_height="wrap_content"
+            android:text="الفئة السعرية"
+            android:gravity="center"
+            android:textSize="28sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/abdo_master_semibold"
+            />
 
-        </RelativeLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </android.support.v7.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/showdialog"
+        android:layout_below="@id/textcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_relativelayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-5dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        >
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_sort_down"
+            />
+
+
+    </RelativeLayout>
+
+
+
 </RelativeLayout>

@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), SearchActivity.class));
                 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                 finish();
             }
