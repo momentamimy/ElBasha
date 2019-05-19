@@ -48,6 +48,7 @@
 
 
     <ScrollView
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar">
@@ -61,23 +62,129 @@
                 android:id="@+id/wa7shelprocessor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="15dp"
                 app:cardElevation="5dp"
+                android:transitionName="backgroundTransition"
                 app:cardPreventCornerOverlap="false"
                 >
 
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/facebookbutton"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/card_bgd_1">
+                    <ImageView
+                        android:background="@drawable/card_hint_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
 
             </android.support.v7.widget.CardView>
 
 
 
+            <android.support.v7.widget.CardView
+                android:layout_below="@+id/wa7shelprocessor"
+                android:id="@+id/elfananeen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="false"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/card_bgd_2">
+                    <ImageView
+                        android:background="@drawable/card_hint_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_below="@+id/elfananeen"
+                android:id="@+id/superhero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="false"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/card_bgd_3">
+                    <ImageView
+                        android:background="@drawable/card_hint_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_below="@+id/superhero"
+                android:id="@+id/mlookelselfy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="false"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/card_bgd_4">
+                    <ImageView
+                        android:background="@drawable/card_hint_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_below="@+id/mlookelselfy"
+                android:id="@+id/mn8eerfslan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="5dp"
+                app:cardPreventCornerOverlap="false"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="@drawable/card_bgd_5">
+                    <ImageView
+                        android:background="@drawable/card_hint_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
 
         </RelativeLayout>
 

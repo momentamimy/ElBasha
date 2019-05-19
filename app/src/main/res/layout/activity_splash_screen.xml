@@ -61,7 +61,7 @@
         android:textSize="60dp"
         android:gravity="center"
         android:textColor="@android:color/white"
-        android:text="إسأل الباشا"
+        android:text="@string/title"
         android:fontFamily="@font/aref_regular"/>
 
 
