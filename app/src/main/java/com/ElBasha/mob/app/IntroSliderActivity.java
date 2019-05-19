@@ -21,10 +21,8 @@ public class IntroSliderActivity extends AppCompatActivity {
 
 
     ViewPager pager;
-    ViewPager MyPager;
     ViewPagerIndicator viewPagerIndicator;
     TextView skip;
-    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,12 +44,9 @@ public class IntroSliderActivity extends AppCompatActivity {
             }
         }
 
-        MyPager=findViewById(R.id.MyViewPager);
-        MyPager.setPageTransformer(true,new CascadingPageTransformer());
         pager=findViewById(R.id.introViewPager);
         CustomViewPagerAdapter adapter=new CustomViewPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
-        MyPager.setAdapter(adapter);
         pager.setPageTransformer(true,adapter);
         viewPagerIndicator=findViewById(R.id.viewPagerIndicator);
         viewPagerIndicator.initWithViewPager(pager);
@@ -65,20 +60,5 @@ public class IntroSliderActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        imageView=findViewById(R.id.logo2);
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Flubber.with()
-                        .animation(Flubber.AnimationPreset.ROTATION) // Slide up animation
-                        .interpolator(Flubber.Curve.LINEAR)
-                        .repeatCount(0)                              // Repeat once
-                        .duration(2000)                              // Last for 1000 milliseconds(1 second)
-                        .createFor(imageView)                             // Apply it to the view
-                        .start();                                    // Start it now
-            }
-        });
-
     }
 }

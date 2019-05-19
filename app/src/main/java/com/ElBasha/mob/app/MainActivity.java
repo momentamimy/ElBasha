@@ -11,10 +11,12 @@ import android.transition.Fade;
 import android.util.Pair;
 import android.view.View;
 import android.util.Log;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     String priceRange ;
+    ImageView back;
     CardView wa7shelprocessor,elfananeen,superhero,mlookelselfy,mn8eerfslan;
 
     @Override
@@ -24,6 +26,15 @@ public class MainActivity extends AppCompatActivity {
 
         getIntnet();
         Log.w("aaaa",priceRange);
+
+
+        back=findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void getIntnet() {
