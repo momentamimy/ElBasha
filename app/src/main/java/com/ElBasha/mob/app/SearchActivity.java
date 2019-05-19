@@ -30,6 +30,20 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+
+        list.add(new IconPowerMenuItem("أقل من 1000"));
+        list.add(new IconPowerMenuItem("من 1000 الي 2000"));
+        list.add(new IconPowerMenuItem("من 2000 الي 2500"));
+        list.add(new IconPowerMenuItem("من 2500 الي 3000"));
+        list.add(new IconPowerMenuItem("من 3000 الي 3500"));
+        list.add(new IconPowerMenuItem("من 3500 الي 4000"));
+        list.add(new IconPowerMenuItem("من 4000 الي 5000"));
+        list.add(new IconPowerMenuItem("من 5000 الي 6000"));
+        list.add(new IconPowerMenuItem("من 6000 الي 7000"));
+        list.add(new IconPowerMenuItem("أكثر من 7000"));
+
+
+
         showDialog=findViewById(R.id.showdialog);
 
         showDialog.setOnClickListener(new View.OnClickListener() {
@@ -50,17 +64,6 @@ public class SearchActivity extends AppCompatActivity {
     public void showPopup(View v) {
 
 
-
-        list.add(new IconPowerMenuItem("أقل من 1000"));
-        list.add(new IconPowerMenuItem("من 1000 الي 2000"));
-        list.add(new IconPowerMenuItem("من 2000 الي 2500"));
-        list.add(new IconPowerMenuItem("من 2500 الي 3000"));
-        list.add(new IconPowerMenuItem("من 3000 الي 3500"));
-        list.add(new IconPowerMenuItem("من 3500 الي 4000"));
-        list.add(new IconPowerMenuItem("من 4000 الي 5000"));
-        list.add(new IconPowerMenuItem("من 5000 الي 6000"));
-        list.add(new IconPowerMenuItem("من 6000 الي 7000"));
-        list.add(new IconPowerMenuItem("أكثر من 7000"));
 
 
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -90,7 +93,7 @@ public class SearchActivity extends AppCompatActivity {
                         Intent intent = new Intent(SearchActivity.this, MainActivity.class);
                         intent.putExtra("priceRange",list.get(position).getTitle());
                         startActivity(intent);
-                        finish();
+                        //finish();
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
