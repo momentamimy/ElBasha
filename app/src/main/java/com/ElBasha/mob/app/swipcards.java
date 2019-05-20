@@ -169,8 +169,10 @@ public class swipcards extends AppCompatActivity {
                 public void onClick(View v) {
                     Log.i("Layer type: ", Integer.toString(v.getLayerType()));
                     Log.i("Hwardware Accel type:", Integer.toString(View.LAYER_TYPE_HARDWARE));
-               /* Intent i = new Intent(v.getContext(), BlankActivity.class);
-                v.getContext().startActivity(i);*/
+               Intent i = new Intent(v.getContext(), CardSwipeSpecesActivity.class);
+                v.getContext().startActivity(i);
+                finish();
+
                 }
             });
             return v;
