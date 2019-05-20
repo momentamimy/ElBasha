@@ -27,7 +27,7 @@ public class swipcards extends AppCompatActivity {
 
     private SwipeDeckAdapter adapter;
     private ArrayList<String> testData;
-    ImageView backarrow;
+    ImageView backarrow,close;
 
 
     @Override
@@ -36,6 +36,7 @@ public class swipcards extends AppCompatActivity {
         setContentView(R.layout.activity_swipcards);
 
         backarrow=findViewById(R.id.backarrow);
+        close=findViewById(R.id.close);
         cardStack = (SwipeDeck) findViewById(R.id.swipe_deck);
         cardStack.setHardwareAccelerationEnabled(true);
 
@@ -96,6 +97,15 @@ public class swipcards extends AppCompatActivity {
 
 
         backarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), SearchActivity.class));
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                finish();
+            }
+        });
+
+        close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), SearchActivity.class));
