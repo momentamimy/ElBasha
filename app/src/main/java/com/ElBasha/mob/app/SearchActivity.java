@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class SearchActivity extends AppCompatActivity {
     RelativeLayout showDialog;
     PopupWindow popupWindow;
     List<IconPowerMenuItem> list=new ArrayList<>();
+    CardView spinnertext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,7 @@ public class SearchActivity extends AppCompatActivity {
 
 
         showDialog=findViewById(R.id.showdialog);
+        spinnertext=findViewById(R.id.textcard);
 
         showDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +55,15 @@ public class SearchActivity extends AppCompatActivity {
 
                 showPopup(v);
 
+
+            }
+        });
+
+
+        spinnertext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopup(v);
 
             }
         });
@@ -118,7 +130,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         popupWindow.setAnimationStyle(R.style.Animation);
-        popupWindow.showAsDropDown(v,Gravity.NO_GRAVITY, 15);
+        popupWindow.showAsDropDown(v,Gravity.NO_GRAVITY, 35);
 
     }
 

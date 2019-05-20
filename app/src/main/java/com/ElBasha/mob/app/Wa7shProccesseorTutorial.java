@@ -1,8 +1,10 @@
 package com.ElBasha.mob.app;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.transition.Fade;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +14,7 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
 
 
     ImageView back;
+    CardView next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,5 +42,22 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
                 finish();
             }
         });
+
+
+        next=findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(Wa7shProccesseorTutorial.this, swipcards.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+
+            }
+        });
+
+
+
     }
 }
