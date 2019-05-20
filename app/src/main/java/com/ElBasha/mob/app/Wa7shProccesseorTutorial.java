@@ -5,9 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.Fade;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Wa7shProccesseorTutorial extends AppCompatActivity {
 
+
+    ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,5 +31,13 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
                 getWindow().setExitTransition(fade);
             }
         }
+
+        back=findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
