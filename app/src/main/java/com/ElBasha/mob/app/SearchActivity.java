@@ -138,7 +138,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         popupWindow.setAnimationStyle(R.style.Animation);
-        popupWindow.showAsDropDown(v,Gravity.NO_GRAVITY, 55);
+        popupWindow.showAsDropDown(v,Gravity.NO_GRAVITY, 60);
 
     }
 

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -13,6 +14,7 @@ public class Manual_Activity extends AppCompatActivity {
 
     Spinner spinner;
     ImageView fav_list,back;
+    Button searchbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +22,22 @@ public class Manual_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_manual_);
 
         fav_list=findViewById(R.id.favoratelist);
+        searchbtn=findViewById(R.id.searchbtn);
         back=findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finish();
+            }
+        });
+
+        //search btn and get result
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Manual_Activity.this, swipcards.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
                 finish();
             }
         });

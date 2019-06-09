@@ -10,14 +10,14 @@
 
     <string-array name="Ram">
         <item>RAM</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>6</item>
-        <item>8</item>
-        <item>10</item>
-        <item>12</item>
+        <item>1GB</item>
+        <item>2GB</item>
+        <item>3GB</item>
+        <item>4GB</item>
+        <item>6GB</item>
+        <item>8GB</item>
+        <item>10GB</item>
+        <item>12GB</item>
     </string-array>
 
 
@@ -43,14 +43,14 @@
 
     <string-array name="Battery">
         <item>Battery</item>
-        <item>2000</item>
-        <item>2500</item>
-        <item>3000</item>
-        <item>3500</item>
-        <item>4000</item>
-        <item>4500</item>
-        <item>5000</item>
-        <item>10000</item>
+        <item>2000MAH</item>
+        <item>2500MAH</item>
+        <item>3000MAH</item>
+        <item>3500MAH</item>
+        <item>4000MAH</item>
+        <item>4500MAH</item>
+        <item>5000MAH</item>
+        <item>10000MAH</item>
     </string-array>
 
     <string-array name="screen">
@@ -66,12 +66,12 @@
     <string-array name="software">
         <item>Software/OS</item>
         <item>IOS</item>
-        <item>lolipop</item>
-        <item>Masrhmallow</item>
-        <item>Nought</item>
-        <item>Oreo</item>
-        <item>pie</item>
-        <item>Q</item>
+        <item>lolipop 5</item>
+        <item>Masrhmallow 6</item>
+        <item>Nought 7</item>
+        <item>Oreo 8</item>
+        <item>pie 9</item>
+        <item>Q 10</item>
     </string-array>
 
 

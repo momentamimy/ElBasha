@@ -84,23 +84,11 @@
                 android:layout_height="match_parent">
 
 
-
-                <TextView
-                    android:id="@+id/Ream"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="RAM"
-                    android:layout_marginTop="10dp"
-                    android:background="#cbc0cc"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    />
-
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginTop="99dp"
+                    android:layout_marginTop="20dp"
                     android:dropDownWidth="match_parent"
                     android:background="@drawable/spinner"
                     android:layout_marginEnd="20dp"
@@ -109,6 +97,7 @@
 
 
                 <Button
+                    android:id="@+id/searchbtn"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
