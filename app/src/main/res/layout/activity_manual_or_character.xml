@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".ManualOrCharacterActivity">
+
+<RelativeLayout
+    android:layout_marginTop="25dp"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_margin="10dp"
+        android:layout_centerVertical="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_back"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/esaal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:text="@string/title"
+        android:textStyle="bold"
+        />
+
+
+    <TextView
+        android:background="@android:color/white"
+        android:layout_below="@id/esaal"
+        android:id="@+id/esaal_en"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="9dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:text="@string/ask_el_basha"
+        android:padding="5dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
+        />
+</RelativeLayout>
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/ManualButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/manual_button">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الإختيار اليدوى"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/CharButton"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/chars_button">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/char_basha"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

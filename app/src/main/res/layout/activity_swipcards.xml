@@ -4,48 +4,62 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgd_svg"
+    android:background="#cbc0cc"
     tools:context="com.ElBasha.mob.app.swipcards">
 
-    <android.support.v7.widget.Toolbar
+    <RelativeLayout
         android:id="@+id/toolbar"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/white"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:layout_gravity="center"
-        android:layoutDirection="rtl"
-        app:popupTheme="@style/AppTheme.PopupOverlay">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/back"
+            android:layout_margin="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back"/>
 
-            <TextView
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textSize="26sp"
-                android:textColor="#FF0000"
-                android:id="@+id/toolbar_title"
-                android:text="الباشا"
-                android:fontFamily="@font/aref_regular"
-                />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/esaal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="@string/title"
+            android:textStyle="bold"
+            />
 
-            <ImageView
-                android:id="@+id/backarrow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:src="@drawable/ic_keyboard_arrow_right_red_24dp"/>
 
-        </RelativeLayout>
+        <TextView
+            android:background="@android:color/white"
+            android:layout_below="@id/esaal"
+            android:id="@+id/esaal_en"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="9dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black"
+            android:text="@string/ask_el_basha"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            />
 
-    </android.support.v7.widget.Toolbar>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_list"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
 
 
     <RelativeLayout

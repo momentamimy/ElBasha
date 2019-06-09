@@ -6,37 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
-    android:background="@drawable/bgd_svg">
+    android:background="@android:color/white">
 
 <RelativeLayout
+    android:layout_marginTop="20dp"
     android:id="@+id/logo"
     android:layout_width="wrap_content"
-    android:layout_height="300dp"
+    android:layout_height="350dp"
     android:transitionName="Transition_Animation">
 
     <ImageView
         android:id="@+id/circle_bgd"
-        android:background="@drawable/white_circle_bgd"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <ImageView
-        android:id="@+id/progress_logo"
-        android:background="@drawable/progress_logo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <ImageView
-        android:layout_marginTop="25dp"
-        android:id="@+id/char_body"
-        android:background="@drawable/char_body"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:id="@+id/char_head"
-        android:background="@drawable/char_head"
+        android:background="@drawable/logo_circle_bgd"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -58,11 +39,24 @@
         android:id="@+id/esaal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="60dp"
+        android:textSize="55dp"
         android:gravity="center"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:text="@string/title"
-        android:fontFamily="@font/aref_regular"/>
+        />
 
+
+    <TextView
+        android:background="@android:color/black"
+        android:layout_below="@id/esaal"
+        android:id="@+id/esaal_en"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:text="@string/ask_el_basha"
+        android:padding="5dp"
+        />
 
 </RelativeLayout>

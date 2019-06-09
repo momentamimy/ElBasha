@@ -4,4 +4,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">إسأل الباشا</string>
+    <string name="ask_el_basha">ASK EL BASHA</string>
+    <string name="skip">التالى</string>
+    <string name="char_basha">شخضيات الباشا</string>
 </resources>

@@ -26,9 +26,9 @@ public class SplashScreen extends AppCompatActivity {
 
     Animation downtoup,righttoleft,lefttoright;
 
-    ImageView progress_logo,char_head,left_arm,right_arm;
+    ImageView left_arm,right_arm;
 
-    TextView Text;
+    TextView Text,TextEn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +54,8 @@ public class SplashScreen extends AppCompatActivity {
         righttoleft = AnimationUtils.loadAnimation(this,R.anim.righttoleft);
 
         Text=findViewById(R.id.esaal);
+        TextEn=findViewById(R.id.esaal_en);
+        TextEn.setAnimation(downtoup);
         Text.setAnimation(downtoup);
 
         left_arm=findViewById(R.id.left_arm);
@@ -62,14 +64,7 @@ public class SplashScreen extends AppCompatActivity {
         right_arm=findViewById(R.id.right_arm);
         right_arm.setAnimation(righttoleft);
 
-        char_head=findViewById(R.id.char_head);
-        Handler handler1 = new Handler();
-        handler1.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                head_animation(char_head,2000);
-            }
-        }, 1500);
+
 
 
 
@@ -77,7 +72,7 @@ public class SplashScreen extends AppCompatActivity {
         WaveDrawable mWaveDrawable = new WaveDrawable(this,R.drawable.progress_logo);
 
 // Use as common drawable
-        progress_logo=findViewById(R.id.progress_logo);
+    /*    progress_logo=findViewById(R.id.progress_logo);
 
         ValueAnimator animator = ValueAnimator.ofFloat(1, 1);
         animator.setRepeatMode(ValueAnimator.REVERSE);
@@ -88,7 +83,7 @@ public class SplashScreen extends AppCompatActivity {
         mWaveDrawable.setIndeterminate(true);
         mWaveDrawable.setLevel(10);
         progress_logo.setBackground(mWaveDrawable);
-
+*/
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

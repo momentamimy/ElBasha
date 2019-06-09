@@ -35,7 +35,7 @@ public class swipcards extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipcards);
 
-        backarrow=findViewById(R.id.backarrow);
+        backarrow=findViewById(R.id.back);
         close=findViewById(R.id.close);
         cardStack = (SwipeDeck) findViewById(R.id.swipe_deck);
         cardStack.setHardwareAccelerationEnabled(true);
