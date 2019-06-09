@@ -156,5 +156,25 @@ public class Manual_Activity extends AppCompatActivity {
             }
         });
 
+
+        //******************************************************ArrayAdapter for first spinner**********************************************************************
+        ArrayAdapter<String> myAdapter6= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.screen));
+        myAdapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerScreen.setAdapter(myAdapter6);
+        spinnerScreen.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //((TextView) parent.getChildAt(0)).setTextColor(Color.parseColor("#083c93"));
+                //((TextView) parent.getChildAt(0)).setTextSize(18);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                spinnerScreen.setSelection(0);
+            }
+        });
+
     }
 }
