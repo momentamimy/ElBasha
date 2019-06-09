@@ -76,8 +76,7 @@
             android:layout_marginEnd="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            app:cardCornerRadius="8dp"
-            >
+            app:cardCornerRadius="8dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -94,7 +93,84 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
+                    android:paddingStart="28dp"
+                    android:paddingLeft="28dp" />
+
+                <Spinner
+                    android:layout_below="@id/spinner"
+                    android:id="@+id/spinnerRom"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="70dp"
+                    android:dropDownWidth="match_parent"
+                    android:background="@drawable/spinner"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:popupBackground="#efe5f0"
+                    android:paddingStart="28dp"
+                    android:paddingLeft="28dp"
                     />
+
+                <Spinner
+                    android:layout_below="@id/spinnerRom"
+                    android:id="@+id/spinnerCPU"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:dropDownWidth="match_parent"
+                    android:background="@drawable/spinner"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:popupBackground="#efe5f0"
+                    android:paddingStart="28dp"
+                    android:paddingLeft="28dp"
+                    />
+
+                <Spinner
+                    android:layout_below="@id/spinnerCPU"
+                    android:id="@+id/spinnerBattery"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:dropDownWidth="match_parent"
+                    android:background="@drawable/spinner"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:popupBackground="#efe5f0"
+                    android:paddingStart="28dp"
+                    android:paddingLeft="28dp"
+                    />
+
+                <Spinner
+                    android:layout_below="@id/spinnerBattery"
+                    android:id="@+id/spinnerScreen"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:dropDownWidth="match_parent"
+                    android:background="@drawable/spinner"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:popupBackground="#efe5f0"
+                    android:paddingStart="28dp"
+                    android:paddingLeft="28dp"
+                    />
+
+                <Spinner
+                    android:layout_below="@id/spinnerScreen"
+                    android:id="@+id/spinnerOS"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:dropDownWidth="match_parent"
+                    android:background="@drawable/spinner"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:popupBackground="#efe5f0"
+                    android:paddingStart="28dp"
+                    android:paddingLeft="28dp"
+                    />
+
 
 
                 <Button
@@ -106,7 +182,7 @@
                     android:background="@drawable/bgd_round"
                     android:text="بحث"
                     android:textSize="16sp"
-                    android:layout_below="@+id/spinner"
+                    android:layout_below="@+id/spinnerOS"
                     android:fontFamily="@font/abdo_master_semibold"
                     android:textColor="@android:color/white"
                     />
