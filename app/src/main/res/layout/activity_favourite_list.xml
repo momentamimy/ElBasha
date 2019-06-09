@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context=".SearchActivity">
+    tools:context="com.ElBasha.mob.app.favourite_list">
 
 
     <RelativeLayout
@@ -54,58 +53,17 @@
     </RelativeLayout>
 
 
-
-    <RelativeLayout
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
-        android:id="@+id/textcard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/gradient"
-        >
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="الفئة السعرية"
-            android:gravity="center"
-            android:textSize="28sp"
-            android:textColor="@android:color/black"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/abdo_master_semibold"
-            />
-
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/showdialog"
-        android:layout_below="@id/textcard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/radius_relativelayout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-5dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        >
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_sort_down"
-            />
-
-
-    </RelativeLayout>
-
-
+        android:drawableStart="@drawable/ic_list"
+        android:drawableLeft="@drawable/ic_list"
+        android:backgroundTint="@android:color/black"
+        android:text="أختر"
+        />
 
 </RelativeLayout>

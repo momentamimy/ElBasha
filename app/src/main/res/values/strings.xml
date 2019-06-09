@@ -7,4 +7,72 @@
     <string name="ask_el_basha">ASK EL BASHA</string>
     <string name="skip">التالى</string>
     <string name="char_basha">شخضيات الباشا</string>
+
+    <string-array name="Ram">
+        <item>RAM</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+    </string-array>
+
+
+    <string-array name="Processor">
+        <item>CPU</item>
+        <item>Snapdragon600</item>
+        <item>Snapdragon855</item>
+        <item>kirin</item>
+    </string-array>
+
+    <string-array name="Storage">
+        <item>ROM/Storage</item>
+        <item>8GB</item>
+        <item>16GB</item>
+        <item>32GB</item>
+        <item>64GB</item>
+        <item>128GB</item>
+        <item>256GB</item>
+        <item>512GB</item>
+        <item>1TB</item>
+    </string-array>
+
+
+    <string-array name="Battery">
+        <item>Battery</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+        <item>4500</item>
+        <item>5000</item>
+        <item>10000</item>
+    </string-array>
+
+    <string-array name="screen">
+        <item>Screen</item>
+        <item>HD</item>
+        <item>FHD</item>
+        <item>FHD+</item>
+        <item>QHD</item>
+        <item>2k</item>
+        <item>4k</item>
+    </string-array>
+
+    <string-array name="software">
+        <item>Software/OS</item>
+        <item>IOS</item>
+        <item>lolipop</item>
+        <item>Masrhmallow</item>
+        <item>Nought</item>
+        <item>Oreo</item>
+        <item>pie</item>
+        <item>Q</item>
+    </string-array>
+
+
 </resources>

@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -26,6 +27,7 @@ public class SearchActivity extends AppCompatActivity {
     PopupWindow popupWindow;
     List<IconPowerMenuItem> list=new ArrayList<>();
     RelativeLayout spinnertext;
+    ImageView backarrow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,13 @@ public class SearchActivity extends AppCompatActivity {
         list.add(new IconPowerMenuItem("من 6000 الي 7000"));
         list.add(new IconPowerMenuItem("أكثر من 7000"));
 
-
+        backarrow=findViewById(R.id.back);
+        backarrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         showDialog=findViewById(R.id.showdialog);
         spinnertext=findViewById(R.id.textcard);
@@ -130,7 +138,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         popupWindow.setAnimationStyle(R.style.Animation);
-        popupWindow.showAsDropDown(v,Gravity.NO_GRAVITY, 35);
+        popupWindow.showAsDropDown(v,Gravity.NO_GRAVITY, 55);
 
     }
 
