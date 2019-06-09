@@ -138,10 +138,13 @@ public class SearchActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(popupWindow.isShowing()) {
-            popupWindow.dismiss();
-            return;
+        if(popupWindow!=null){
+            if(popupWindow.isShowing()) {
+                popupWindow.dismiss();
+                return;
+            }
         }
+
         super.onBackPressed();
     }
 
