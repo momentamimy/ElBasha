@@ -31,7 +31,8 @@ public class ManualOrCharacterActivity extends AppCompatActivity {
         manualButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(getApplicationContext(), Manual_Activity.class));
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
             }
         });
 
