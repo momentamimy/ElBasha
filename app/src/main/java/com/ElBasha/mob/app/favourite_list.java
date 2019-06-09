@@ -46,6 +46,10 @@ public class favourite_list extends AppCompatActivity {
         fav.setLayoutManager(mGridLayoutManager);
         adapter=new adapter_fav(testData,this);
         fav.setAdapter(adapter);
+        int spanCount = 3; // 3 columns
+        int spacing = 50; // 50px
+        boolean includeEdge = true;
+        fav.addItemDecoration(new GridSpacingItemDecoration(spanCount, spacing, includeEdge));
         fav.setItemAnimator(new DefaultItemAnimator());
 
 
