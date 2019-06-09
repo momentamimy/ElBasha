@@ -37,13 +37,13 @@ public class adapter_fav  extends RecyclerView.Adapter<Holder_fav> {
 
     @Override
     public Holder_fav onCreateViewHolder(ViewGroup parent, int viewType) {
-        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardiremmobile, null); //azkar_recycleview
+        View layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_fav_recycle, null); //azkar_recycleview
         return new Holder_fav(layoutView);
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull final Holder_fav holder, final int position) {
+    public void onBindViewHolder( Holder_fav holder,  int position) {
 
      holder.text.setText(data.get(position));
      Picasso.with(context).load(R.drawable.dummy3).fit().centerCrop().into(holder.mobile_pic);
