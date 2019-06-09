@@ -53,7 +53,8 @@
     </RelativeLayout>
 
 
-    <TextView
+    <ImageView
+        android:src="@drawable/favorite_list"
         android:id="@+id/titlepage"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
@@ -63,8 +64,6 @@
         android:layout_centerHorizontal="true"
         android:drawableStart="@drawable/ic_list"
         android:drawableLeft="@drawable/ic_list"
-        android:backgroundTint="@android:color/black"
-        android:text="أختر"
         />
 
 

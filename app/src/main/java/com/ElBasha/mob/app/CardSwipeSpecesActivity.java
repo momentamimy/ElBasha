@@ -14,7 +14,7 @@ public class CardSwipeSpecesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_swipe_speces);
 
-        close=findViewById(R.id.close);
+        close=findViewById(R.id.back);
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override

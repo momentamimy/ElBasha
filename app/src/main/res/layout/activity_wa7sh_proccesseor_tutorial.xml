@@ -5,41 +5,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgd_svg"
-    tools:context=".Wa7shProccesseorTutorial"
-    android:layoutDirection="rtl">
+    android:background="@android:color/white"
+    tools:context=".Wa7shProccesseorTutorial">
     <RelativeLayout
-        android:id="@+id/esaallayout"
+        android:id="@+id/toolbar"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/back"
+            android:layout_margin="10dp"
+            android:layout_centerVertical="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
-            android:layout_centerVertical="true"/>
+            android:src="@drawable/ic_back"/>
 
         <TextView
+            android:layout_marginTop="5dp"
             android:id="@+id/esaal"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="30dp"
+            android:textSize="18dp"
+            android:layout_centerHorizontal="true"
             android:gravity="center"
             android:textColor="@android:color/white"
             android:text="@string/title"
-            android:fontFamily="@font/aref_regular"/>
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+            android:background="@android:color/white"
+            android:layout_below="@id/esaal"
+            android:id="@+id/esaal_en"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="9dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black"
+            android:text="@string/ask_el_basha"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            />
     </RelativeLayout>
 
 
     <android.support.v7.widget.CardView
-        android:layout_below="@+id/esaallayout"
+        android:layout_above="@+id/next"
+        android:layout_below="@+id/toolbar"
         android:id="@+id/wa7shelprocessor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="10dp"
         android:transitionName="backgroundTransition"
         app:cardCornerRadius="15dp"
         app:cardElevation="5dp"
@@ -47,126 +70,68 @@
         >
 
         <RelativeLayout
+            android:id="@+id/cardLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/card_bgd_1">
 
+            <android.support.v4.view.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/charPager"></android.support.v4.view.ViewPager>
 
             <ImageView
-                android:id="@+id/text_processor"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_centerHorizontal="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text_processor"/>
-
-            <ImageView
-                android:id="@+id/bgd_hint_processor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bgd_hint_processor"/>
-
-            <ImageView
-                android:id="@+id/char_processor"
-                android:layout_alignParentEnd="true"
+                android:id="@+id/scroll_right"
                 android:layout_centerVertical="true"
-                android:layout_width="120dp"
-                android:layout_height="200dp"
-                android:background="@drawable/char_processor"
-                android:layout_alignParentRight="true"
-                />
-
-           <LinearLayout
-               android:layout_toStartOf="@+id/char_processor"
-               android:layout_marginStart="10dp"
-               android:layout_centerVertical="true"
-               android:orientation="vertical"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginLeft="10dp"
-               android:layout_toLeftOf="@+id/char_processor">
-
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="\u25CF معالج فورى ومعالج رسوم فورى"
-                   android:textColor="#fff"
-                   android:textSize="15dp"/>
-
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="\u25CF معالج فورى ومعالج رسوم فورى"
-                   android:textColor="#fff"
-                   android:textSize="15dp"/>
-
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="\u25CF معالج فورى ومعالج رسوم فورى"
-                   android:textColor="#fff"
-                   android:textSize="15dp"/>
-
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="\u25CF معالج فورى ومعالج رسوم فورى"
-                   android:textColor="#fff"
-                   android:textSize="15dp"/>
-
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="\u25CF معالج فورى ومعالج رسوم فورى"
-                   android:textColor="#fff"
-                   android:textSize="15dp"/>
-
-           </LinearLayout>
-
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_keyboard_arrow_right_white_24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true" />
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
+                android:id="@+id/scroll_left"
+                android:layout_centerVertical="true"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_keyboard_arrow_left_white_24dp" />
 
 
-            <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/next"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentBottom="true"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="5dp"
-                android:layout_marginRight="60dp"
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:gravity="center"
-                        android:id="@+id/SKIP"
-                        android:background="?android:attr/selectableItemBackground"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="التالى"
-                        android:fontFamily="@font/abdo_master_semibold"
-                        android:textStyle="bold"
-                        android:textColor="#000"
-                        android:textSize="15dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        />
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
 
+    <android.support.v7.widget.CardView
+        app:cardBackgroundColor="#cbc0cc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/next"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/SKIP"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="إختيار"
+                android:fontFamily="@font/abdo_master_semibold"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:textSize="15dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                />
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
 </RelativeLayout>

@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
                 }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
+                intent.putExtra("charName","wa7shelprocessor");
                 startActivity(intent,options.toBundle());
             }
         });
@@ -79,32 +80,56 @@ public class MainActivity extends AppCompatActivity {
         elfananeen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Pair pair=new Pair<View,String>(elfananeen,"backgroundTransition");
+                ActivityOptions options= null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
+                }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
-                startActivity(intent);
+                intent.putExtra("charName","elfananeen");
+                startActivity(intent,options.toBundle());
             }
         });
 
         superhero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Pair pair=new Pair<View,String>(superhero,"backgroundTransition");
+                ActivityOptions options= null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
+                }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
-                startActivity(intent);
+                intent.putExtra("charName","superhero");
+                startActivity(intent,options.toBundle());
             }
         });
 
         mlookelselfy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Pair pair=new Pair<View,String>(mlookelselfy,"backgroundTransition");
+                ActivityOptions options= null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
+                }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
-                startActivity(intent);
+                intent.putExtra("charName","mlookelselfy");
+                startActivity(intent,options.toBundle());
             }
         });
 
         mn8eerfslan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Pair pair=new Pair<View,String>(mn8eerfslan,"backgroundTransition");
+                ActivityOptions options= null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
+                }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
-                startActivity(intent);
+                intent.putExtra("charName","mn8eerfslan");
+                startActivity(intent,options.toBundle());
             }
         });
     }

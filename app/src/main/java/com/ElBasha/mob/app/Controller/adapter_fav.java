@@ -45,8 +45,8 @@ public class adapter_fav  extends RecyclerView.Adapter<Holder_fav> {
     @Override
     public void onBindViewHolder( Holder_fav holder,  int position) {
 
-     holder.text.setText(data.get(position));
-     Picasso.with(context).load(R.drawable.dummy3).fit().centerCrop().into(holder.mobile_pic);
+    // holder.text.setText(data.get(position));
+    // Picasso.with(context).load(R.drawable.dummy3).fit().centerCrop().into(holder.mobile_pic);
 
     }
 

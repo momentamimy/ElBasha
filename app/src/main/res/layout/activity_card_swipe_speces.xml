@@ -5,21 +5,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CardSwipeSpecesActivity"
-    android:background="@drawable/bgd_svg">
+    android:background="@android:color/white">
 
-    <TextView
-        android:id="@+id/esaal"
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="40dp"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:text="@string/title"
-        android:fontFamily="@font/aref_regular"/>
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_margin="10dp"
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/esaal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:text="@string/title"
+            android:textStyle="bold"
+            />
+
+
+        <TextView
+            android:background="@android:color/white"
+            android:layout_below="@id/esaal"
+            android:id="@+id/esaal_en"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="9dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black"
+            android:text="@string/ask_el_basha"
+            android:padding="5dp"
+            android:layout_marginBottom="5dp"
+            android:textStyle="bold"
+            />
+
+        <ImageView
+            android:id="@+id/favoratelist"
+            android:layout_centerVertical="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_list"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/esaal"
+        android:layout_below="@+id/toolbar"
         android:id="@+id/phone_layout"
         android:layout_above="@+id/buttons_layout"
         android:background="#fff"
@@ -349,9 +394,11 @@
         android:id="@+id/buttons_layout"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#C40606">
 
         <LinearLayout
+
             android:layout_marginTop="3dp"
             android:layout_marginBottom="3dp"
             android:layout_centerInParent="true"

@@ -35,7 +35,7 @@ public class swipcards extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipcards);
 
-        fav_list=findViewById(R.id.favoratelist);
+        fav_list=findViewById(R.id.openfavList);
         backarrow=findViewById(R.id.back);
         close=findViewById(R.id.close);
         cardStack = (SwipeDeck) findViewById(R.id.swipe_deck);
@@ -109,7 +109,7 @@ public class swipcards extends AppCompatActivity {
         backarrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SearchActivity.class));
+                startActivity(new Intent(getApplicationContext(), ManualOrCharacterActivity.class));
                 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                 finish();
             }
@@ -118,7 +118,7 @@ public class swipcards extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SearchActivity.class));
+                startActivity(new Intent(getApplicationContext(), ManualOrCharacterActivity.class));
                 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                 finish();
             }
