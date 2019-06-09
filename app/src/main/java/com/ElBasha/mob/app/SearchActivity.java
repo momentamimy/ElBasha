@@ -25,7 +25,7 @@ public class SearchActivity extends AppCompatActivity {
     RelativeLayout showDialog;
     PopupWindow popupWindow;
     List<IconPowerMenuItem> list=new ArrayList<>();
-    CardView spinnertext;
+    RelativeLayout spinnertext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
