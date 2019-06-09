@@ -27,7 +27,7 @@ public class swipcards extends AppCompatActivity {
 
     private SwipeDeckAdapter adapter;
     private ArrayList<String> testData;
-    ImageView backarrow,close;
+    ImageView backarrow,close,fav_list;
 
 
     @Override
@@ -35,10 +35,20 @@ public class swipcards extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipcards);
 
+        fav_list=findViewById(R.id.favoratelist);
         backarrow=findViewById(R.id.back);
         close=findViewById(R.id.close);
         cardStack = (SwipeDeck) findViewById(R.id.swipe_deck);
         cardStack.setHardwareAccelerationEnabled(true);
+
+        //open favourite list activity
+        fav_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), favourite_list.class));
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+            }
+        });
 
         testData = new ArrayList<>();
         testData.add("0");
