@@ -12,7 +12,7 @@ import android.widget.Spinner;
 
 public class Manual_Activity extends AppCompatActivity {
 
-    Spinner spinner;
+    Spinner spinner,spinnerROM,spinnerCPU,spinnerBattery,spinnerScreen,spinnerSoftware;
     ImageView fav_list,back;
     Button searchbtn;
 
@@ -51,7 +51,12 @@ public class Manual_Activity extends AppCompatActivity {
             }
         });
 
-         spinner=(Spinner) findViewById(R.id.spinner);  // connect 1st spinner
+        spinner=(Spinner) findViewById(R.id.spinner);  // connect 1st spinner
+        spinnerROM=(Spinner) findViewById(R.id.spinnerRom);  // connect 1st spinner
+        spinnerCPU=(Spinner) findViewById(R.id.spinnerCPU);  // connect 1st spinner
+        spinnerBattery=(Spinner) findViewById(R.id.spinnerBattery);  // connect 1st spinner
+        spinnerScreen=(Spinner) findViewById(R.id.spinnerScreen);  // connect 1st spinner
+        spinnerSoftware=(Spinner) findViewById(R.id.spinnerOS);  // connect 1st spinner
 
         //******************************************************ArrayAdapter for first spinner**********************************************************************
         ArrayAdapter<String> myAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Ram));
@@ -69,6 +74,85 @@ public class Manual_Activity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 spinner.setSelection(0);
+            }
+        });
+
+
+        //******************************************************ArrayAdapter for first spinner**********************************************************************
+        ArrayAdapter<String> myAdapter2= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Storage));
+        myAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerROM.setAdapter(myAdapter2);
+        spinnerROM.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //((TextView) parent.getChildAt(0)).setTextColor(Color.parseColor("#083c93"));
+                //((TextView) parent.getChildAt(0)).setTextSize(18);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                spinnerROM.setSelection(0);
+            }
+        });
+
+
+        //******************************************************ArrayAdapter for first spinner**********************************************************************
+        ArrayAdapter<String> myAdapter3= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Processor));
+        myAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerCPU.setAdapter(myAdapter3);
+        spinnerCPU.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //((TextView) parent.getChildAt(0)).setTextColor(Color.parseColor("#083c93"));
+                //((TextView) parent.getChildAt(0)).setTextSize(18);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                spinnerCPU.setSelection(0);
+            }
+        });
+
+
+        //******************************************************ArrayAdapter for first spinner**********************************************************************
+        ArrayAdapter<String> myAdapter4= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Battery));
+        myAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerBattery.setAdapter(myAdapter4);
+        spinnerBattery.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //((TextView) parent.getChildAt(0)).setTextColor(Color.parseColor("#083c93"));
+                //((TextView) parent.getChildAt(0)).setTextSize(18);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                spinnerBattery.setSelection(0);
+            }
+        });
+
+        //******************************************************ArrayAdapter for first spinner**********************************************************************
+        ArrayAdapter<String> myAdapter5= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.software));
+        myAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        spinnerSoftware.setAdapter(myAdapter5);
+        spinnerSoftware.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //((TextView) parent.getChildAt(0)).setTextColor(Color.parseColor("#083c93"));
+                //((TextView) parent.getChildAt(0)).setTextSize(18);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                spinnerSoftware.setSelection(0);
             }
         });
 
