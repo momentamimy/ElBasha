@@ -71,7 +71,7 @@ public class SearchActivity extends AppCompatActivity {
         spinnertext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopup(v);
+                showPopup(showDialog);
 
             }
         });
