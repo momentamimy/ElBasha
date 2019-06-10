@@ -181,7 +181,7 @@ public class swipcards extends AppCompatActivity {
                     Log.i("Hwardware Accel type:", Integer.toString(View.LAYER_TYPE_HARDWARE));
                Intent i = new Intent(v.getContext(), CardSwipeSpecesActivity.class);
                 v.getContext().startActivity(i);
-                finish();
+
 
                 }
             });

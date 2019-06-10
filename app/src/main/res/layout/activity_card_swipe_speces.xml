@@ -9,57 +9,55 @@
 
     <RelativeLayout
         android:id="@+id/toolbar"
-        android:layout_marginTop="25dp"
-        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimary">
 
         <ImageView
             android:id="@+id/back"
-            android:layout_margin="10dp"
-            android:layout_centerVertical="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_back"/>
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_back" />
 
         <TextView
-            android:layout_marginTop="5dp"
             android:id="@+id/esaal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
             android:gravity="center"
-            android:textColor="@android:color/white"
             android:text="@string/title"
-            android:textStyle="bold"
-            />
+            android:textColor="@android:color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
 
         <TextView
-            android:background="@android:color/white"
-            android:layout_below="@id/esaal"
             android:id="@+id/esaal_en"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="9dp"
+            android:layout_below="@id/esaal"
             android:layout_centerHorizontal="true"
-            android:textColor="@android:color/black"
-            android:text="@string/ask_el_basha"
-            android:padding="5dp"
             android:layout_marginBottom="5dp"
-            android:textStyle="bold"
-            />
+            android:background="@android:color/white"
+            android:padding="5dp"
+            android:text="@string/ask_el_basha"
+            android:textColor="@android:color/black"
+            android:textSize="9dp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/favoratelist"
-            android:layout_centerVertical="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_list"
-            android:layout_margin="10dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_list" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -223,6 +221,7 @@
                     android:layout_marginRight="5dp"/>
 
             </LinearLayout>
+
                 <TextView
                     android:padding="8dp"
                     android:layout_marginTop="10dp"
@@ -230,11 +229,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bgd_round"
-                    android:text="shop now"
+                    android:text="Shop now"
                     android:textColor="@android:color/white"
                     android:layout_below="@+id/color_layout"
                     android:layout_centerHorizontal="true"/>
+
             </RelativeLayout>
+
         </RelativeLayout>
 
         <TextView
@@ -244,7 +245,7 @@
             android:background="#d6d6d6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="kEY SPECS"
+            android:text="KEY SPECS"
             android:textColor="@android:color/black"
             android:textSize="25dp"
             android:padding="5dp"
