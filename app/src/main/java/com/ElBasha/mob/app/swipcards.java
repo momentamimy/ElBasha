@@ -129,7 +129,7 @@ public class swipcards extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(getApplicationContext(), SearchActivity.class));
+        startActivity(new Intent(getApplicationContext(), ManualOrCharacterActivity.class));
         overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
         finish();
     }
