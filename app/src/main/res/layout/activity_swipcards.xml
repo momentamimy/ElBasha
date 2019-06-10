@@ -98,8 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        >
+        android:layout_centerHorizontal="true">
 
         <ImageView
             android:id="@+id/reload"
@@ -110,8 +109,7 @@
             android:layout_height="40dp"
             android:src="@drawable/ic_round_right_arrow"
             android:padding="9dp"
-            android:background="@drawable/circle"
-            />
+            android:background="@drawable/circle" />
 
         <ImageView
             android:id="@+id/close"
