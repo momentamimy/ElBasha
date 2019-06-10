@@ -1,5 +1,6 @@
 package com.ElBasha.mob.app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,13 +8,23 @@ import android.widget.ImageView;
 
 public class CardSwipeSpecesActivity extends AppCompatActivity {
 
-    ImageView close;
+    ImageView close,fav_list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_swipe_speces);
 
+        fav_list=findViewById(R.id.openfavList);
         close=findViewById(R.id.back);
+
+        //open favourite list activity
+        fav_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), favourite_list.class));
+                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+            }
+        });
 
         close.setOnClickListener(new View.OnClickListener() {
             @Override

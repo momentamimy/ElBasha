@@ -16,7 +16,7 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
 
 
     ImageView back;
-    CardView next;
+    RelativeLayout next;
     RelativeLayout cardLayout;
     ViewPager pager;
     ImageView scrollRight,scrollLeft;
