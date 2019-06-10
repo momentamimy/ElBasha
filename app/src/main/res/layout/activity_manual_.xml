@@ -93,8 +93,8 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="38dp"
-                    android:paddingLeft="38dp"/>
+                    android:paddingStart="45dp"
+                    android:paddingLeft="45dp"/>
 
                 <Spinner
                     android:layout_below="@id/spinner"
@@ -107,8 +107,8 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="38dp"
-                    android:paddingLeft="38dp"
+                    android:paddingStart="45dp"
+                    android:paddingLeft="45dp"
                     />
 
                 <Spinner
@@ -122,8 +122,8 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="38dp"
-                    android:paddingLeft="38dp"
+                    android:paddingStart="45dp"
+                    android:paddingLeft="45dp"
                     />
 
                 <Spinner
@@ -137,8 +137,8 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="38dp"
-                    android:paddingLeft="38dp"
+                    android:paddingStart="45dp"
+                    android:paddingLeft="45dp"
                     />
 
                 <Spinner
@@ -152,8 +152,8 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="38dp"
-                    android:paddingLeft="38dp"
+                    android:paddingStart="45dp"
+                    android:paddingLeft="45dp"
                     />
 
                 <Spinner
@@ -167,8 +167,8 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="38dp"
-                    android:paddingLeft="38dp"
+                    android:paddingStart="45dp"
+                    android:paddingLeft="45dp"
                     />
 
 
