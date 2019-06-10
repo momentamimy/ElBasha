@@ -278,10 +278,6 @@
                     android:textSize="18dp"
                     android:textColor="@color/colorPrimary"
                     />
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#34000000"/>
 
 
                 <View
@@ -300,10 +296,7 @@
                     android:text="PLATFORM"
                     android:textSize="18dp"
                     android:textColor="@color/colorPrimary"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#34000000"/>
+
 
 
                 <View
@@ -322,10 +315,7 @@
                     android:text="CAMERA"
                     android:textSize="18dp"
                     android:textColor="@color/colorPrimary"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#34000000"/>
+
 
 
                 <View
@@ -344,10 +334,7 @@
                     android:text="BATTERY"
                     android:textSize="18dp"
                     android:textColor="@color/colorPrimary"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#34000000"/>
+
 
 
                 <View
@@ -366,10 +353,7 @@
                     android:text="OTHER FEATURE"
                     android:textSize="18dp"
                     android:textColor="@color/colorPrimary"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#34000000"/>
+
 
 
                 <View
@@ -388,14 +372,18 @@
                     android:text="REVIEW"
                     android:textSize="18dp"
                     android:textColor="@color/colorPrimary"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#34000000" />
             </LinearLayout>
         </ScrollView>
 
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="https://www.youtube.com/watch"
+        android:textColor="#0E1C68"
+        android:gravity="center"
+        android:layout_above="@+id/buttons_layout"/>
 
     <RelativeLayout
         android:id="@+id/buttons_layout"
