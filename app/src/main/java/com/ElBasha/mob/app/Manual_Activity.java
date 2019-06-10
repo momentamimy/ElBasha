@@ -59,7 +59,7 @@ public class Manual_Activity extends AppCompatActivity {
         spinnerSoftware=(Spinner) findViewById(R.id.spinnerOS);  // connect 1st spinner
 
         //******************************************************ArrayAdapter for first spinner**********************************************************************
-        ArrayAdapter<String> myAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Ram));
+        ArrayAdapter<String> myAdapter= new ArrayAdapter<String>(this, R.layout.spinner_item_text,getResources().getStringArray(R.array.Ram));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(myAdapter);
@@ -79,7 +79,7 @@ public class Manual_Activity extends AppCompatActivity {
 
 
         //******************************************************ArrayAdapter for first spinner**********************************************************************
-        ArrayAdapter<String> myAdapter2= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Storage));
+        ArrayAdapter<String> myAdapter2= new ArrayAdapter<String>(this,  R.layout.spinner_item_text,getResources().getStringArray(R.array.Storage));
         myAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerROM.setAdapter(myAdapter2);
@@ -99,7 +99,7 @@ public class Manual_Activity extends AppCompatActivity {
 
 
         //******************************************************ArrayAdapter for first spinner**********************************************************************
-        ArrayAdapter<String> myAdapter3= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Processor));
+        ArrayAdapter<String> myAdapter3= new ArrayAdapter<String>(this,  R.layout.spinner_item_text,getResources().getStringArray(R.array.Processor));
         myAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerCPU.setAdapter(myAdapter3);
@@ -119,7 +119,7 @@ public class Manual_Activity extends AppCompatActivity {
 
 
         //******************************************************ArrayAdapter for first spinner**********************************************************************
-        ArrayAdapter<String> myAdapter4= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.Battery));
+        ArrayAdapter<String> myAdapter4= new ArrayAdapter<String>(this,  R.layout.spinner_item_text,getResources().getStringArray(R.array.Battery));
         myAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerBattery.setAdapter(myAdapter4);
@@ -138,7 +138,7 @@ public class Manual_Activity extends AppCompatActivity {
         });
 
         //******************************************************ArrayAdapter for first spinner**********************************************************************
-        ArrayAdapter<String> myAdapter5= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.software));
+        ArrayAdapter<String> myAdapter5= new ArrayAdapter<String>(this,  R.layout.spinner_item_text,getResources().getStringArray(R.array.software));
         myAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerSoftware.setAdapter(myAdapter5);
@@ -158,7 +158,7 @@ public class Manual_Activity extends AppCompatActivity {
 
 
         //******************************************************ArrayAdapter for first spinner**********************************************************************
-        ArrayAdapter<String> myAdapter6= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.screen));
+        ArrayAdapter<String> myAdapter6= new ArrayAdapter<String>(this,  R.layout.spinner_item_text,getResources().getStringArray(R.array.screen));
         myAdapter6.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinnerScreen.setAdapter(myAdapter6);
