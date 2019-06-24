@@ -17,6 +17,7 @@ import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.ElBasha.mob.app.Controller.LocaleHelper;
 import com.ElBasha.mob.app.Controller.RecyclePriceAdapter;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,16 +36,16 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
 
-        list.add(new IconPowerMenuItem("أقل من 1000"));
-        list.add(new IconPowerMenuItem("من 1000 الي 2000"));
-        list.add(new IconPowerMenuItem("من 2000 الي 2500"));
-        list.add(new IconPowerMenuItem("من 2500 الي 3000"));
-        list.add(new IconPowerMenuItem("من 3000 الي 3500"));
-        list.add(new IconPowerMenuItem("من 3500 الي 4000"));
-        list.add(new IconPowerMenuItem("من 4000 الي 5000"));
-        list.add(new IconPowerMenuItem("من 5000 الي 6000"));
-        list.add(new IconPowerMenuItem("من 6000 الي 7000"));
-        list.add(new IconPowerMenuItem("أكثر من 7000"));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.less_than_1000)));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.range_1000_2000)));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.range_2000_2500)));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.range_2500_3000)));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.range_3000_3500)));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.range_3500_4000)));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.range_4000_5000)));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.range_5000_6000)));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.range_6000_7000)));
+        list.add(new IconPowerMenuItem(getResources().getString(R.string.more_than_7000)));
 
         backarrow=findViewById(R.id.back);
         backarrow.setOnClickListener(new View.OnClickListener() {
@@ -156,5 +157,8 @@ public class SearchActivity extends AppCompatActivity {
         super.onBackPressed();
     }
 
-
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
+    }
 }

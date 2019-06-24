@@ -5,10 +5,72 @@
     android:layout_height="match_parent"
     tools:context=".SelfyCharFragment">
 
-    <ImageView
-        android:id="@+id/char_processor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/selfy"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ملوك السيلفى"
+            android:textSize="35dp"
+            android:textColor="@android:color/white"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:shadowColor="@android:color/black"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/kufam_bold"
+            />
+
+        <ImageView
+            android:id="@+id/char_selfy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selfy"
+            />
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"
+                android:text="\u25CF أداء كاميرا أمامية قوي "
+                android:shadowColor="@android:color/black"
+                android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"
+                android:text="\u25CF دقة ميجا بيكسل وفتحة عدسة واسعة "
+                android:shadowColor="@android:color/black"
+                android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"
+                android:text="\u25CF قوة الواجهة وثابتها "
+                android:shadowColor="@android:color/black"
+                android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textColor="@android:color/white"
+                android:text="\u25CF مميزات الواجعة فى التصوير "
+                android:shadowColor="@android:color/black"
+                android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+        </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>

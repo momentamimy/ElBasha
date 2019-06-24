@@ -5,21 +5,21 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">إسأل الباشا</string>
     <string name="ask_el_basha">ASK EL BASHA</string>
-    <string name="skip">next</string>
-    <string name="char_basha">Basha characters</string>
-    <string name="choose_manual">manual option</string>
-    <string name="Price_category">Price Category</string>
-    <string name="less_than_1000">less than 1000</string>
-    <string name="range_1000_2000">from 1000 to 2000</string>
-    <string name="range_2000_2500">from 2000 to 2500</string>
-    <string name="range_2500_3000">from 2500 to 3000</string>
-    <string name="range_3000_3500">from 3000 to 3500</string>
-    <string name="range_3500_4000">from 3500 to 4000</string>
-    <string name="range_4000_5000">from 4000 to 5000</string>
-    <string name="range_5000_6000">from 5000 to 6000</string>
-    <string name="range_6000_7000">from 6000 to 7000</string>
-    <string name="more_than_7000">more than 7000</string>
-    <string name="choose">show</string>
+    <string name="skip">التالى</string>
+    <string name="char_basha">شخضيات الباشا</string>
+    <string name="choose_manual">الإختيار اليدوى</string>
+    <string name="Price_category">الفئة السعرية</string>
+    <string name="less_than_1000">أقل من 1000</string>
+    <string name="range_1000_2000">من 1000 الي 2000</string>
+    <string name="range_2000_2500">من 2000 الي 2500</string>
+    <string name="range_2500_3000">من 2500 الي 3000</string>
+    <string name="range_3000_3500">من 3000 الي 3500</string>
+    <string name="range_3500_4000">من 3500 الي 4000</string>
+    <string name="range_4000_5000">من 4000 الي 5000</string>
+    <string name="range_5000_6000">من 5000 الي 6000</string>
+    <string name="range_6000_7000">من 6000 الي 7000</string>
+    <string name="more_than_7000">أكثر من 7000</string>
+    <string name="choose">إختيار</string>
 
     <string-array name="Ram">
         <item>RAM</item>

@@ -71,7 +71,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="الفئة السعرية"
+            android:text="@string/Price_category"
             android:gravity="center"
             android:textSize="28sp"
             android:textColor="@android:color/black"
