@@ -1,5 +1,6 @@
 package com.ElBasha.mob.app;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+
+import com.ElBasha.mob.app.Controller.LocaleHelper;
 
 public class Manual_Activity extends AppCompatActivity {
 
@@ -176,5 +179,9 @@ public class Manual_Activity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

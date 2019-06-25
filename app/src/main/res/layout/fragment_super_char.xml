@@ -9,10 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
+            android:gravity="center"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="سوبر هيرو"
+            android:text="@string/superhero"
             android:textSize="35dp"
             android:textColor="@android:color/white"
             android:shadowDx="1"
@@ -43,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF الأداء المتوسط فى كل مهام الموبايل "
+                android:text="@string/performance_mobile"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
             <TextView
@@ -51,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF الموبايل الأقرب للموبايل المثالى "
+                android:text="@string/closest_ideal_mobile"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
             <TextView
@@ -59,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF جاهز لتلبية اغراضك اليومية بشكل سريع وفعال "
+                android:text="@string/Ready_quickly_efficiently"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
             <TextView
@@ -67,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF قوة المعالج - نقاء الكاميرا - قوة مواد التصنيع "
+                android:text="@string/processor_Camera_material"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
         </LinearLayout>

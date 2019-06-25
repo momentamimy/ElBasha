@@ -9,11 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
+            android:gravity="center"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="من غير فصلان"
-            android:textSize="35dp"
+            android:text="@string/without_stopping"
+            android:textSize="25dp"
             android:textColor="@android:color/white"
             android:shadowDx="1"
             android:shadowDy="1"
@@ -43,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF حجم بطارية كبير "
+                android:text="@string/Large_battery_size"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
             <TextView
@@ -51,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF معالج موفر للطاقة "
+                android:text="@string/Power_Saver_Wizard"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
             <TextView
@@ -59,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF تحسين واجهة المستخدم فى توفير الطاقة "
+                android:text="@string/interface_energy_saving"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
         </LinearLayout>

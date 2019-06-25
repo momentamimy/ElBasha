@@ -1,6 +1,7 @@
 package com.ElBasha.mob.app;
 
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
@@ -18,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ElBasha.mob.app.Controller.LocaleHelper;
 import com.appolica.flubber.Flubber;
 import com.race604.drawable.wave.WaveDrawable;
 
@@ -106,5 +108,10 @@ public class SplashScreen extends AppCompatActivity {
                 .duration(duration)                              // Last for 1000 milliseconds(1 second)
                 .createFor(imageView)                             // Apply it to the view
                 .start();                                    // Start it now
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

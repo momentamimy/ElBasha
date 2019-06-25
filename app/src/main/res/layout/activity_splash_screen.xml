@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
+    android:layoutDirection="ltr"
     android:background="@android:color/white">
 
 <RelativeLayout
@@ -39,10 +40,11 @@
         android:id="@+id/esaal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="55dp"
+        android:textSize="45dp"
         android:gravity="center"
         android:textColor="@android:color/black"
         android:text="@string/title"
+        android:fontFamily="@font/khebrat_musamim_bold_new"
         />
 
 
@@ -57,6 +59,7 @@
         android:textColor="@android:color/white"
         android:text="@string/ask_el_basha"
         android:padding="5dp"
+        android:fontFamily="@font/samsungsharpsans"
         />
 
 </RelativeLayout>

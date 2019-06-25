@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ElBasha.mob.app.Controller.LocaleHelper;
 import com.daprlabs.cardstack.SwipeDeck;
 import com.squareup.picasso.Picasso;
 
@@ -187,6 +188,11 @@ public class swipcards extends AppCompatActivity {
             });
             return v;
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }
 

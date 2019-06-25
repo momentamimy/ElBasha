@@ -9,10 +9,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
+            android:gravity="center"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="الفنانين"
+            android:text="@string/Artists"
             android:textSize="35dp"
             android:textColor="@android:color/white"
             android:shadowDx="1"
@@ -44,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF التصميم الفريد والمتميز فى الألوان "
+                android:text="@string/Unique_design"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
             <TextView
@@ -52,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF دقة الكاميرا الخلفية وقوتها لإضفاء الحيوية للصور "
+                android:text="@string/camera_power_images"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
             <TextView
@@ -60,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF ألوان شاشة واضحة وزاهية "
+                android:text="@string/screen_clear_bright"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
             <TextView
@@ -68,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textColor="@android:color/white"
-                android:text="\u25CF حجم مستشعر كاميرا كبير وفتحة عدسة واسعة "
+                android:text="@string/camera_lens_slot"
                 android:shadowColor="@android:color/black"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
         </LinearLayout>

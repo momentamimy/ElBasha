@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     android:background="@color/colorPrimaryDark"
     tools:context=".ManualOrCharacterActivity">
 
@@ -33,6 +34,7 @@
         android:textColor="@android:color/white"
         android:text="@string/title"
         android:textStyle="bold"
+        android:fontFamily="@font/khebrat_musamim_bold_new"
         />
 
 
@@ -49,7 +51,22 @@
         android:padding="5dp"
         android:layout_marginBottom="5dp"
         android:textStyle="bold"
+        android:fontFamily="@font/samsungsharpsans"
         />
+
+    <TextView
+        android:id="@+id/lang_list"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lang"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
 </RelativeLayout>
 
     <LinearLayout
@@ -67,7 +84,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/choose_manual"/>
+                android:text="@string/choose_manual"
+                android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/CharButton"
@@ -79,7 +97,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/char_basha"/>
+                android:text="@string/char_basha"
+                android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
         </RelativeLayout>
 
     </LinearLayout>

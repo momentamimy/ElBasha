@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#cbc0cc"
+    android:layoutDirection="ltr"
     tools:context="com.ElBasha.mob.app.swipcards">
 
     <RelativeLayout
@@ -33,6 +34,7 @@
             android:textColor="@android:color/white"
             android:text="@string/title"
             android:textStyle="bold"
+            android:fontFamily="@font/khebrat_musamim_bold_new"
             />
 
 
@@ -49,6 +51,7 @@
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:textStyle="bold"
+            android:fontFamily="@font/samsungsharpsans"
             />
 
         <ImageView

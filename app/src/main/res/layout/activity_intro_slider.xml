@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".IntroSliderActivity"
+    android:layoutDirection="ltr"
     android:background="@android:color/white">
     <RelativeLayout
         android:id="@+id/logo"
@@ -40,8 +41,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="إسأل الباشا"
-        android:textSize="35dp"
-        android:textColor="@android:color/black"/>
+        android:textSize="30dp"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/khebrat_musamim_bold_new"/>
 
     <TextView
         android:background="@android:color/black"
@@ -54,6 +56,7 @@
         android:textColor="@android:color/white"
         android:text="@string/ask_el_basha"
         android:padding="5dp"
+        android:fontFamily="@font/samsungsharpsans"
         />
 
 
@@ -109,6 +112,7 @@
         android:textColor="@android:color/white"
         android:textSize="15dp"
         android:layout_margin="5dp"
+        android:fontFamily="@font/bahij_the_sans_arabic_bold"
         />
     </RelativeLayout>
 </RelativeLayout>

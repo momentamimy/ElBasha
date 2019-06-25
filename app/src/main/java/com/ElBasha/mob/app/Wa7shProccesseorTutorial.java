@@ -1,5 +1,6 @@
 package com.ElBasha.mob.app;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v4.view.ViewPager;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.ElBasha.mob.app.Controller.LocaleHelper;
 
 public class Wa7shProccesseorTutorial extends AppCompatActivity {
 
@@ -149,5 +152,11 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
 
 
 
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

@@ -21,6 +21,51 @@
     <string name="more_than_7000">أكثر من 7000</string>
     <string name="choose">إختيار</string>
 
+    <string name="monster_of_processor">وحش البروسيسور</string>
+    <string name="Artists">الفنانين</string>
+    <string name="superhero">سوبر هيرو</string>
+    <string name="Kings_of_selfie">ملوك السيلفى</string>
+    <string name="without_stopping">من غير فصلان</string>
+
+    <string name="Powerful_processor">● معالج قوى ومعالج رسوم قوى</string>
+    <string name="Stable_software_performance">● أداء سوفت وير مستقر</string>
+    <string name="Materials_manufacturing">● المواد المستخدمه فى التصنيع</string>
+    <string name="user_interface">● واجهة المستخدم</string>
+    <string name="Size_of_Ram">● حجم الرامات</string>
+
+    <string name="Unique_design">● التصميم الفريد والمتميز فى الألوان</string>
+    <string name="camera_power_images">● دقة الكاميرا الخلفية وقوتها لإضفاء الحيوية للصور</string>
+    <string name="screen_clear_bright">● ألوان شاشة واضحة وزاهية</string>
+    <string name="camera_lens_slot">● حجم مستشعر كاميرا كبير وفتحة عدسة واسعة</string>
+
+    <string name="performance_mobile">● الأداء المتوسط فى كل مهام الموبايل</string>
+    <string name="closest_ideal_mobile">● الموبايل الأقرب للموبايل المثالى</string>
+    <string name="Ready_quickly_efficiently">● جاهز لتلبية اغراضك اليومية بشكل سريع وفعال</string>
+    <string name="processor_Camera_material">● قوة المعالج - نقاء الكاميرا - قوة مواد التصنيع</string>
+
+    <string name="powerful_front_camera">● أداء كاميرا أمامية قوي</string>
+    <string name="Accurate_pixel_camera">● دقة ميجا بيكسل وفتحة عدسة واسعة</string>
+    <string name="strength_interface_stability">● قوة الواجهة وثابتها</string>
+    <string name="Features_interface_photography">● مميزات الواجهة فى التصوير</string>
+
+    <string name="Large_battery_size">● حجم بطارية كبير</string>
+    <string name="Power_Saver_Wizard">● معالج موفر للطاقة</string>
+    <string name="interface_energy_saving">● تحسين واجهة المستخدم فى توفير الطاقة</string>
+
+    <string name="lang">ع ر</string>
+
+    <string name="fav_list">قائمة الاختيارات</string>
+
+    <string name="colors">ألوان</string>
+    <string name="shop_now">تسوق الآن</string>
+    <string name="key_specs">المواصفات الرئيسية</string>
+    <string name="display">العرض</string>
+    <string name="platform">المنصة</string>
+    <string name="camera">الكاميرا</string>
+    <string name="other_feature">مميزات أخرى</string>
+    <string name="battery">البطارية</string>
+    <string name="review">المراجعة</string>
+
     <string-array name="Ram">
         <item>RAM</item>
         <item>1GB</item>

@@ -1,5 +1,6 @@
 package com.ElBasha.mob.app;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v4.view.ViewPager;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ElBasha.mob.app.Controller.LocaleHelper;
 import com.appolica.flubber.Flubber;
 import com.ocnyang.pagetransformerhelp.cardtransformer.CascadingPageTransformer;
 
@@ -60,5 +62,10 @@ public class IntroSliderActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ElBasha</string>
+    <string name="app_name">ASK EL BASHA</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -20,6 +20,53 @@
     <string name="range_6000_7000">from 6000 to 7000</string>
     <string name="more_than_7000">more than 7000</string>
     <string name="choose">show</string>
+
+    <string name="monster_of_processor">Monster Of Processor</string>
+    <string name="Artists">Artists</string>
+    <string name="superhero">Super Hero</string>
+    <string name="Kings_of_selfie">Kings Of Selfie</string>
+    <string name="without_stopping">Without Stopping</string>
+
+    <string name="Powerful_processor">● Powerful processor and powerful graphics processor</string>
+    <string name="Stable_software_performance">● Stable software performance</string>
+    <string name="Materials_manufacturing">● Materials used in manufacturing</string>
+    <string name="user_interface">● user interface</string>
+    <string name="Size_of_Ram">● Size of Ram</string>
+
+    <string name="Unique_design">● Unique design and distinctive colors</string>
+    <string name="camera_power_images">● The rear camera\'s resolution and power to enliven images</string>
+    <string name="screen_clear_bright">● The colors of the screen are clear and bright</string>
+    <string name="camera_lens_slot">● Large camera sensor size and wide lens slot</string>
+
+    <string name="performance_mobile">● medium performance in all mobile tasks</string>
+    <string name="closest_ideal_mobile">● Mobile is the closest to the ideal mobile</string>
+    <string name="Ready_quickly_efficiently">● Ready to meet your daily needs quickly and efficiently</string>
+    <string name="processor_Camera_material">● Power processor - Camera purity - Power material manufacturing</string>
+
+    <string name="powerful_front_camera">● Performance of a powerful front camera</string>
+    <string name="Accurate_pixel_camera">● Accurate mega pixel camera and wide lens slot</string>
+    <string name="strength_interface_stability">● The strength of the interface and its stability</string>
+    <string name="Features_interface_photography">● Features of the interface in photography</string>
+
+    <string name="Large_battery_size">● Large battery size</string>
+    <string name="Power_Saver_Wizard">● Power Saver Wizard</string>
+    <string name="interface_energy_saving">● Improved user interface in energy saving</string>
+
+    <string name="lang">en</string>
+
+    <string name="fav_list">Favorite List</string>
+
+    <string name="colors">Colors</string>
+    <string name="shop_now">Shop now</string>
+    <string name="key_specs">KEY SPECS</string>
+    <string name="display">DISPLAY</string>
+    <string name="platform">PLATFORM</string>
+    <string name="camera">CAMERA</string>
+    <string name="other_feature">OTHER FEATURES</string>
+    <string name="battery">BATTERY</string>
+    <string name="review">REVIEW</string>
+
+
 
     <string-array name="Ram">
         <item>RAM</item>

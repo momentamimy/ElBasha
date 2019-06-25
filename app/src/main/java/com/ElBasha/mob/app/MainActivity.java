@@ -1,6 +1,7 @@
 package com.ElBasha.mob.app;
 
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.content.Intent;
@@ -12,6 +13,8 @@ import android.util.Pair;
 import android.view.View;
 import android.util.Log;
 import android.widget.ImageView;
+
+import com.ElBasha.mob.app.Controller.LocaleHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -132,5 +135,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent,options.toBundle());
             }
         });
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

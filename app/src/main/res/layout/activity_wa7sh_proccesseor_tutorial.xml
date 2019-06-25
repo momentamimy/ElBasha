@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:layoutDirection="ltr"
     tools:context=".Wa7shProccesseorTutorial">
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -33,6 +34,7 @@
             android:textColor="@android:color/white"
             android:text="@string/title"
             android:textStyle="bold"
+            android:fontFamily="@font/khebrat_musamim_bold_new"
             />
 
 
@@ -49,6 +51,7 @@
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:textStyle="bold"
+            android:fontFamily="@font/samsungsharpsans"
             />
     </RelativeLayout>
 
@@ -124,6 +127,7 @@
                 android:textSize="20dp"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
+                android:fontFamily="@font/bahij_the_sans_arabic_bold"
                 />
         </RelativeLayout>
 

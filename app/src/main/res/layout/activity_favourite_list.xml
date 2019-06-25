@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:layoutDirection="ltr"
     tools:context="com.ElBasha.mob.app.favourite_list">
 
 
@@ -33,6 +34,7 @@
             android:textColor="@android:color/white"
             android:text="@string/title"
             android:textStyle="bold"
+            android:fontFamily="@font/khebrat_musamim_bold_new"
             />
 
 
@@ -49,22 +51,39 @@
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:textStyle="bold"
+            android:fontFamily="@font/samsungsharpsans"
             />
     </RelativeLayout>
 
-
-    <ImageView
-        android:src="@drawable/favorite_list"
+    <LinearLayout
+        android:layoutDirection="locale"
+        android:orientation="horizontal"
         android:id="@+id/titlepage"
         android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"
-        android:drawableStart="@drawable/ic_list"
-        android:drawableLeft="@drawable/ic_list"
-        />
+        android:layout_below="@id/toolbar">
+
+        <ImageView
+            android:src="@drawable/list1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:textSize="20sp"
+            android:drawableStart="@drawable/ic_list"
+            android:drawableLeft="@drawable/ic_list"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fav_list"
+            android:textSize="20dp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+
+    </LinearLayout>
+
 
 
     <android.support.v7.widget.RecyclerView

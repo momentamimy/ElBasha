@@ -1,5 +1,6 @@
 package com.ElBasha.mob.app;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.ElBasha.mob.app.Controller.LocaleHelper;
 import com.ElBasha.mob.app.Controller.adapter_fav;
 
 import java.util.ArrayList;
@@ -56,5 +58,11 @@ public class favourite_list extends AppCompatActivity {
 
 
 
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 }

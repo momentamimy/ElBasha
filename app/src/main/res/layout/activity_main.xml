@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
@@ -33,6 +34,7 @@
             android:textColor="@android:color/white"
             android:text="@string/title"
             android:textStyle="bold"
+            android:fontFamily="@font/khebrat_musamim_bold_new"
             />
 
 
@@ -49,6 +51,7 @@
             android:padding="5dp"
             android:layout_marginBottom="5dp"
             android:textStyle="bold"
+            android:fontFamily="@font/samsungsharpsans"
             />
     </RelativeLayout>
 
@@ -88,6 +91,22 @@
                         android:background="@drawable/card_hint_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/monster_of_processor"
+                        android:textSize="20dp"
+                        android:textColor="@android:color/white"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:shadowColor="@android:color/black"
+                        android:fontFamily="@font/kufam_bold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -116,6 +135,21 @@
                         android:background="@drawable/card_hint_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Artists"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:shadowColor="@android:color/black"
+                        android:fontFamily="@font/kufam_bold"
+                        />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -142,6 +176,22 @@
                         android:background="@drawable/card_hint_3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/superhero"
+                        android:textSize="25dp"
+                        android:textColor="@android:color/white"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:shadowColor="@android:color/black"
+                        android:fontFamily="@font/kufam_bold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -168,6 +218,21 @@
                         android:background="@drawable/card_hint_4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="100dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/Kings_of_selfie"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/white"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:shadowColor="@android:color/black"
+                        android:fontFamily="@font/kufam_bold"
+                        />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -195,6 +260,22 @@
                         android:background="@drawable/card_hint_5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="100dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/without_stopping"
+                        android:textSize="18dp"
+                        android:textColor="@android:color/white"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="1"
+                        android:shadowColor="@android:color/black"
+                        android:fontFamily="@font/kufam_bold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
