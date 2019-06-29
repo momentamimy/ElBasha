@@ -85,8 +85,6 @@ public class SearchActivity extends AppCompatActivity {
     public void showPopup(View v) {
 
 
-
-
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final View popupView = layoutInflater.inflate(R.layout.popup_filter_layout, null);
 
@@ -139,7 +137,7 @@ public class SearchActivity extends AppCompatActivity {
         });
 
         popupWindow.setAnimationStyle(R.style.Animation);
-        popupWindow.showAsDropDown(v,Gravity.NO_GRAVITY, 60);
+        popupWindow.showAsDropDown(v,Gravity.NO_GRAVITY, 20);
 
     }
 

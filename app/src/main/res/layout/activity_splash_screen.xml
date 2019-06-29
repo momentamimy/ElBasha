@@ -17,18 +17,28 @@
     android:transitionName="Transition_Animation">
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/circle_bgd"
         android:background="@drawable/logo_circle_bgd"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <pl.droidsonroids.gif.GifTextView
+        android:id="@+id/circle_bgdgif"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/circle_logo"
+        />
+
     <ImageView
+        android:visibility="gone"
         android:id="@+id/left_arm"
         android:background="@drawable/left_arm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <ImageView
+        android:visibility="gone"
         android:id="@+id/right_arm"
         android:background="@drawable/right_arm"
         android:layout_width="match_parent"

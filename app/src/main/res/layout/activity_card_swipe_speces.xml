@@ -67,10 +67,10 @@
         android:layout_marginTop="10dp"
         android:layout_below="@+id/toolbar"
         android:id="@+id/phone_layout"
-        android:layout_above="@+id/buttons_layout"
         android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <RelativeLayout
             android:id="@+id/big_layout"
             android:layout_width="wrap_content"
@@ -272,6 +272,7 @@
 
         <ScrollView
             android:layoutDirection="locale"
+            android:layout_above="@+id/buttons_layout"
             android:layout_below="@+id/key_specs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -392,19 +393,23 @@
                     android:textSize="18dp"
                     android:textColor="@color/colorPrimary"
                     android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://www.youtube.com/watch"
+                    android:textColor="#0E1C68"
+                    android:gravity="center"
+                    android:layout_above="@+id/buttons_layout"
+                    android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+
+
             </LinearLayout>
         </ScrollView>
 
-    </RelativeLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="https://www.youtube.com/watch"
-        android:textColor="#0E1C68"
-        android:gravity="center"
-        android:layout_above="@+id/buttons_layout"
-        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+
 
     <RelativeLayout
         android:id="@+id/buttons_layout"
@@ -466,6 +471,8 @@
                 android:background="@drawable/circle"
                 />
         </LinearLayout>
+    </RelativeLayout>
+
     </RelativeLayout>
 
 </RelativeLayout>

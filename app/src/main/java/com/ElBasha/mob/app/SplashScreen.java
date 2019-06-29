@@ -52,19 +52,19 @@ public class SplashScreen extends AppCompatActivity {
             }
         }
         downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
-        lefttoright = AnimationUtils.loadAnimation(this,R.anim.lefttoright);
-        righttoleft = AnimationUtils.loadAnimation(this,R.anim.righttoleft);
+        //lefttoright = AnimationUtils.loadAnimation(this,R.anim.lefttoright);
+        //righttoleft = AnimationUtils.loadAnimation(this,R.anim.righttoleft);
 
         Text=findViewById(R.id.esaal);
         TextEn=findViewById(R.id.esaal_en);
         TextEn.setAnimation(downtoup);
         Text.setAnimation(downtoup);
 
-        left_arm=findViewById(R.id.left_arm);
+        /*left_arm=findViewById(R.id.left_arm);
         left_arm.setAnimation(lefttoright);
 
         right_arm=findViewById(R.id.right_arm);
-        right_arm.setAnimation(righttoleft);
+        right_arm.setAnimation(righttoleft);*/
 
 
 
