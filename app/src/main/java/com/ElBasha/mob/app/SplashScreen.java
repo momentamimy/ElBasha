@@ -26,9 +26,9 @@ import com.race604.drawable.wave.WaveDrawable;
 
 public class SplashScreen extends AppCompatActivity {
 
-    Animation downtoup,righttoleft,lefttoright;
+    Animation downtoup,righttoleft,lefttoright,zoom;
 
-    ImageView left_arm,right_arm;
+    ImageView left_arm,right_arm,basha;
 
     TextView Text,TextEn;
     @Override
@@ -52,21 +52,24 @@ public class SplashScreen extends AppCompatActivity {
             }
         }
         downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
-        //lefttoright = AnimationUtils.loadAnimation(this,R.anim.lefttoright);
-        //righttoleft = AnimationUtils.loadAnimation(this,R.anim.righttoleft);
+        lefttoright = AnimationUtils.loadAnimation(this,R.anim.lefttoright);
+        righttoleft = AnimationUtils.loadAnimation(this,R.anim.righttoleft);
+        zoom = AnimationUtils.loadAnimation(this,R.anim.zoom_out_in);
+
 
         Text=findViewById(R.id.esaal);
         TextEn=findViewById(R.id.esaal_en);
         TextEn.setAnimation(downtoup);
         Text.setAnimation(downtoup);
 
-        /*left_arm=findViewById(R.id.left_arm);
+        left_arm=findViewById(R.id.left_arm);
         left_arm.setAnimation(lefttoright);
 
         right_arm=findViewById(R.id.right_arm);
-        right_arm.setAnimation(righttoleft);*/
+        right_arm.setAnimation(righttoleft);
 
-
+        basha=findViewById(R.id.basha);
+        basha.setAnimation(zoom);
 
 
 

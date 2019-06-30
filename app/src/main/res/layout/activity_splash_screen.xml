@@ -16,12 +16,7 @@
     android:layout_height="350dp"
     android:transitionName="Transition_Animation">
 
-    <ImageView
-        android:visibility="gone"
-        android:id="@+id/circle_bgd"
-        android:background="@drawable/logo_circle_bgd"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
 
     <pl.droidsonroids.gif.GifTextView
         android:id="@+id/circle_bgdgif"
@@ -31,14 +26,18 @@
         />
 
     <ImageView
-        android:visibility="gone"
+        android:id="@+id/basha"
+        android:background="@drawable/basha"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
         android:id="@+id/left_arm"
         android:background="@drawable/left_arm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <ImageView
-        android:visibility="gone"
         android:id="@+id/right_arm"
         android:background="@drawable/right_arm"
         android:layout_width="match_parent"
