@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,6 +13,17 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 
 import com.ElBasha.mob.app.Controller.LocaleHelper;
+import com.ElBasha.mob.app.Retrofit.ELBashaApi;
+import com.ElBasha.mob.app.Retrofit.ProductModel;
+import com.ElBasha.mob.app.Retrofit.RamBodyModel;
+import com.ElBasha.mob.app.Retrofit.retrofitHead;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class Manual_Activity extends AppCompatActivity {
 
@@ -38,10 +50,37 @@ public class Manual_Activity extends AppCompatActivity {
         searchbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Manual_Activity.this, swipcards.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                finish();
+                if (CheckNetworkConnection.hasInternetConnection(getApplicationContext())) {
+                    //Check internet Access
+                    if (ConnectionDetector.hasInternetConnection(getApplicationContext())) {
+
+                        RamBodyModel ramBodyModel = new RamBodyModel(2);
+                        Retrofit retrofit = retrofitHead.headOfGetorPostReturnRes();
+                        ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
+                        Call<List<ProductModel>> dataByValue = elBashaApi.getDataByValue(ramBodyModel);
+
+                        dataByValue.enqueue(new Callback<List<ProductModel>>() {
+                            @Override
+                            public void onResponse(Call<List<ProductModel>> call, Response<List<ProductModel>> response) {
+
+                                if (response.isSuccessful())
+                                {
+                                    Log.d("dahLog",response.body().get(0).getName());
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<List<ProductModel>> call, Throwable t) {
+
+                            }
+                        });
+
+                        /*Intent intent = new Intent(Manual_Activity.this, swipcards.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                        finish();
+                    */}
+                }
             }
         });
 
