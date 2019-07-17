@@ -78,9 +78,10 @@
     android:layout_centerHorizontal="true"></android.support.v4.view.ViewPager>
 
     </RelativeLayout>
+
     <it.xabaras.android.viewpagerindicator.widget.ViewPagerIndicator
         android:id="@+id/viewPagerIndicator"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:itemSelectedColor="@color/MyGray"
@@ -94,8 +95,8 @@
         android:id="@+id/skip"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/rounded_bgd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -111,7 +112,7 @@
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:textSize="15dp"
-        android:layout_margin="5dp"
+        android:layout_margin="4dp"
         android:fontFamily="@font/bahij_the_sans_arabic_bold"
         />
     </RelativeLayout>

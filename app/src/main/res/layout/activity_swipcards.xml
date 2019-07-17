@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#cbc0cc"
     android:layoutDirection="ltr"
+    android:id="@+id/parentcards"
     tools:context="com.ElBasha.mob.app.swipcards">
 
     <RelativeLayout

@@ -1,7 +1,9 @@
 package com.ElBasha.mob.app;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,12 +12,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 
 import com.ElBasha.mob.app.Controller.LocaleHelper;
 import com.ElBasha.mob.app.Retrofit.ELBashaApi;
 import com.ElBasha.mob.app.Retrofit.ProductModel;
 import com.ElBasha.mob.app.Retrofit.RamBodyModel;
+import com.ElBasha.mob.app.Retrofit.RangeBodyModel;
 import com.ElBasha.mob.app.Retrofit.retrofitHead;
 
 import java.util.List;
@@ -30,12 +34,15 @@ public class Manual_Activity extends AppCompatActivity {
     Spinner spinner,spinnerROM,spinnerCPU,spinnerBattery,spinnerScreen,spinnerSoftware;
     ImageView fav_list,back;
     Button searchbtn;
+    RelativeLayout parent;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual_);
 
+        parent=findViewById(R.id.parentM);
         fav_list=findViewById(R.id.favoratelist);
         searchbtn=findViewById(R.id.searchbtn);
         back=findViewById(R.id.back);
@@ -50,37 +57,33 @@ public class Manual_Activity extends AppCompatActivity {
         searchbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (CheckNetworkConnection.hasInternetConnection(getApplicationContext())) {
                     //Check internet Access
                     if (ConnectionDetector.hasInternetConnection(getApplicationContext())) {
 
-                        RamBodyModel ramBodyModel = new RamBodyModel(2);
-                        Retrofit retrofit = retrofitHead.headOfGetorPostReturnRes();
-                        ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
-                        Call<List<ProductModel>> dataByValue = elBashaApi.getDataByValue(ramBodyModel);
-
-                        dataByValue.enqueue(new Callback<List<ProductModel>>() {
-                            @Override
-                            public void onResponse(Call<List<ProductModel>> call, Response<List<ProductModel>> response) {
-
-                                if (response.isSuccessful())
-                                {
-                                    Log.d("dahLog",response.body().get(0).getName());
-                                }
-                            }
-
-                            @Override
-                            public void onFailure(Call<List<ProductModel>> call, Throwable t) {
-
-                            }
-                        });
-
-                        /*Intent intent = new Intent(Manual_Activity.this, swipcards.class);
+                        Intent intent = new Intent(Manual_Activity.this, swipcards.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.putExtra("TypeActivity","Manual_Activity");
+                        intent.putExtra("RAM",spinner.getSelectedItem().toString());
+                        intent.putExtra("ROM",spinnerROM.getSelectedItem().toString());
+                        intent.putExtra("BATTERY",spinnerBattery.getSelectedItem().toString());
+                        intent.putExtra("PROCESSOR",spinnerCPU.getSelectedItem().toString());
+                        intent.putExtra("OS",spinnerSoftware.getSelectedItem().toString());
+                        intent.putExtra("SCREEN",spinnerScreen.getSelectedItem().toString());
                         startActivity(intent);
                         finish();
-                    */}
+
+                    }else {
+                            Snackbar snackbar = Snackbar.make(parent, R.string.Internet_not_access_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+                            snackbar.show();
+                        }
+
+                }else {
+                    Snackbar snackbar = Snackbar.make(parent, R.string.You_are_offline_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+                    snackbar.show();
                 }
+
             }
         });
 
@@ -94,11 +97,11 @@ public class Manual_Activity extends AppCompatActivity {
         });
 
         spinner=(Spinner) findViewById(R.id.spinner);  // connect 1st spinner
-        spinnerROM=(Spinner) findViewById(R.id.spinnerRom);  // connect 1st spinner
-        spinnerCPU=(Spinner) findViewById(R.id.spinnerCPU);  // connect 1st spinner
-        spinnerBattery=(Spinner) findViewById(R.id.spinnerBattery);  // connect 1st spinner
-        spinnerScreen=(Spinner) findViewById(R.id.spinnerScreen);  // connect 1st spinner
-        spinnerSoftware=(Spinner) findViewById(R.id.spinnerOS);  // connect 1st spinner
+        spinnerROM=(Spinner) findViewById(R.id.spinnerRom);  // connect 2end spinner
+        spinnerCPU=(Spinner) findViewById(R.id.spinnerCPU);  // connect 3 spinner
+        spinnerBattery=(Spinner) findViewById(R.id.spinnerBattery);  // connect 4 spinner
+        spinnerScreen=(Spinner) findViewById(R.id.spinnerScreen);  // connect 5 spinner
+        spinnerSoftware=(Spinner) findViewById(R.id.spinnerOS);  // connect 6 spinner
 
         //******************************************************ArrayAdapter for first spinner**********************************************************************
         ArrayAdapter<String> myAdapter= new ArrayAdapter<String>(this, R.layout.spinner_item_text,getResources().getStringArray(R.array.Ram));
@@ -108,8 +111,43 @@ public class Manual_Activity extends AppCompatActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //((TextView) parent.getChildAt(0)).setTextColor(Color.parseColor("#083c93"));
-                //((TextView) parent.getChildAt(0)).setTextSize(18);
+
+                if(position!=0){
+
+                    //Show Other Spinner
+                    if (spinnerROM.getVisibility() == View.GONE) {
+                        // Its visible
+                        spinnerROM.setVisibility(View.VISIBLE);
+                    }
+                    if (spinnerCPU.getVisibility() == View.GONE) {
+                        // Its visible
+                        spinnerCPU.setVisibility(View.VISIBLE);
+                    }
+                    if (spinnerBattery.getVisibility() == View.GONE) {
+                        // Its visible
+                        spinnerBattery.setVisibility(View.VISIBLE);
+                    }
+                    if (spinnerScreen.getVisibility() == View.GONE) {
+                        // Its visible
+                        spinnerScreen.setVisibility(View.VISIBLE);
+                    }
+                    if (spinnerSoftware.getVisibility() == View.GONE) {
+                        // Its visible
+                        spinnerSoftware.setVisibility(View.VISIBLE);
+                    }
+
+                   // requestToOtherSpinner();
+
+
+
+                }else if(position==0) {
+                    spinnerROM.setVisibility(View.GONE);
+                    spinnerCPU.setVisibility(View.GONE);
+                    spinnerBattery.setVisibility(View.GONE);
+                    spinnerScreen.setVisibility(View.GONE);
+                    spinnerSoftware.setVisibility(View.GONE);
+                }
+
 
             }
 
@@ -219,8 +257,70 @@ public class Manual_Activity extends AppCompatActivity {
         });
 
     }
+
+    //Request To OTher Spinner
+    private void requestToOtherSpinner() {
+        if (CheckNetworkConnection.hasInternetConnection(getApplicationContext())) {
+            //Check internet Access
+            if (ConnectionDetector.hasInternetConnection(getApplicationContext())) {
+
+                final ProgressDialog mProgressDialog = new ProgressDialog(Manual_Activity.this);
+                mProgressDialog.setIndeterminate(true);
+                mProgressDialog.setMessage("Loading...");
+                mProgressDialog.setCancelable(false);
+                mProgressDialog.show();
+
+                RangeBodyModel rangeBodyModel = new RangeBodyModel(20,55);
+                Retrofit retrofit = retrofitHead.headOfGetorPostReturnRes();
+                ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
+                Call<List<ProductModel>> dataPriceRange = elBashaApi.getDataPriceRange(rangeBodyModel);
+
+                dataPriceRange.enqueue(new Callback<List<ProductModel>>() {
+                    @Override
+                    public void onResponse(Call<List<ProductModel>> call, Response<List<ProductModel>> response) {
+                        if (mProgressDialog.isShowing())
+                            mProgressDialog.dismiss();
+
+
+                        if (response.isSuccessful())
+                        {
+                            Log.d("dahLog",response.body().get(0).getName());
+                            //Set Other Spinner Info
+
+
+
+                        }else {
+                            Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
+                            snackbar.show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<ProductModel>> call, Throwable t) {
+
+                        if (mProgressDialog.isShowing())
+                            mProgressDialog.dismiss();
+                        Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+                });
+            }else {
+                Snackbar snackbar = Snackbar.make(parent, R.string.Internet_not_access_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+                snackbar.show();
+
+            }
+        }else {
+            Snackbar snackbar = Snackbar.make(parent, R.string.You_are_offline_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+    }
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));
     }
+
+
+
 }

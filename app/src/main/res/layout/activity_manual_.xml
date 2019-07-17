@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#cbc0cc"
     android:layoutDirection="ltr"
+    android:id="@+id/parentM"
     tools:context="com.ElBasha.mob.app.Manual_Activity">
 
 
@@ -100,6 +101,7 @@
                     android:paddingLeft="45dp"/>
 
                 <Spinner
+                    android:visibility="gone"
                     android:layout_below="@id/spinner"
                     android:id="@+id/spinnerRom"
                     android:layout_width="match_parent"
@@ -115,6 +117,7 @@
                     />
 
                 <Spinner
+                    android:visibility="gone"
                     android:layout_below="@id/spinnerRom"
                     android:id="@+id/spinnerCPU"
                     android:layout_width="match_parent"
@@ -130,6 +133,7 @@
                     />
 
                 <Spinner
+                    android:visibility="gone"
                     android:layout_below="@id/spinnerCPU"
                     android:id="@+id/spinnerBattery"
                     android:layout_width="match_parent"
@@ -145,6 +149,7 @@
                     />
 
                 <Spinner
+                    android:visibility="gone"
                     android:layout_below="@id/spinnerBattery"
                     android:id="@+id/spinnerScreen"
                     android:layout_width="match_parent"
@@ -160,6 +165,7 @@
                     />
 
                 <Spinner
+                    android:visibility="gone"
                     android:layout_below="@id/spinnerScreen"
                     android:id="@+id/spinnerOS"
                     android:layout_width="match_parent"

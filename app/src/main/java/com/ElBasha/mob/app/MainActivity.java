@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getIntnet();
-        Log.w("aaaa",priceRange);
+        //Log.w("aaaa",priceRange);
 
 
         back=findViewById(R.id.back);
@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getIntnet() {
-        Intent intent = getIntent();
-        priceRange = intent.getStringExtra("priceRange");
+        //Intent intent = getIntent();
+        //priceRange = intent.getStringExtra("priceRange");
 
         setTitle("Activity 3");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

@@ -66,7 +66,7 @@
     <string name="battery">البطارية</string>
     <string name="review">المراجعة</string>
 
-    <string-array name="Ram">
+    <string-array name="Ram2">
         <item>RAM</item>
         <item>1GB</item>
         <item>2GB</item>
@@ -78,15 +78,41 @@
         <item>12GB</item>
     </string-array>
 
+    <string-array name="Ram">
+        <item>RAM</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+        <item>10</item>
+        <item>12</item>
+    </string-array>
+
 
     <string-array name="Processor">
         <item>CPU</item>
         <item>Snapdragon600</item>
         <item>Snapdragon855</item>
         <item>kirin</item>
+        <item>snapdragon</item>
+        <item>qualcom</item>
     </string-array>
 
     <string-array name="Storage">
+        <item>ROM/Storage</item>
+        <item>8</item>
+        <item>16</item>
+        <item>32</item>
+        <item>64</item>
+        <item>128</item>
+        <item>256</item>
+        <item>512</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="Storage1">
         <item>ROM/Storage</item>
         <item>8GB</item>
         <item>16GB</item>
@@ -101,6 +127,18 @@
 
     <string-array name="Battery">
         <item>Battery</item>
+        <item>2000</item>
+        <item>2500</item>
+        <item>3000</item>
+        <item>3500</item>
+        <item>4000</item>
+        <item>4500</item>
+        <item>5000</item>
+        <item>10000</item>
+    </string-array>
+
+    <string-array name="Battery1">
+        <item>Battery</item>
         <item>2000MAH</item>
         <item>2500MAH</item>
         <item>3000MAH</item>
@@ -114,6 +152,7 @@
     <string-array name="screen">
         <item>Screen</item>
         <item>HD</item>
+        <item>1080</item>
         <item>FHD</item>
         <item>FHD+</item>
         <item>QHD</item>
@@ -123,7 +162,8 @@
 
     <string-array name="software">
         <item>Software/OS</item>
-        <item>IOS</item>
+        <item>ios</item>
+        <item>android</item>
         <item>lolipop 5</item>
         <item>Masrhmallow 6</item>
         <item>Nought 7</item>
@@ -132,5 +172,8 @@
         <item>Q 10</item>
     </string-array>
 
+    <string name="Internet_not_access_Please_connect_to_the_internet">غير متصل بالإنترنت يرجى الاتصال بالإنترنت</string>
+    <string name="You_are_offline_Please_connect_to_the_internet">انت غير متصل. يرجى الاتصال بالإنترنت</string>
+    <string name="Failure_Please_try_again">فشل ، يرجى المحاولة مرة أخرى</string>
 
 </resources>
