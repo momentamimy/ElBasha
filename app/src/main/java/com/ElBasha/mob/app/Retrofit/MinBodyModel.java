@@ -4,7 +4,7 @@ public class MinBodyModel {
 
     int min;
 
-    public MinBodyModel(int min, int max) {
+    public MinBodyModel(int min) {
         this.min = min;
     }
 

@@ -23,10 +23,16 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
     RelativeLayout cardLayout;
     ViewPager pager;
     ImageView scrollRight,scrollLeft;
+
+    String priceRange;
+    String charName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wa7sh_proccesseor_tutorial);
+
+        getIntnet();
+
         setTitle("Activity 4");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Fade fade = new Fade();
@@ -50,7 +56,6 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
         pager.setAdapter(adapter);
         pager.setPageTransformer(true,adapter);
 
-        String charName=getIntent().getStringExtra("charName");
         cardLayout=findViewById(R.id.cardLayout);
         if (charName.equals("wa7shelprocessor"))
         {
@@ -146,6 +151,8 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
                 Intent intent = new Intent(Wa7shProccesseorTutorial.this, swipcards.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 intent.putExtra("TypeActivity","MainActivity");
+                intent.putExtra("priceRange",priceRange);
+                intent.putExtra("charName",charName);
                 startActivity(intent);
                 finish();
             }
@@ -156,7 +163,13 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
     }
 
 
-    @Override
+    private void getIntnet() {
+        Intent intent = getIntent();
+        priceRange = intent.getStringExtra("priceRange");
+        charName=intent.getStringExtra("charName");
+    }
+
+        @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(LocaleHelper.onAttach(base));
     }

@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getIntnet();
-        //Log.w("aaaa",priceRange);
+
 
 
         back=findViewById(R.id.back);
@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getIntnet() {
-        //Intent intent = getIntent();
-        //priceRange = intent.getStringExtra("priceRange");
+        Intent intent = getIntent();
+        priceRange = intent.getStringExtra("priceRange");
 
         setTitle("Activity 3");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
                 }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
+                intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","wa7shelprocessor");
                 startActivity(intent,options.toBundle());
             }
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                     options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
                 }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
+                intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","elfananeen");
                 startActivity(intent,options.toBundle());
             }
@@ -103,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
                 }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
+                intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","superhero");
                 startActivity(intent,options.toBundle());
             }
@@ -117,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                     options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
                 }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
+                intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","mlookelselfy");
                 startActivity(intent,options.toBundle());
             }
@@ -131,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,pair);
                 }
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
+                intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","mn8eerfslan");
                 startActivity(intent,options.toBundle());
             }

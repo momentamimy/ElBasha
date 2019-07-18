@@ -4,7 +4,7 @@ public class MaxBodyModel {
 
     int max;
 
-    public MaxBodyModel(int min, int max) {
+    public MaxBodyModel(int max) {
         this.max = max;
     }
 

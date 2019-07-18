@@ -22,6 +22,8 @@ import android.widget.Toast;
 import com.ElBasha.mob.app.Controller.LocaleHelper;
 import com.ElBasha.mob.app.Controller.RecyclePriceAdapter;
 import com.ElBasha.mob.app.Retrofit.ELBashaApi;
+import com.ElBasha.mob.app.Retrofit.MaxBodyModel;
+import com.ElBasha.mob.app.Retrofit.MinBodyModel;
 import com.ElBasha.mob.app.Retrofit.ProductModel;
 import com.ElBasha.mob.app.Retrofit.RamBodyModel;
 import com.ElBasha.mob.app.Retrofit.RangeBodyModel;
@@ -120,25 +122,11 @@ public class SearchActivity extends AppCompatActivity {
         priceRecycle.addOnItemTouchListener(
                 new RecyclerItemClickListener(this, priceRecycle ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
-
-                        if (list.get(position).getTitle().equals(getResources().getString(R.string.range_1000_2000))) {
-                            priceRangeRequest(1000,2000);
-                        }else if (list.get(position).getTitle().equals(getResources().getString(R.string.range_2000_2500))){
-                            priceRangeRequest(2000,2500);
-                        }else if (list.get(position).getTitle().equals(getResources().getString(R.string.range_2500_3000))){
-                            priceRangeRequest(2500,3000);
-                        }else if (list.get(position).getTitle().equals(getResources().getString(R.string.range_3000_3500))){
-                            priceRangeRequest(3000,3500);
-                        }else if (list.get(position).getTitle().equals(getResources().getString(R.string.range_3500_4000))){
-                            priceRangeRequest(3500,4000);
-                        }else if (list.get(position).getTitle().equals(getResources().getString(R.string.range_4000_5000))){
-                            priceRangeRequest(4000,5000);
-                        }else if (list.get(position).getTitle().equals(getResources().getString(R.string.range_5000_6000))){
-                            priceRangeRequest(5000,6000);
-                        }else if (list.get(position).getTitle().equals(getResources().getString(R.string.range_6000_7000))){
-                            priceRangeRequest(6000,7000);
-                        }
-
+                        popupWindow.dismiss();
+                        Intent intent = new Intent(SearchActivity.this, MainActivity.class);
+                        intent.putExtra("priceRange",list.get(position).getTitle());
+                        startActivity(intent);
+                        finish();
 
                     }
 
@@ -189,62 +177,6 @@ public class SearchActivity extends AppCompatActivity {
 
 
 
-    public void priceRangeRequest(int min,int max)
-    {
-        if (CheckNetworkConnection.hasInternetConnection(getApplicationContext())) {
-            //Check internet Access
-            if (ConnectionDetector.hasInternetConnection(getApplicationContext())) {
-
-                final ProgressDialog mProgressDialog = new ProgressDialog(SearchActivity.this);
-                mProgressDialog.setIndeterminate(true);
-                mProgressDialog.setMessage("Loading...");
-                mProgressDialog.setCancelable(false);
-                mProgressDialog.show();
-
-                RangeBodyModel rangeBodyModel = new RangeBodyModel(min,max);
-                Retrofit retrofit = retrofitHead.headOfGetorPostReturnRes();
-                ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
-                Call<List<ProductModel>> dataPriceRange = elBashaApi.getDataPriceRange(rangeBodyModel);
-
-                dataPriceRange.enqueue(new Callback<List<ProductModel>>() {
-                    @Override
-                    public void onResponse(Call<List<ProductModel>> call, Response<List<ProductModel>> response) {
-                        if (mProgressDialog.isShowing())
-                            mProgressDialog.dismiss();
 
 
-                        if (response.isSuccessful())
-                        {
-                            Log.d("dahLog",response.body().get(0).getName());
-
-                            popupWindow.dismiss();
-                            Intent intent = new Intent(SearchActivity.this, MainActivity.class);
-                            startActivity(intent);
-                            //finish();
-                        }else {
-                            Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
-                            snackbar.show();
-                        }
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<List<ProductModel>> call, Throwable t) {
-
-                        if (mProgressDialog.isShowing())
-                            mProgressDialog.dismiss();
-                        Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
-                        snackbar.show();
-                    }
-                });
-            }else {
-                Snackbar snackbar = Snackbar.make(parent, R.string.Internet_not_access_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
-                snackbar.show();
-
-            }
-        }else {
-            Snackbar snackbar = Snackbar.make(parent, R.string.You_are_offline_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
-            snackbar.show();
-        }
-    }
 }
