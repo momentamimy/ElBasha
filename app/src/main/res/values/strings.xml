@@ -178,4 +178,5 @@
     <string name="Internet_not_access_Please_connect_to_the_internet">Internet not access Please connect to the internet</string>
     <string name="You_are_offline_Please_connect_to_the_internet">You are offline. Please connect to the internet</string>
     <string name="Failure_Please_try_again">Failure,Please try again</string>
+    <string name="there_are_no_products_right_now">there are no products right now</string>
 </resources>

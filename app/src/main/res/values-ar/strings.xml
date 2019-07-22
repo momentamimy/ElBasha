@@ -175,5 +175,6 @@
     <string name="Internet_not_access_Please_connect_to_the_internet">غير متصل بالإنترنت يرجى الاتصال بالإنترنت</string>
     <string name="You_are_offline_Please_connect_to_the_internet">انت غير متصل. يرجى الاتصال بالإنترنت</string>
     <string name="Failure_Please_try_again">فشل ، يرجى المحاولة مرة أخرى</string>
+    <string name="there_are_no_products_right_now">لا توجد منتجات في الوقت الحالي</string>
 
 </resources>

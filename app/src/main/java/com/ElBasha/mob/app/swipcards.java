@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ import com.ElBasha.mob.app.Retrofit.RangeBodyModel;
 import com.ElBasha.mob.app.Retrofit.retrofitHead;
 import com.daprlabs.cardstack.SwipeDeck;
 import com.squareup.picasso.Picasso;
+import com.victor.loading.rotate.RotateLoading;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -220,33 +222,43 @@ public class swipcards extends AppCompatActivity {
                 // normally use a viewholder
                 v = inflater.inflate(R.layout.cardiremmobile, parent, false);
             }
+
             //((TextView) v.findViewById(R.id.textView2)).setText(data.get(position));
             ImageView imageView = (ImageView) v.findViewById(R.id.mobileimage);
             if (!data.get(position).getImg().isEmpty())
+            {
+                final RotateLoading rotateLoading=v.findViewById(R.id.rotateloading);
+                rotateLoading.start();
                 Picasso.with(context).load(data.get(position).getImg())
-                        .error(R.drawable.ic_sad).fit().centerCrop().into(imageView ,new com.squareup.picasso.Callback() {
-                @Override
-                public void onSuccess() {
+                        .error(R.drawable.ic_warning).fit().centerCrop().into(imageView ,new com.squareup.picasso.Callback() {
+                    @Override
+                    public void onSuccess() {
+                        rotateLoading.stop();
+                    }
 
-                }
-
-                @Override
-                public void onError() {
-
-                }
-            });
+                    @Override
+                    public void onError() {
+                        rotateLoading.stop();
+                    }
+                });
+            }
+            else
+            {
+                imageView.setImageResource(R.drawable.ic_warning);
+            }
             //String item = (String)getItem(position);
             TextView textView = (TextView) v.findViewById(R.id.mobilename);
             //String item = (String)getItem(position);
             textView.setText(data.get(position).getName());
 
-            Toast.makeText(getApplicationContext(),"mashyya3m",Toast.LENGTH_LONG).show();
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Log.i("Layer type: ", Integer.toString(v.getLayerType()));
                     Log.i("Hwardware Accel type:", Integer.toString(View.LAYER_TYPE_HARDWARE));
                     Intent i = new Intent(v.getContext(), CardSwipeSpecesActivity.class);
+                    
+                    i.putExtra("productModel",data.get(position));
                     v.getContext().startActivity(i);
 
 
@@ -285,8 +297,15 @@ public class swipcards extends AppCompatActivity {
 
                         if (response.isSuccessful())
                         {
-                            Log.d("dahLog",response.body().get(0).getName());
-                            displayResultRecycleview(response.body());
+
+                            Log.d("dahLog", String.valueOf(response.body().size()));
+                            if (TextUtils.isEmpty(response.body().get(0).getError()))
+                                displayResultRecycleview(response.body());
+                            else
+                            {
+                                Snackbar snackbar = Snackbar.make(parent, R.string.there_are_no_products_right_now, Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                            }
 
 
                         }else {
@@ -367,8 +386,14 @@ public class swipcards extends AppCompatActivity {
 
                         if (response.isSuccessful())
                         {
-                            Log.w("dahLog", String.valueOf(response.body().size()));
-                            displayResultRecycleview(response.body());
+                            Log.d("dahLog", String.valueOf(response.body().size()));
+                            if (TextUtils.isEmpty(response.body().get(0).getError()))
+                                displayResultRecycleview(response.body());
+                            else
+                            {
+                                Snackbar snackbar = Snackbar.make(parent, R.string.there_are_no_products_right_now, Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                            }
 
                         }else {
                             Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
@@ -423,8 +448,15 @@ public class swipcards extends AppCompatActivity {
 
                         if (response.isSuccessful())
                         {
-                            Log.d("dahLog",response.body().get(0).getName());
-                            displayResultRecycleview(response.body());
+                            Log.d("dahLog", String.valueOf(response.body().size()));
+                            if (TextUtils.isEmpty(response.body().get(0).getError()))
+                                displayResultRecycleview(response.body());
+                            else
+                            {
+                                Snackbar snackbar = Snackbar.make(parent, R.string.there_are_no_products_right_now, Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                            }
+
                         }
                         else
                         {
@@ -481,8 +513,15 @@ public class swipcards extends AppCompatActivity {
 
                         if (response.isSuccessful())
                         {
-                            Log.w("dahLog", String.valueOf(response.body().size()));
-                            displayResultRecycleview(response.body());
+                            Log.d("dahLog", String.valueOf(response.body().size()));
+                            if (TextUtils.isEmpty(response.body().get(0).getError()))
+                                displayResultRecycleview(response.body());
+                            else
+                            {
+                                Snackbar snackbar = Snackbar.make(parent, R.string.there_are_no_products_right_now, Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                            }
+
 
                         }
                         else

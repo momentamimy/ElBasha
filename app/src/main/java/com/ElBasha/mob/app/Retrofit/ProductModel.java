@@ -1,6 +1,9 @@
 package com.ElBasha.mob.app.Retrofit;
 
-public class ProductModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class ProductModel implements Parcelable {
     int id;
     String name;
     String battery;
@@ -18,6 +21,7 @@ public class ProductModel {
     int kings_of_selfie;
     int without_stopping;
     int post_id;
+    String error;
 
 
     public ProductModel(int id, String name, String battery, String myPrice, String ram, String camera, String screen, String storage, String processor, String os, String img, int monster_of_processor, int artists, int super_hero, int kings_of_selfie, int without_stopping, int post_id) {
@@ -39,6 +43,39 @@ public class ProductModel {
         this.without_stopping = without_stopping;
         this.post_id = post_id;
     }
+
+    protected ProductModel(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        battery = in.readString();
+        myPrice = in.readString();
+        ram = in.readString();
+        camera = in.readString();
+        screen = in.readString();
+        storage = in.readString();
+        processor = in.readString();
+        os = in.readString();
+        img = in.readString();
+        monster_of_processor = in.readInt();
+        artists = in.readInt();
+        super_hero = in.readInt();
+        kings_of_selfie = in.readInt();
+        without_stopping = in.readInt();
+        post_id = in.readInt();
+    }
+
+
+    public static final Creator<ProductModel> CREATOR = new Creator<ProductModel>() {
+        @Override
+        public ProductModel createFromParcel(Parcel in) {
+            return new ProductModel(in);
+        }
+
+        @Override
+        public ProductModel[] newArray(int size) {
+            return new ProductModel[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -174,5 +211,41 @@ public class ProductModel {
 
     public void setPost_id(int post_id) {
         this.post_id = post_id;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(name);
+        dest.writeString(battery);
+        dest.writeString(myPrice);
+        dest.writeString(ram);
+        dest.writeString(camera);
+        dest.writeString(screen);
+        dest.writeString(storage);
+        dest.writeString(processor);
+        dest.writeString(os);
+        dest.writeString(img);
+        dest.writeInt(monster_of_processor);
+        dest.writeInt(artists);
+        dest.writeInt(super_hero);
+        dest.writeInt(kings_of_selfie);
+        dest.writeInt(without_stopping);
+        dest.writeInt(post_id);
+        dest.writeString(error);
     }
 }

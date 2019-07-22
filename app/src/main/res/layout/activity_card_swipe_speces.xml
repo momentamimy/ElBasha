@@ -82,12 +82,23 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
-                <ImageView
-                    android:id="@+id/phone_photo"
-                    android:background="@drawable/phone_photo"
-                    android:layout_width="100dp"
-                    android:layout_height="150dp" />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/phone_photo"
+                        android:layout_width="150dp"
+                        android:layout_height="200dp" />
+                    <com.victor.loading.rotate.RotateLoading
+                        android:id="@+id/rotateloading"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:loading_width="5dp"
+                        app:loading_color="@color/colorPrimary"
+                        android:layout_centerInParent="true"/>
+                </RelativeLayout>
                 <TextView
+                    android:layout_gravity="center"
                     android:id="@+id/phone_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -119,18 +130,20 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+                        android:id="@+id/Storage_Ram"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3GB &amp; 32GB"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:textSize="15dp"
                         android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
                     <TextView
+                        android:id="@+id/Price"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3000 EGP"
+                        android:text=""
                         android:textColor="@color/colorPrimary"
                         android:textSize="15dp"
                         android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
@@ -140,55 +153,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@android:color/black"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="3GB &amp; 32GB"
-                        android:textColor="@android:color/black"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
-                    <TextView
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="3777 EGP"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@android:color/black"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="3GB &amp; 32GB"
-                        android:textColor="@android:color/black"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
-                    <TextView
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="4222 EGP"
-                        android:textColor="@color/colorPrimary"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
-                </LinearLayout>
 
             </LinearLayout>
 <!--********************** prices Layout ********************** -->
@@ -210,7 +174,8 @@
                 android:id="@+id/color_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <android.support.design.widget.FloatingActionButton
                     app:backgroundTint="#F08DDF"
@@ -240,6 +205,9 @@
             </LinearLayout>
 
                 <TextView
+                    android:id="@+id/shop_now"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="20sp"
                     android:padding="8dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
@@ -281,19 +249,80 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/display"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorPrimary"
-                    android:fontFamily="@font/bahij_the_sans_arabic_bold"
-                    />
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/display_text"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/display"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"
+                        />
+                    <TextView
+                        android:layout_below="@+id/display_text"
+                        android:id="@+id/display"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_marginTop="60dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#34000000"/>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/platform_text"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/platform"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+
+                    <TextView
+                        android:layout_below="@+id/platform_text"
+                        android:id="@+id/platform"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
 
 
                 <View
@@ -301,19 +330,41 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#34000000"/>
-                <TextView
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/platform"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorPrimary"
-                    android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+                    android:layout_height="wrap_content">
 
+                    <TextView
+                        android:id="@+id/camera_text"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/camera"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+                    <TextView
+                        android:layout_below="@+id/camera_text"
+                        android:id="@+id/camera"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
 
 
                 <View
@@ -321,19 +372,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#34000000"/>
-                <TextView
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/camera"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorPrimary"
-                    android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/battery_text"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/battery"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+                    <TextView
+                        android:layout_below="@+id/battery_text"
+                        android:id="@+id/battery"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
 
+                </RelativeLayout>
 
 
                 <View
@@ -341,19 +413,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#34000000"/>
-                <TextView
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/battery"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorPrimary"
-                    android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/other_feature_text"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/other_feature"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+                    <TextView
+                        android:layout_below="@+id/other_feature_text"
+                        android:id="@+id/other_feature"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
 
+                </RelativeLayout>
 
 
                 <View
@@ -361,38 +454,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#34000000"/>
-                <TextView
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/other_feature"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorPrimary"
-                    android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/review_text"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/review"
+                        android:textSize="18dp"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+                    <TextView
+                        android:layout_below="@+id/review_text"
+                        android:id="@+id/review"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="18dp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/bahij_the_sans_arabic_bold"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true" />
 
-
-
-                <View
-                    android:layout_marginTop="60dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="#34000000"/>
-                <TextView
-                    android:layout_marginStart="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/review"
-                    android:textSize="18dp"
-                    android:textColor="@color/colorPrimary"
-                    android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+                </RelativeLayout>
 
 
                 <TextView

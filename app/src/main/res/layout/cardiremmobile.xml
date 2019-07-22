@@ -17,9 +17,15 @@
                android:layout_marginEnd="20dp"
                android:layout_width="match_parent"
                android:layout_height="300dp"
-               android:src="@drawable/dummy3"
                />
 
+        <com.victor.loading.rotate.RotateLoading
+            android:id="@+id/rotateloading"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            card_view:loading_width="5dp"
+            card_view:loading_color="@color/colorPrimary"
+            android:layout_centerInParent="true"/>
 
         <TextView
             android:id="@+id/mobilename"
