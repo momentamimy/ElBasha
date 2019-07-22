@@ -1,20 +1,9 @@
 package com.ElBasha.mob.app.Retrofit;
 
 public class RamBodyModel {
-    int ram,storage,battery,screen;
+    String ram,storage,battery,screen;
     String processor,os;
 
-    public int getStorage() {
-        return storage;
-    }
-
-    public int getBattery() {
-        return battery;
-    }
-
-    public int getScreen() {
-        return screen;
-    }
 
     public String getProcessor() {
         return processor;
@@ -24,15 +13,47 @@ public class RamBodyModel {
         return os;
     }
 
-    public int getRam() {
+    public String getRam() {
         return ram;
     }
 
-    public void setRam(int ram) {
+    public void setRam(String ram) {
         this.ram = ram;
     }
 
-    public RamBodyModel(int ram,int storage,int battery,int screen,String processor,String os)
+    public String getStorage() {
+        return storage;
+    }
+
+    public void setStorage(String storage) {
+        this.storage = storage;
+    }
+
+    public String getBattery() {
+        return battery;
+    }
+
+    public void setBattery(String battery) {
+        this.battery = battery;
+    }
+
+    public String getScreen() {
+        return screen;
+    }
+
+    public void setScreen(String screen) {
+        this.screen = screen;
+    }
+
+    public void setProcessor(String processor) {
+        this.processor = processor;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public RamBodyModel(String ram, String storage, String battery, String screen, String processor, String os)
     {
         this.ram = ram;
         this.storage = storage;

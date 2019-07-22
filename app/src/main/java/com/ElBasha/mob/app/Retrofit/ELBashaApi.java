@@ -30,6 +30,17 @@ public interface ELBashaApi {
             @Field("os") String os
     );
 
+    @FormUrlEncoded
+    @POST("products")
+    Call<List<ProductModel>> getDataByValue3(
+            @Header("Content-Type") String Accept,
+            @Field("ram") String ram,
+            @Field("storage") String storage,
+            @Field("battery") String battery,
+            @Field("processor") String processor,
+            @Field("os") String os
+    );
+
 
     @POST("products/price")
     Call<List<ProductModel>> getDataPriceRange(

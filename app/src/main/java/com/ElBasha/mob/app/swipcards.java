@@ -53,7 +53,7 @@ public class swipcards extends AppCompatActivity {
     String Type_Activity;
 
     String o_software,processor;
-    int Ram,Rom,battery,screen;
+    String Ram,Rom,battery,screen;
 
     String priceRange;
     String charName;
@@ -150,7 +150,7 @@ public class swipcards extends AppCompatActivity {
             }
         });
 
-        callPriceRequest();
+
     }
 
     private void getAllIntent() {
@@ -160,12 +160,12 @@ public class swipcards extends AppCompatActivity {
 
         if(Type_Activity.equals("Manual_Activity")){
 
-            Ram= Integer.parseInt(intent.getStringExtra("RAM"));
-            Rom= Integer.parseInt(intent.getStringExtra("ROM"));
+            Ram= intent.getStringExtra("RAM");
+            Rom= intent.getStringExtra("ROM");
             o_software=intent.getStringExtra("OS");
-            battery= Integer.parseInt(intent.getStringExtra("BATTERY"));
+            battery= intent.getStringExtra("BATTERY");
             processor=intent.getStringExtra("PROCESSOR");
-            screen= Integer.parseInt(intent.getStringExtra("SCREEN"));
+            screen= intent.getStringExtra("SCREEN");
 
             //send Request
             requestManualSearch(Ram,Rom,battery,screen,processor,o_software);
@@ -175,6 +175,7 @@ public class swipcards extends AppCompatActivity {
             priceRange = intent.getStringExtra("priceRange");
             charName=intent.getStringExtra("charName");
 
+            callPriceRequest();
 
         }
 
@@ -273,7 +274,7 @@ public class swipcards extends AppCompatActivity {
         super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 
-    void requestManualSearch(int ram,int storage,int battery,int screen,String processor,String os){
+    void requestManualSearch(String ram,String storage,String battery,String screen,String processor,String os){
         if (CheckNetworkConnection.hasInternetConnection(getApplicationContext())) {
             //Check internet Access
             if (ConnectionDetector.hasInternetConnection(getApplicationContext())) {
@@ -287,7 +288,7 @@ public class swipcards extends AppCompatActivity {
                 RamBodyModel ramBodyModel = new RamBodyModel(ram,storage,battery,screen,processor,os);
                 Retrofit retrofit = retrofitHead.retrofitTimeOut();
                 ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
-                Call<List<ProductModel>> dataByValue = elBashaApi.getDataByValue2("application/x-www-form-urlencoded",ram,storage,battery,screen,processor,os);
+                Call<List<ProductModel>> dataByValue = elBashaApi.getDataByValue3("application/x-www-form-urlencoded",ram,storage,battery,processor,os);
 
                 dataByValue.enqueue(new Callback<List<ProductModel>>() {
                     @Override

@@ -68,19 +68,19 @@
 
 
 
-    <string-array name="Ram2">
+    <string-array name="Ram">
         <item>RAM</item>
-        <item>1GB</item>
-        <item>2GB</item>
-        <item>3GB</item>
-        <item>4GB</item>
-        <item>6GB</item>
-        <item>8GB</item>
-        <item>10GB</item>
-        <item>12GB</item>
+        <item>1 GB</item>
+        <item>2 GB</item>
+        <item>3 GB</item>
+        <item>4 GB</item>
+        <item>6 GB</item>
+        <item>8 GB</item>
+        <item>10 GB</item>
+        <item>12 GB</item>
     </string-array>
 
-    <string-array name="Ram">
+    <string-array name="Ram2">
         <item>RAM</item>
         <item>1</item>
         <item>2</item>
@@ -102,7 +102,7 @@
         <item>qualcom</item>
     </string-array>
 
-    <string-array name="Storage">
+    <string-array name="Storage1">
         <item>ROM/Storage</item>
         <item>8</item>
         <item>16</item>
@@ -114,20 +114,20 @@
         <item>1</item>
     </string-array>
 
-    <string-array name="Storage1">
+    <string-array name="Storage">
         <item>ROM/Storage</item>
-        <item>8GB</item>
-        <item>16GB</item>
-        <item>32GB</item>
-        <item>64GB</item>
-        <item>128GB</item>
-        <item>256GB</item>
-        <item>512GB</item>
-        <item>1TB</item>
+        <item>8 GB</item>
+        <item>16 GB</item>
+        <item>32 GB</item>
+        <item>64 GB</item>
+        <item>128 GB</item>
+        <item>256 GB</item>
+        <item>512 GB</item>
+        <item>1 TB</item>
     </string-array>
 
 
-    <string-array name="Battery">
+    <string-array name="Battery1">
         <item>Battery</item>
         <item>2000</item>
         <item>2500</item>
@@ -139,22 +139,21 @@
         <item>10000</item>
     </string-array>
 
-    <string-array name="Battery1">
+    <string-array name="Battery">
         <item>Battery</item>
-        <item>2000MAH</item>
-        <item>2500MAH</item>
-        <item>3000MAH</item>
-        <item>3500MAH</item>
-        <item>4000MAH</item>
-        <item>4500MAH</item>
-        <item>5000MAH</item>
-        <item>10000MAH</item>
+        <item>2000 mAh</item>
+        <item>2500 mAh</item>
+        <item>3000 mAh</item>
+        <item>3500 mAh</item>
+        <item>4000 mAh</item>
+        <item>4500 mAh</item>
+        <item>5000 mAh</item>
+        <item>10000 mAh</item>
     </string-array>
 
     <string-array name="screen">
         <item>Screen</item>
         <item>HD</item>
-        <item>1080</item>
         <item>FHD</item>
         <item>FHD+</item>
         <item>QHD</item>
@@ -164,14 +163,19 @@
 
     <string-array name="software">
         <item>Software/OS</item>
-        <item>ios</item>
-        <item>android</item>
-        <item>lolipop 5</item>
-        <item>Masrhmallow 6</item>
-        <item>Nought 7</item>
-        <item>Oreo 8</item>
-        <item>pie 9</item>
-        <item>Q 10</item>
+        <item>android 4.4 ( kitkat)</item>
+        <item>android 5.0 ( lolipop )</item>
+        <item>android 5.1 ( lolipop )</item>
+        <item>android 6.0 ( marshmallow )</item>
+        <item>android 7.0 ( nougat )</item>
+        <item>android 7.1 ( nougat )</item>
+        <item>android 8.0 ( oreo )</item>
+        <item>android 8.1 ( oreo )</item>
+        <item>android 9.0 ( pie )</item>
+        <item>ios 10</item>
+        <item>ios 11</item>
+        <item>ios 12</item>
+        <item>ios 13</item>
     </string-array>
 
 
