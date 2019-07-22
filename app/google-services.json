@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "197343581896",
+    "firebase_url": "https://my-project-mohamedy.firebaseio.com",
+    "project_id": "my-project-mohamedy",
+    "storage_bucket": "my-project-mohamedy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197343581896:android:46692f6c08a8b9f0",
+        "android_client_info": {
+          "package_name": "com.ElBasha.mob.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197343581896-410qbk8consjs0lid9rka65919npklda.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ElBasha.mob.app",
+            "certificate_hash": "e221e2487d85f93094b03febafaeaf56df3fa857"
+          }
+        },
+        {
+          "client_id": "197343581896-mifkih56r87ldgnv5lgiuqja47ed70ok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_mF9cYDYMVYne9tqhn08N0dmEjJmo1eQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197343581896-mifkih56r87ldgnv5lgiuqja47ed70ok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

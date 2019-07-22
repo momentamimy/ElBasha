@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_lawyer_app_logoo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Locked_hakha"></activity>
         <activity
             android:name=".ManualOrCharacterActivity"
             android:configChanges="orientation"
@@ -73,12 +74,11 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".favourite_list"
+        <activity
+            android:name=".favourite_list"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"
-            />
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

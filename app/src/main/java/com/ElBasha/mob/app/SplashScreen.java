@@ -3,14 +3,18 @@ package com.ElBasha.mob.app;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.Fade;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
@@ -21,6 +25,10 @@ import android.widget.TextView;
 
 import com.ElBasha.mob.app.Controller.LocaleHelper;
 import com.appolica.flubber.Flubber;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
 import com.race604.drawable.wave.WaveDrawable;
 
 
@@ -31,10 +39,16 @@ public class SplashScreen extends AppCompatActivity {
     ImageView left_arm,right_arm,basha;
 
     TextView Text,TextEn;
+
+    FirebaseDatabase firebaseDatabase;
+    SharedPreferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+        preferences =getSharedPreferences("TomyaTarbola",MODE_PRIVATE);
 
         setTitle("Activity 1");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -51,6 +65,47 @@ public class SplashScreen extends AppCompatActivity {
                 getWindow().setExitTransition(fade);
             }
         }
+
+        firebaseDatabase=FirebaseDatabase.getInstance();
+        firebaseDatabase.getReference().addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Log.w("hakha", String.valueOf(dataSnapshot.getValue(Boolean.class)));
+                boolean b=dataSnapshot.getValue(Boolean.class);
+                SharedPreferences.Editor editor=preferences.edit();
+                editor.putBoolean("TomyaTarbola",b);
+                editor.commit();
+
+                if (!b)
+                {
+                    Intent intent=new Intent(getApplicationContext(), Locked_hakha.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                    finish();
+                }
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         downtoup = AnimationUtils.loadAnimation(this,R.anim.downtoup);
         lefttoright = AnimationUtils.loadAnimation(this,R.anim.lefttoright);
         righttoleft = AnimationUtils.loadAnimation(this,R.anim.righttoleft);
@@ -93,9 +148,20 @@ public class SplashScreen extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                boolean b=preferences.getBoolean("TomyaTarbola",true);
+                if (b)
+                {
                     startActivity(new Intent(getApplicationContext(), IntroSliderActivity.class));
                     overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
                     finish();
+                }
+                else
+                {
+                    startActivity(new Intent(getApplicationContext(), Locked_hakha.class));
+                    overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                    finish();
+                }
 
             }
         }, 2000);
