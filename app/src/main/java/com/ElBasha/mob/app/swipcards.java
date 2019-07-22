@@ -389,7 +389,9 @@ public class swipcards extends AppCompatActivity {
                         {
                             Log.d("dahLog", String.valueOf(response.body().size()));
                             if (TextUtils.isEmpty(response.body().get(0).getError()))
-                                displayResultRecycleview(response.body());
+                            {
+                                displayResultRecycleview(charFilter(response.body()));
+                            }
                             else
                             {
                                 Snackbar snackbar = Snackbar.make(parent, R.string.there_are_no_products_right_now, Snackbar.LENGTH_LONG);
@@ -451,13 +453,14 @@ public class swipcards extends AppCompatActivity {
                         {
                             Log.d("dahLog", String.valueOf(response.body().size()));
                             if (TextUtils.isEmpty(response.body().get(0).getError()))
-                                displayResultRecycleview(response.body());
+                            {
+                                displayResultRecycleview(charFilter(response.body()));
+                            }
                             else
                             {
                                 Snackbar snackbar = Snackbar.make(parent, R.string.there_are_no_products_right_now, Snackbar.LENGTH_LONG);
                                 snackbar.show();
                             }
-
                         }
                         else
                         {
@@ -516,7 +519,9 @@ public class swipcards extends AppCompatActivity {
                         {
                             Log.d("dahLog", String.valueOf(response.body().size()));
                             if (TextUtils.isEmpty(response.body().get(0).getError()))
-                                displayResultRecycleview(response.body());
+                            {
+                                displayResultRecycleview(charFilter(response.body()));
+                            }
                             else
                             {
                                 Snackbar snackbar = Snackbar.make(parent, R.string.there_are_no_products_right_now, Snackbar.LENGTH_LONG);
@@ -585,6 +590,69 @@ public class swipcards extends AppCompatActivity {
         {
             priceMinRequest(7000);
         }
+    }
+
+
+    public List<ProductModel> charFilter(List<ProductModel> modelList)
+    {
+        List<ProductModel> filteredList=new ArrayList<>();
+        if (charName.equals("wa7shelprocessor"))
+        {
+            for (int i=0;i<modelList.size();i++)
+            {
+                ProductModel model=modelList.get(i);
+                if (model.getMonster_of_processor()==1)
+                {
+                    filteredList.add(model);
+                }
+            }
+        }
+        else if (charName.equals("elfananeen"))
+        {
+            for (int i=0;i<modelList.size();i++)
+            {
+                ProductModel model=modelList.get(i);
+                if (model.getArtists()==1)
+                {
+                    filteredList.add(model);
+                }
+            }
+        }
+        else if (charName.equals("superhero"))
+        {
+            for (int i=0;i<modelList.size();i++)
+            {
+                ProductModel model=modelList.get(i);
+                if (model.getSuper_hero()==1)
+                {
+                    filteredList.add(model);
+                }
+            }
+        }
+        else if (charName.equals("mlookelselfy"))
+        {
+            for (int i=0;i<modelList.size();i++)
+            {
+                ProductModel model=modelList.get(i);
+                if (model.getKings_of_selfie()==1)
+                {
+                    filteredList.add(model);
+                }
+            }
+        }
+        else if (charName.equals("mn8eerfslan"))
+        {
+            for (int i=0;i<modelList.size();i++)
+            {
+                ProductModel model=modelList.get(i);
+                if (model.getWithout_stopping()==1)
+                {
+                    filteredList.add(model);
+                }
+            }
+        }
+
+        return filteredList;
     }
 }
 
