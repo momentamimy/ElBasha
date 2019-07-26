@@ -334,10 +334,17 @@ public class swipcards extends AppCompatActivity {
                 mProgressDialog.setCancelable(false);
                 mProgressDialog.show();
 
+                if(screen.equals("Screen")){
+                    screen=null;
+                }
+
+                if(os.equals("Software/OS")){
+                    os=null;
+                }
                 RamBodyModel ramBodyModel = new RamBodyModel(ram,storage,battery,screen,processor,os);
                 Retrofit retrofit = retrofitHead.retrofitTimeOut();
                 ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
-                Call<List<ProductModel>> dataByValue = elBashaApi.getDataByValue3("application/x-www-form-urlencoded",ram,storage,battery,processor,os,null);
+                Call<List<ProductModel>> dataByValue = elBashaApi.getDataByValue3("application/x-www-form-urlencoded",ram,storage,battery,processor,os,screen);
 
                 dataByValue.enqueue(new Callback<List<ProductModel>>() {
                     @Override

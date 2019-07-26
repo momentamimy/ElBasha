@@ -36,6 +36,44 @@ public interface ELBashaApi {
     @GET("products")
     Call<List<ProductModel>> getDataByValueRAM();
 
+
+    @FormUrlEncoded
+    @POST("products")
+    Call<List<ProductModel>> getDataByROM(
+            @Header("Content-Type") String Accept,
+            @Field("ram") String ram
+    );
+
+
+    @FormUrlEncoded
+    @POST("products")
+    Call<List<ProductModel>> getDataByCPUOther(
+            @Header("Content-Type") String Accept,
+            @Field("ram") String ram,
+            @Field("storage") String storage
+    );
+
+
+    @FormUrlEncoded
+    @POST("products")
+    Call<List<ProductModel>> getDataBybattery(
+            @Header("Content-Type") String Accept,
+            @Field("ram") String ram,
+            @Field("storage") String storage,
+            @Field("processor") String processor
+    );
+
+    @FormUrlEncoded
+    @POST("products")
+    Call<List<ProductModel>> getDataByScreen(
+            @Header("Content-Type") String Accept,
+            @Field("ram") String ram,
+            @Field("storage") String storage,
+            @Field("processor") String processor,
+            @Field("battery") String battery
+    );
+
+
     @FormUrlEncoded
     @POST("products")
     Call<List<ProductModel>> getDataByValue3(
