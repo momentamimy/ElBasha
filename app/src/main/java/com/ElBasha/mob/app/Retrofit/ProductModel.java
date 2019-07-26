@@ -22,9 +22,16 @@ public class ProductModel implements Parcelable {
     int without_stopping;
     int post_id;
     String error;
+    int likes;
+    String features;
+    String youtubeLink;
+    String color1;
+    String color2;
+    String color3;
+    String color4;
 
 
-    public ProductModel(long id, String name, String battery, String myPrice, String ram, String camera, String screen, String storage, String processor, String os, String img, int monster_of_processor, int artists, int super_hero, int kings_of_selfie, int without_stopping, int post_id) {
+    public ProductModel(long id, String name, String battery, String myPrice, String ram, String camera, String screen, String storage, String processor, String os, String img, int monster_of_processor, int artists, int super_hero, int kings_of_selfie, int without_stopping, int post_id, String error, int likes, String features, String youtubeLink, String color1, String color2, String color3, String color4) {
         this.id = id;
         this.name = name;
         this.battery = battery;
@@ -42,7 +49,16 @@ public class ProductModel implements Parcelable {
         this.kings_of_selfie = kings_of_selfie;
         this.without_stopping = without_stopping;
         this.post_id = post_id;
+        this.error = error;
+        this.likes = likes;
+        this.features = features;
+        this.youtubeLink = youtubeLink;
+        this.color1 = color1;
+        this.color2 = color2;
+        this.color3 = color3;
+        this.color4 = color4;
     }
+
 
     protected ProductModel(Parcel in) {
         id = in.readLong();
@@ -62,8 +78,15 @@ public class ProductModel implements Parcelable {
         kings_of_selfie = in.readInt();
         without_stopping = in.readInt();
         post_id = in.readInt();
+        error = in.readString();
+        likes = in.readInt();
+        features = in.readString();
+        youtubeLink = in.readString();
+        color1 = in.readString();
+        color2 = in.readString();
+        color3 = in.readString();
+        color4 = in.readString();
     }
-
 
     public static final Creator<ProductModel> CREATOR = new Creator<ProductModel>() {
         @Override
@@ -221,6 +244,62 @@ public class ProductModel implements Parcelable {
         this.error = error;
     }
 
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public String getFeatures() {
+        return features;
+    }
+
+    public void setFeatures(String features) {
+        this.features = features;
+    }
+
+    public String getYoutubeLink() {
+        return youtubeLink;
+    }
+
+    public void setYoutubeLink(String youtubeLink) {
+        this.youtubeLink = youtubeLink;
+    }
+
+    public String getColor1() {
+        return color1;
+    }
+
+    public void setColor1(String color1) {
+        this.color1 = color1;
+    }
+
+    public String getColor2() {
+        return color2;
+    }
+
+    public void setColor2(String color2) {
+        this.color2 = color2;
+    }
+
+    public String getColor3() {
+        return color3;
+    }
+
+    public void setColor3(String color3) {
+        this.color3 = color3;
+    }
+
+    public String getColor4() {
+        return color4;
+    }
+
+    public void setColor4(String color4) {
+        this.color4 = color4;
+    }
+
 
     @Override
     public int describeContents() {
@@ -247,5 +326,12 @@ public class ProductModel implements Parcelable {
         dest.writeInt(without_stopping);
         dest.writeInt(post_id);
         dest.writeString(error);
+        dest.writeInt(likes);
+        dest.writeString(features);
+        dest.writeString(youtubeLink);
+        dest.writeString(color1);
+        dest.writeString(color2);
+        dest.writeString(color3);
+        dest.writeString(color4);
     }
 }

@@ -2,11 +2,13 @@ package com.ElBasha.mob.app;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ElBasha.mob.app.Controller.LocaleHelper;
@@ -21,8 +23,11 @@ public class CardSwipeSpecesActivity extends AppCompatActivity {
     ImageView productPicture;
     TextView productName;
     TextView productStorage_Ram,productPrice;
-    TextView productDisplay,productPlatform,productCamera,productBattery,productOtherFeatures,productReview;
+    TextView productDisplay,productPlatform,productCamera,productBattery,productOtherFeatures,productReview,youtubeLink;
 
+
+    LinearLayout colorLayout;
+    FloatingActionButton color1,color2,color3,color4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +46,14 @@ public class CardSwipeSpecesActivity extends AppCompatActivity {
         productBattery=findViewById(R.id.battery);
         productOtherFeatures=findViewById(R.id.other_feature);
         productReview=findViewById(R.id.review);
+        youtubeLink=findViewById(R.id.YoutubeLink);
+
+        colorLayout=findViewById(R.id.color_layout);
+        color1=findViewById(R.id.color1);
+        color2=findViewById(R.id.color2);
+        color3=findViewById(R.id.color3);
+        color4=findViewById(R.id.color4);
+
 
         fillDataModel(model);
 
@@ -100,7 +113,8 @@ public class CardSwipeSpecesActivity extends AppCompatActivity {
         productPlatform.setText(model.getOs());
         productCamera.setText(model.getCamera());
         productBattery.setText(model.getBattery());
-        productOtherFeatures.setText(model.getProcessor());
+        productOtherFeatures.setText(model.getFeatures());
+        youtubeLink.setText(model.getYoutubeLink());
         //productReview.setText(model.getStorage()+" / "+model.getMyPrice()+" / "+model.getRam()) ;
         if (!model.getStorage().isEmpty()&&!model.getRam().isEmpty())
         {
@@ -110,6 +124,8 @@ public class CardSwipeSpecesActivity extends AppCompatActivity {
         {
             productPrice.setText(model.getMyPrice()+"EGP");
         }
+
+        //color1.setBackgroundColor(ge);
     }
 
 

@@ -404,7 +404,7 @@ public class Manual_Activity extends AppCompatActivity {
 
     private void getRamSpinnerArray(List<ProductModel> body) {
 
-        ArrayList<String> array = null;
+        List<String> array = new ArrayList<>();
 
         for(int i = 0; i< body.size(); i++){
             if(body.get(i).getRam()!=null){

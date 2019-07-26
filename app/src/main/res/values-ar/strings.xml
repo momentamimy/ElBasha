@@ -179,6 +179,7 @@
     <string name="like">لقد أحببت هذا المنتج</string>
     <string name="likealready">لقد تم الاعجاب بالفعل لهذا المنتج</string>
     <string name="favalready">هذا المنتج بالفعل في قائمة المفضلة</string>
+    <string name="favadded">تم اضافته إلى قائمة المفضلة</string>
     <string name="no_favorites">قائمة المفضلة فارغه</string>
     <string name="oops_there_is_problem_in_internet_connection">هناك مشكلة في الاتصال بالإنترنت</string>
     <string name="no_products">لا توجد منتجات</string>

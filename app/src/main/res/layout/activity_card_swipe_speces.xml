@@ -175,32 +175,49 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:visibility="gone">
+                >
 
                 <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/color1"
                     app:backgroundTint="#F08DDF"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"/>
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"/>
                 <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/color2"
                     app:backgroundTint="@android:color/black"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"/>
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"/>
                 <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/color3"
                     app:backgroundTint="#4f83d9"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"/>
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"/>
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/color4"
+                    app:backgroundTint="#4f83d9"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"/>
 
             </LinearLayout>
 
@@ -491,6 +508,7 @@
 
 
                 <TextView
+                    android:id="@+id/YoutubeLink"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="https://www.youtube.com/watch"
