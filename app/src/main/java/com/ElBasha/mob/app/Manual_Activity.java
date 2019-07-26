@@ -39,7 +39,7 @@ public class Manual_Activity extends AppCompatActivity {
     ImageView fav_list,back;
     Button searchbtn;
     RelativeLayout parent;
-    ArrayList<String> aa;
+    ArrayList<String> RamArray;
 
 
     @Override
@@ -111,7 +111,7 @@ public class Manual_Activity extends AppCompatActivity {
         spinnerSoftware=(Spinner) findViewById(R.id.spinnerOS);  // connect 6 spinner
 
         //******************************************************ArrayAdapter for first spinner**********************************************************************
-        ArrayAdapter<String> myAdapter= new ArrayAdapter<String>(this, R.layout.spinner_item_text,getResources().getStringArray(R.array.Ram));
+        ArrayAdapter<String> myAdapter= new ArrayAdapter<String>(this, R.layout.spinner_item_text,RamArray);
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(myAdapter);
@@ -347,6 +347,7 @@ public class Manual_Activity extends AppCompatActivity {
                 dataByValue.enqueue(new Callback<List<ProductModel>>() {
                     @Override
                     public void onResponse(Call<List<ProductModel>> call, Response<List<ProductModel>> response) {
+
                         if (mProgressDialog.isShowing())
                             mProgressDialog.dismiss();
 
@@ -404,7 +405,7 @@ public class Manual_Activity extends AppCompatActivity {
 
     private void getRamSpinnerArray(List<ProductModel> body) {
 
-        List<String> array = new ArrayList<>();
+        ArrayList<String> array = new ArrayList<>();
 
         for(int i = 0; i< body.size(); i++){
             if(body.get(i).getRam()!=null){
@@ -424,7 +425,8 @@ public class Manual_Activity extends AppCompatActivity {
         for(int i = 0; i< array.size(); i++){
             Log.w("aa",array.get(i));
         }
-        
+
+        RamArray=array;
     }
 
 

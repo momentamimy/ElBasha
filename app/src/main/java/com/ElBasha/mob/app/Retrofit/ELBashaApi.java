@@ -34,9 +34,7 @@ public interface ELBashaApi {
 
 
     @GET("products")
-    Call<List<ProductModel>> getDataByValueRAM(
-
-    );
+    Call<List<ProductModel>> getDataByValueRAM();
 
     @FormUrlEncoded
     @POST("products")
