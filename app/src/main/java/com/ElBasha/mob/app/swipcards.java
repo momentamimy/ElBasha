@@ -286,6 +286,7 @@ public class swipcards extends AppCompatActivity {
                     }else {
                         //send request
                         requestLike(data.get(position).getId());
+
                     }
                 }
             });
@@ -766,11 +767,12 @@ public class swipcards extends AppCompatActivity {
             //Check internet Access
             if (ConnectionDetector.hasInternetConnection(getApplicationContext())) {
 
-                final ProgressDialog mProgressDialog = new ProgressDialog(swipcards.this);
-                mProgressDialog.setIndeterminate(true);
-                mProgressDialog.setMessage("Loading...");
-                mProgressDialog.setCancelable(false);
-                mProgressDialog.show();
+                //Show message to user
+                Snackbar snackbar = Snackbar.make(parent, R.string.like, Snackbar.LENGTH_LONG);
+                snackbar.show();
+
+                //save it of product
+                db.insertProductIDLiked(id);
 
                 Retrofit retrofit = retrofitHead.retrofitTimeOut();
                 ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
@@ -779,38 +781,33 @@ public class swipcards extends AppCompatActivity {
                 dataByValue.enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
-                        if (mProgressDialog.isShowing())
-                            mProgressDialog.dismiss();
 
                         if (response.isSuccessful())
                         {
 
-
-
                             Log.d("dahLoglike", String.valueOf(response.body()));
                             if (response.body().length()>2) {
-                                Snackbar snackbar = Snackbar.make(parent, R.string.like, Snackbar.LENGTH_LONG);
+                               /* Snackbar snackbar = Snackbar.make(parent, R.string.like, Snackbar.LENGTH_LONG);
                                 snackbar.show();
 
                                 //save it of product
-                                db.insertProductIDLiked(id);
+                                db.insertProductIDLiked(id);*/
                             }
 
 
 
                         }else {
-                            Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
-                            snackbar.show();
+
+                            //Delete If falire
+                            db.deleteLiketByID(id);
                         }
 
                     }
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
-                        if (mProgressDialog.isShowing())
-                            mProgressDialog.dismiss();
-                        Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
-                        snackbar.show();
+                        //Delete If falire
+                        db.deleteLiketByID(id);
                     }
                 });
 

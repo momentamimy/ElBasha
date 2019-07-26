@@ -115,6 +115,14 @@ public class Database_Helper extends SQLiteOpenHelper {
     }
 
 
+    public void deleteLiketByID(long id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(like.TABLE_NAME, like.COLUMN_ID_API + " = ?",
+                new String[]{String.valueOf(id)});
+        db.close();
+    }
+
+
 
 
     //TODO:#####################################################3/31/2019  Fav Operation  ########################################################
