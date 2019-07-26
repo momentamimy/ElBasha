@@ -95,22 +95,27 @@ public class Wa7shProccesseorTutorial extends AppCompatActivity {
                 if (position==0)
                 {
                     cardLayout.setBackgroundResource(R.drawable.card_bgd_1);
+                    charName="wa7shelprocessor";
                 }
                 else if (position==1)
                 {
                     cardLayout.setBackgroundResource(R.drawable.card_bgd_2);
+                    charName="elfananeen";
                 }
                 else if (position==2)
                 {
                     cardLayout.setBackgroundResource(R.drawable.card_bgd_3);
+                    charName="superhero";
                 }
                 else if (position==3)
                 {
                     cardLayout.setBackgroundResource(R.drawable.card_bgd_4);
+                    charName="mlookelselfy";
                 }
                 else if (position==4)
                 {
                     cardLayout.setBackgroundResource(R.drawable.card_bgd_5);
+                    charName="mn8eerfslan";
                 }
             }
 

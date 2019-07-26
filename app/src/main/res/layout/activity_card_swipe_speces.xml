@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".CardSwipeSpecesActivity"
     android:layoutDirection="ltr"
-    android:background="@android:color/white">
+    android:background="@android:color/white"
+    android:id="@+id/myLayout">
 
     <RelativeLayout
         android:id="@+id/toolbar"
@@ -555,6 +556,7 @@
                 android:src="@drawable/ic_clear"
                 android:padding="12dp"
                 android:background="@drawable/circle"
+                android:onClick="back"
                 />
 
 
@@ -569,6 +571,7 @@
                 android:src="@drawable/ic_star"
                 android:padding="11dp"
                 android:background="@drawable/circle"
+                android:onClick="like"
                 />
 
             <ImageView
@@ -582,6 +585,7 @@
                 android:src="@drawable/ic_like"
                 android:padding="11dp"
                 android:background="@drawable/circle"
+                android:onClick="love"
                 />
         </LinearLayout>
     </RelativeLayout>
