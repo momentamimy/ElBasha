@@ -14,8 +14,10 @@ import android.widget.ImageView;
 import com.ElBasha.mob.app.CardSwipeSpecesActivity;
 import com.ElBasha.mob.app.Holder_fav;
 import com.ElBasha.mob.app.R;
+import com.ElBasha.mob.app.Retrofit.ProductModel;
 import com.ElBasha.mob.app.recycleviewHolder;
 import com.squareup.picasso.Picasso;
+import com.victor.loading.rotate.RotateLoading;
 
 import java.util.List;
 
@@ -26,10 +28,10 @@ import java.util.List;
 public class adapter_fav  extends RecyclerView.Adapter<Holder_fav> {
 
 
-    private List<String> data;
+    private List<ProductModel> data;
     private Context context;
 
-    public adapter_fav(List<String> data, Context context) {
+    public adapter_fav(List<ProductModel> data, Context context) {
         this.data = data;
         this.context = context;
     }
@@ -43,14 +45,43 @@ public class adapter_fav  extends RecyclerView.Adapter<Holder_fav> {
 
 
     @Override
-    public void onBindViewHolder( Holder_fav holder,  int position) {
+    public void onBindViewHolder(final Holder_fav holder, final int position) {
 
-       // holder.text.setText(data.get(position));
-      // Picasso.with(context).load(R.drawable.dummy3).fit().centerCrop().into(holder.mobile_pic);
+        // holder.text.setText(data.get(position));
+
+        if (!data.get(position).getImg().isEmpty())
+        {
+
+            holder.rotateLoading.start();
+            Picasso.with(context).load(data.get(position).getImg())
+                    .error(R.drawable.ic_smartphone_empty).fit().centerCrop().into(holder.mobile_pic,new com.squareup.picasso.Callback() {
+                @Override
+                public void onSuccess() {
+                    holder.rotateLoading.stop();
+                }
+
+                @Override
+                public void onError() {
+                    holder.rotateLoading.stop();
+                }
+            });
+        }
+        else
+        {
+            holder.mobile_pic.setImageResource(R.drawable.ic_smartphone_empty);
+        }
+       //Picasso.with(context).load(data.get(position).getImg()).fit().centerCrop().into(holder.mobile_pic);
+
+        if(!data.get(position).getName().isEmpty()){
+            holder.text.setText(data.get(position).getName());
+        }
+
+
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, CardSwipeSpecesActivity.class);
+                i.putExtra("productModel",data.get(position));
                 context.startActivity(i);
             }
         });

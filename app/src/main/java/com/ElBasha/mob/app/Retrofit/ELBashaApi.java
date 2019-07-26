@@ -7,6 +7,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 
@@ -30,6 +31,13 @@ public interface ELBashaApi {
             @Field("os") String os
     );
 
+
+
+    @GET("products")
+    Call<List<ProductModel>> getDataByValueRAM(
+
+    );
+
     @FormUrlEncoded
     @POST("products")
     Call<List<ProductModel>> getDataByValue3(
@@ -38,7 +46,16 @@ public interface ELBashaApi {
             @Field("storage") String storage,
             @Field("battery") String battery,
             @Field("processor") String processor,
-            @Field("os") String os
+            @Field("os") String os,
+            @Field("screen") String screen
+    );
+
+
+    @FormUrlEncoded
+    @POST("products/like")
+    Call<String> like(
+            @Header("Content-Type") String Accept,
+            @Field("id") long id
     );
 
 
@@ -54,5 +71,9 @@ public interface ELBashaApi {
     Call<List<ProductModel>> getDataMaxPrice(
             @Body MaxBodyModel maxBodyModel);
 
+
+    @POST("products/id")
+    Call<List<ProductModel>> getFavProduct(
+            @Body favJSON favJSON);
 
 }

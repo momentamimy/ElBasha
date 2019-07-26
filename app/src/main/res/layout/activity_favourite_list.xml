@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:layoutDirection="ltr"
+    android:id="@+id/parentlayfav"
     tools:context="com.ElBasha.mob.app.favourite_list">
 
 
@@ -92,5 +93,35 @@
         android:id="@+id/recycleview_fav"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/imageNoInternetfav"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_no_wifi"/>
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/imageemptyfav"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_paper"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/imageemptyfav"
+        android:visibility="gone"
+        android:id="@+id/favemptytext"
+        android:textStyle="bold"
+        android:textColor="#49da0303"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/no_favorites"
+        />
 
 </RelativeLayout>

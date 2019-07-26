@@ -3,6 +3,7 @@ package com.ElBasha.mob.app;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.PopupMenu;
@@ -19,12 +20,14 @@ public class ManualOrCharacterActivity extends AppCompatActivity {
     RelativeLayout manualButton,charButton;
     ImageView back;
     TextView langList;
+    RelativeLayout parent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manual_or_character);
 
+        parent=findViewById(R.id.parentmanualorcharacter);
         back=findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,8 +43,24 @@ public class ManualOrCharacterActivity extends AppCompatActivity {
         manualButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Manual_Activity.class));
-                overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+
+                if (CheckNetworkConnection.hasInternetConnection(getApplicationContext())) {
+                    //Check internet Access
+                    if (ConnectionDetector.hasInternetConnection(getApplicationContext())) {
+
+                        startActivity(new Intent(getApplicationContext(), Manual_Activity.class));
+                        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+
+                    }else {
+                        Snackbar snackbar = Snackbar.make(parent, R.string.Internet_not_access_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+
+                }else {
+                    Snackbar snackbar = Snackbar.make(parent, R.string.You_are_offline_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+
             }
         });
 

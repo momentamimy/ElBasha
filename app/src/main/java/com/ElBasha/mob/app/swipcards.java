@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ElBasha.mob.app.Controller.LocaleHelper;
+import com.ElBasha.mob.app.Model.Database_Helper;
 import com.ElBasha.mob.app.Retrofit.ELBashaApi;
 import com.ElBasha.mob.app.Retrofit.MaxBodyModel;
 import com.ElBasha.mob.app.Retrofit.MinBodyModel;
@@ -43,12 +44,16 @@ public class swipcards extends AppCompatActivity {
     private static final String TAG = "swipcards";
     private SwipeDeck cardStack;
     private Context context = this;
+    Database_Helper db;
 
     private SwipeDeckAdapter adapter;
     private ArrayList<String> testData;
     private List<ProductModel> RealData;
-    ImageView backarrow,close,fav_list;
+    ImageView backarrow,close,fav_list,reload,setFav,setLike;
     RelativeLayout parent;
+    ImageView imagemobileoops;
+    TextView opstext,textnoproduct;
+
 
     String Type_Activity;
 
@@ -64,9 +69,15 @@ public class swipcards extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_swipcards);
 
+        db=new Database_Helper(this);
 
-
+        imagemobileoops=findViewById(R.id.mobileimageempty);
+        opstext=findViewById(R.id.textopps);
+        textnoproduct=findViewById(R.id.textnoresultinrecycle);
         parent=findViewById(R.id.parentcards);
+        reload=findViewById(R.id.reloadbtn);
+        setFav=findViewById(R.id.setfavorate);
+        setLike=findViewById(R.id.setlike);
         fav_list=findViewById(R.id.openfavList);
         backarrow=findViewById(R.id.back);
         close=findViewById(R.id.close);
@@ -83,7 +94,9 @@ public class swipcards extends AppCompatActivity {
         });
 
 
+
         getAllIntent();
+
 
 
         cardStack.setEventCallback(new SwipeDeck.SwipeEventCallback() {
@@ -114,17 +127,18 @@ public class swipcards extends AppCompatActivity {
 
         });
 
-        ImageView btn3 = (ImageView) findViewById(R.id.reload);
-        btn3.setOnClickListener(new View.OnClickListener() {
+
+        reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                  testData.add("a sample string.");
+                  //testData.add("a sample string.");
 //                ArrayList<String> newData = new ArrayList<>();
 //                newData.add("some new data");
 //                newData.add("some new data");
 //                newData.add("some new data");
 //                newData.add("some new data");
 //
+                  displayResultRecycleview(RealData);
 //                SwipeDeckAdapter adapter = new SwipeDeckAdapter(newData, context);
 //                cardStack.setAdapter(adapter);
                   adapter.notifyDataSetChanged();
@@ -175,6 +189,7 @@ public class swipcards extends AppCompatActivity {
             priceRange = intent.getStringExtra("priceRange");
             charName=intent.getStringExtra("charName");
 
+            //send Request
             callPriceRequest();
 
         }
@@ -215,7 +230,7 @@ public class swipcards extends AppCompatActivity {
         }
 
         @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, final ViewGroup parent) {
 
             View v = convertView;
             if (v == null) {
@@ -230,8 +245,7 @@ public class swipcards extends AppCompatActivity {
             {
                 final RotateLoading rotateLoading=v.findViewById(R.id.rotateloading);
                 rotateLoading.start();
-                Picasso.with(context).load(data.get(position).getImg())
-                        .error(R.drawable.ic_warning).fit().centerCrop().into(imageView ,new com.squareup.picasso.Callback() {
+                Picasso.with(context).load(data.get(position).getImg()).error(R.drawable.ic_smartphone_empty).fit().centerCrop().into(imageView ,new com.squareup.picasso.Callback() {
                     @Override
                     public void onSuccess() {
                         rotateLoading.stop();
@@ -245,12 +259,47 @@ public class swipcards extends AppCompatActivity {
             }
             else
             {
-                imageView.setImageResource(R.drawable.ic_warning);
+                imageView.setImageResource(R.drawable.ic_smartphone_empty);
             }
             //String item = (String)getItem(position);
             TextView textView = (TextView) v.findViewById(R.id.mobilename);
             //String item = (String)getItem(position);
-            textView.setText(data.get(position).getName());
+            if (!data.get(position).getName().isEmpty())
+            {
+                textView.setVisibility(View.VISIBLE);
+                textView.setText(data.get(position).getName());
+            }else {
+                textView.setVisibility(View.GONE);
+            }
+
+
+            //Like button
+            setLike.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Log.w("what", String.valueOf(data.get(position).getName()));
+                    if(db.CheckIsDataAlreadyInDBorNotLike(data.get(position).getId())){
+                        //message to user
+                        Snackbar snackbar = Snackbar.make(parent, R.string.likealready, Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }else {
+                        //send request
+                        requestLike(data.get(position).getId());
+                    }
+                }
+            });
+
+
+
+            //Fav Button
+            setFav.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   addFav(data.get(position).getId());
+                }
+            });
+
 
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -288,7 +337,7 @@ public class swipcards extends AppCompatActivity {
                 RamBodyModel ramBodyModel = new RamBodyModel(ram,storage,battery,screen,processor,os);
                 Retrofit retrofit = retrofitHead.retrofitTimeOut();
                 ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
-                Call<List<ProductModel>> dataByValue = elBashaApi.getDataByValue3("application/x-www-form-urlencoded",ram,storage,battery,processor,os);
+                Call<List<ProductModel>> dataByValue = elBashaApi.getDataByValue3("application/x-www-form-urlencoded",ram,storage,battery,processor,os,null);
 
                 dataByValue.enqueue(new Callback<List<ProductModel>>() {
                     @Override
@@ -298,6 +347,9 @@ public class swipcards extends AppCompatActivity {
 
                         if (response.isSuccessful())
                         {
+
+                            imagemobileoops.setVisibility(View.GONE);
+                            opstext.setVisibility(View.GONE);
 
                             Log.d("dahLog", String.valueOf(response.body().size()));
                             if (TextUtils.isEmpty(response.body().get(0).getError()))
@@ -310,6 +362,10 @@ public class swipcards extends AppCompatActivity {
 
 
                         }else {
+
+                            imagemobileoops.setVisibility(View.VISIBLE);
+                            opstext.setVisibility(View.VISIBLE);
+
                             Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
                             snackbar.show();
                         }
@@ -322,17 +378,27 @@ public class swipcards extends AppCompatActivity {
                             mProgressDialog.dismiss();
                         Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
                         snackbar.show();
+
+                        imagemobileoops.setVisibility(View.VISIBLE);
+                        opstext.setVisibility(View.VISIBLE);
+
                     }
                 });
 
 
             }else {
+                imagemobileoops.setVisibility(View.VISIBLE);
+                opstext.setVisibility(View.VISIBLE);
+
                 Snackbar snackbar = Snackbar.make(parent, R.string.Internet_not_access_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
                 snackbar.show();
 
             }
 
         }else {
+            imagemobileoops.setVisibility(View.VISIBLE);
+            opstext.setVisibility(View.VISIBLE);
+
             Snackbar snackbar = Snackbar.make(parent, R.string.You_are_offline_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
             snackbar.show();
         }
@@ -346,6 +412,16 @@ public class swipcards extends AppCompatActivity {
         testData.add("2");
         testData.add("3");
         testData.add("4");
+
+        RealData =listMobile;
+
+        if(listMobile.size()<0){
+            imagemobileoops.setVisibility(View.VISIBLE);
+            textnoproduct.setVisibility(View.VISIBLE);
+        }else {
+            imagemobileoops.setVisibility(View.GONE);
+            textnoproduct.setVisibility(View.GONE);
+        }
 
         adapter = new SwipeDeckAdapter(listMobile, this);
         cardStack.setAdapter(adapter);
@@ -517,6 +593,10 @@ public class swipcards extends AppCompatActivity {
 
                         if (response.isSuccessful())
                         {
+
+                            imagemobileoops.setVisibility(View.GONE);
+                            opstext.setVisibility(View.GONE);
+
                             Log.d("dahLog", String.valueOf(response.body().size()));
                             if (TextUtils.isEmpty(response.body().get(0).getError()))
                             {
@@ -524,6 +604,7 @@ public class swipcards extends AppCompatActivity {
                             }
                             else
                             {
+
                                 Snackbar snackbar = Snackbar.make(parent, R.string.there_are_no_products_right_now, Snackbar.LENGTH_LONG);
                                 snackbar.show();
                             }
@@ -534,6 +615,10 @@ public class swipcards extends AppCompatActivity {
                         {
                             Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
                             snackbar.show();
+
+                            imagemobileoops.setVisibility(View.VISIBLE);
+                            opstext.setVisibility(View.VISIBLE);
+
                         }
                     }
 
@@ -544,16 +629,28 @@ public class swipcards extends AppCompatActivity {
 
                         Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
                         snackbar.show();
+
+                        imagemobileoops.setVisibility(View.VISIBLE);
+                        opstext.setVisibility(View.VISIBLE);
+
+
                     }
                 });
             }else {
                 Snackbar snackbar = Snackbar.make(parent, R.string.Internet_not_access_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
                 snackbar.show();
 
+                imagemobileoops.setVisibility(View.VISIBLE);
+                opstext.setVisibility(View.VISIBLE);
+
             }
         }else {
             Snackbar snackbar = Snackbar.make(parent, R.string.You_are_offline_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
             snackbar.show();
+
+            imagemobileoops.setVisibility(View.VISIBLE);
+            opstext.setVisibility(View.VISIBLE);
+
         }
     }
 
@@ -654,6 +751,89 @@ public class swipcards extends AppCompatActivity {
 
         return filteredList;
     }
+
+
+    //like request
+    void requestLike(final long id){
+        if (CheckNetworkConnection.hasInternetConnection(getApplicationContext())) {
+            //Check internet Access
+            if (ConnectionDetector.hasInternetConnection(getApplicationContext())) {
+
+                final ProgressDialog mProgressDialog = new ProgressDialog(swipcards.this);
+                mProgressDialog.setIndeterminate(true);
+                mProgressDialog.setMessage("Loading...");
+                mProgressDialog.setCancelable(false);
+                mProgressDialog.show();
+
+                Retrofit retrofit = retrofitHead.retrofitTimeOut();
+                ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
+                Call<String> dataByValue = elBashaApi.like("application/x-www-form-urlencoded",id);
+
+                dataByValue.enqueue(new Callback<String>() {
+                    @Override
+                    public void onResponse(Call<String> call, Response<String> response) {
+                        if (mProgressDialog.isShowing())
+                            mProgressDialog.dismiss();
+
+                        if (response.isSuccessful())
+                        {
+
+
+
+                            Log.d("dahLoglike", String.valueOf(response.body()));
+                            if (response.body().length()>2) {
+                                Snackbar snackbar = Snackbar.make(parent, R.string.like, Snackbar.LENGTH_LONG);
+                                snackbar.show();
+
+                                //save it of product
+                                db.insertProductIDLiked(id);
+                            }
+
+
+
+                        }else {
+                            Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
+                            snackbar.show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<String> call, Throwable t) {
+                        if (mProgressDialog.isShowing())
+                            mProgressDialog.dismiss();
+                        Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+                });
+
+
+            }else {
+                Snackbar snackbar = Snackbar.make(parent, R.string.Internet_not_access_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+                snackbar.show();
+
+            }
+
+        }else {
+            Snackbar snackbar = Snackbar.make(parent, R.string.You_are_offline_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+    }
+
+    void addFav (Long id){
+        if(db.CheckIsDataAlreadyInDBorNotFav(id)){
+            Snackbar snackbar = Snackbar.make(parent, R.string.favalready, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }else {
+            //insert id in fav list
+            db.insertFavProduct(id);
+            Snackbar snackbar = Snackbar.make(parent, R.string.favadded, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+
+    }
+
+
 }
 
 

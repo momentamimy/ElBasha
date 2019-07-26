@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ProductModel implements Parcelable {
-    int id;
+    long id;
     String name;
     String battery;
     String myPrice;
@@ -24,7 +24,7 @@ public class ProductModel implements Parcelable {
     String error;
 
 
-    public ProductModel(int id, String name, String battery, String myPrice, String ram, String camera, String screen, String storage, String processor, String os, String img, int monster_of_processor, int artists, int super_hero, int kings_of_selfie, int without_stopping, int post_id) {
+    public ProductModel(long id, String name, String battery, String myPrice, String ram, String camera, String screen, String storage, String processor, String os, String img, int monster_of_processor, int artists, int super_hero, int kings_of_selfie, int without_stopping, int post_id) {
         this.id = id;
         this.name = name;
         this.battery = battery;
@@ -45,7 +45,7 @@ public class ProductModel implements Parcelable {
     }
 
     protected ProductModel(Parcel in) {
-        id = in.readInt();
+        id = in.readLong();
         name = in.readString();
         battery = in.readString();
         myPrice = in.readString();
@@ -77,11 +77,11 @@ public class ProductModel implements Parcelable {
         }
     };
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -229,7 +229,7 @@ public class ProductModel implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
+        dest.writeLong(id);
         dest.writeString(name);
         dest.writeString(battery);
         dest.writeString(myPrice);

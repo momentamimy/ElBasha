@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,6 +23,9 @@ import com.ElBasha.mob.app.Retrofit.RamBodyModel;
 import com.ElBasha.mob.app.Retrofit.RangeBodyModel;
 import com.ElBasha.mob.app.Retrofit.retrofitHead;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,6 +39,7 @@ public class Manual_Activity extends AppCompatActivity {
     ImageView fav_list,back;
     Button searchbtn;
     RelativeLayout parent;
+    ArrayList<String> aa;
 
 
     @Override
@@ -52,6 +57,8 @@ public class Manual_Activity extends AppCompatActivity {
                 finish();
             }
         });
+
+        getRamSpinnerArrayRequest();
 
         //search btn and get result
         searchbtn.setOnClickListener(new View.OnClickListener() {
@@ -321,6 +328,104 @@ public class Manual_Activity extends AppCompatActivity {
         super.attachBaseContext(LocaleHelper.onAttach(base));
     }
 
+
+    void getRamSpinnerArrayRequest(){
+        if (CheckNetworkConnection.hasInternetConnection(getApplicationContext())) {
+            //Check internet Access
+            if (ConnectionDetector.hasInternetConnection(getApplicationContext())) {
+
+                final ProgressDialog mProgressDialog = new ProgressDialog(Manual_Activity.this);
+                mProgressDialog.setIndeterminate(true);
+                mProgressDialog.setMessage("Loading...");
+                mProgressDialog.setCancelable(false);
+                mProgressDialog.show();
+
+                Retrofit retrofit = retrofitHead.retrofitTimeOut();
+                ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
+                Call<List<ProductModel>> dataByValue = elBashaApi.getDataByValueRAM();
+
+                dataByValue.enqueue(new Callback<List<ProductModel>>() {
+                    @Override
+                    public void onResponse(Call<List<ProductModel>> call, Response<List<ProductModel>> response) {
+                        if (mProgressDialog.isShowing())
+                            mProgressDialog.dismiss();
+
+                        if (response.isSuccessful())
+                        {
+
+
+                             Log.d("dahLog", String.valueOf(response.body().size()));
+                            if (TextUtils.isEmpty(response.body().get(0).getError()))
+
+                                getRamSpinnerArray(response.body());
+
+                            else
+                            {
+                                Snackbar snackbar = Snackbar.make(parent, R.string.there_are_no_products_right_now, Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                            }
+
+
+                        }else {
+
+
+                            Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
+                            snackbar.show();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<ProductModel>> call, Throwable t) {
+                        if (mProgressDialog.isShowing())
+                            mProgressDialog.dismiss();
+                        Snackbar snackbar = Snackbar.make(parent, R.string.Failure_Please_try_again, Snackbar.LENGTH_LONG);
+                        snackbar.show();
+
+
+                    }
+                });
+
+
+            }else {
+
+                Snackbar snackbar = Snackbar.make(parent, R.string.Internet_not_access_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+                snackbar.show();
+
+            }
+
+        }else {
+
+            Snackbar snackbar = Snackbar.make(parent, R.string.You_are_offline_Please_connect_to_the_internet, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+
+    }
+
+    private void getRamSpinnerArray(List<ProductModel> body) {
+
+        ArrayList<String> array = null;
+
+        for(int i = 0; i< body.size(); i++){
+            if(body.get(i).getRam()!=null){
+                array.add(String.valueOf(body.get(i).getRam()));
+            }
+
+        }
+
+
+
+        HashSet<String> hashSet = new HashSet<String>();
+        hashSet.addAll(array);
+        array.clear();
+        array.addAll(hashSet);
+
+
+        for(int i = 0; i< array.size(); i++){
+            Log.w("aa",array.get(i));
+        }
+        
+    }
 
 
 }

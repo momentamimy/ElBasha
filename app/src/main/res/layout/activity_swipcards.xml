@@ -9,6 +9,41 @@
     android:id="@+id/parentcards"
     tools:context="com.ElBasha.mob.app.swipcards">
 
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/mobileimageempty"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/ic_smartphone_empty"
+        android:layout_centerInParent="true"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textopps"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/mobileimageempty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#9bda0303"
+        android:layout_marginTop="15dp"
+        android:text="@string/oops_there_is_problem_in_internet_connection"/>
+
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textnoresultinrecycle"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/mobileimageempty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="#9bda0303"
+        android:layout_marginTop="15dp"
+        android:text="@string/no_products"/>
+
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_marginTop="25dp"
@@ -105,7 +140,7 @@
         android:layout_centerHorizontal="true">
 
         <ImageView
-            android:id="@+id/reload"
+            android:id="@+id/reloadbtn"
             android:layout_weight="1"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
@@ -131,6 +166,7 @@
 
 
         <ImageView
+            android:id="@+id/setfavorate"
             android:layout_weight="1"
             android:layout_marginTop="10dp"
             android:layout_marginStart="25dp"
@@ -144,6 +180,7 @@
             />
 
         <ImageView
+            android:id="@+id/setlike"
             android:layout_weight="1"
             android:layout_marginTop="10dp"
             android:layout_marginStart="25dp"
