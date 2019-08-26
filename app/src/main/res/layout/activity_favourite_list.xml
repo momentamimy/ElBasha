@@ -74,11 +74,12 @@
             android:drawableStart="@drawable/ic_list"
             android:drawableLeft="@drawable/ic_list"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fav_list"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textColor="@android:color/black"
             android:layout_gravity="center"
             android:fontFamily="@font/bahij_the_sans_arabic_bold"/>

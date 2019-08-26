@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_lawyer_app_logoo"
+        android:icon="@mipmap/ic_launcher_app_elbasha"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_lawyer_app_logoo"
+        android:roundIcon="@mipmap/ic_launcher_app_elbasha"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Locked_hakha"></activity>
