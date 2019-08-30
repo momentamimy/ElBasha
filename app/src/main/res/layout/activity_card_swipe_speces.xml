@@ -375,6 +375,8 @@
                         android:textSize="18dp"
                         android:textColor="@color/colorPrimary"
                         android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
+
+
                     <TextView
                         android:layout_below="@+id/camera_text"
                         android:id="@+id/camera"

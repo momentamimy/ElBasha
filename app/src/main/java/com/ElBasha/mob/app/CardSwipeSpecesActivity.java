@@ -130,7 +130,8 @@ public class CardSwipeSpecesActivity extends AppCompatActivity {
         productName.setText(model.getName());
         productDisplay.setText(model.getScreen());
         productPlatform.setText(model.getOs());
-        productCamera.setText(model.getCamera());
+        productCamera.setText(getResources().getString(R.string.frontCamera)+"  :  "+model.getFront_camera()+"\n\n"+
+                getResources().getString(R.string.rearCamera)+"  :  "+model.getRear_camera());
         productBattery.setText(model.getBattery());
         productOtherFeatures.setText(model.getFeatures());
         youtubeLink.setText(model.getYoutubeLink());

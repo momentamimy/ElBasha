@@ -71,6 +71,13 @@
         android:layout_marginRight="30dp"
         android:layout_above="@+id/viewPagerIndicator"
         >
+        <com.victor.loading.rotate.RotateLoading
+            android:id="@+id/rotateloading2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:loading_width="5dp"
+            app:loading_color="@android:color/black"
+            android:layout_centerInParent="true"/>
 <android.support.v4.view.ViewPager
     android:id="@+id/introViewPager"
     android:layout_width="match_parent"

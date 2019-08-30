@@ -184,4 +184,6 @@
     <string name="oops_there_is_problem_in_internet_connection">هناك مشكلة في الاتصال بالإنترنت</string>
     <string name="no_products">لا توجد منتجات</string>
 
+    <string name="frontCamera">الكاميرا الأمامية</string>
+    <string name="rearCamera">الكاميرا الخلفية</string>
 </resources>

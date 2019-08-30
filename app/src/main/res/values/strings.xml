@@ -191,4 +191,7 @@
     <string name="oops_there_is_problem_in_internet_connection">OoPs There is problem in internet connection</string>
     <string name="no_products">No Products</string>
 
+    <string name="frontCamera">front Camera</string>
+    <string name="rearCamera">rear Camera</string>
+
 </resources>

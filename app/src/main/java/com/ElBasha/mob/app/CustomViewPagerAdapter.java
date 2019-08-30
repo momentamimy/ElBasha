@@ -1,18 +1,24 @@
 package com.ElBasha.mob.app;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.TextUtils;
 import android.view.View;
 
 
 
 public class CustomViewPagerAdapter extends FragmentPagerAdapter implements ViewPager.PageTransformer {
 
+    String num0,num1,num2;
 
-    public CustomViewPagerAdapter(FragmentManager fm) {
+    public CustomViewPagerAdapter(FragmentManager fm,String num0,String num1,String num2) {
         super(fm);
+        this.num0=num0;
+        this.num1=num1;
+        this.num2=num2;
     }
 
     @Override
@@ -21,17 +27,38 @@ public class CustomViewPagerAdapter extends FragmentPagerAdapter implements View
         if (position==0)
         {
             fragment=new introOneFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("num", num0);
+            fragment.setArguments(bundle);
         }
         if (position==1)
         {
-            fragment=new introTwoFragment();
+            fragment=new introOneFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("num", num1);
+            fragment.setArguments(bundle);
+        }
+        if (position==2)
+        {
+            fragment=new introOneFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("num", num2);
+            fragment.setArguments(bundle);
         }
 return fragment;
     }
 
     @Override
     public int getCount() {
-        return 2;
+        if (TextUtils.isEmpty(num1))
+        {
+            return 1;
+        }
+        if (TextUtils.isEmpty(num2))
+        {
+            return 2;
+        }
+        return 3;
     }
     private static final float MIN_SCALE = 0.75f;
 

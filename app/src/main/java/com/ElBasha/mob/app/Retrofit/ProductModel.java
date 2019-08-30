@@ -9,7 +9,8 @@ public class ProductModel implements Parcelable {
     String battery;
     String myPrice;
     String ram;
-    String camera;
+    String front_camera;
+    String rear_camera;
     String screen;
     String storage;
     String processor;
@@ -31,13 +32,14 @@ public class ProductModel implements Parcelable {
     String color4;
 
 
-    public ProductModel(long id, String name, String battery, String myPrice, String ram, String camera, String screen, String storage, String processor, String os, String img, int monster_of_processor, int artists, int super_hero, int kings_of_selfie, int without_stopping, int post_id, String error, int likes, String features, String youtubeLink, String color1, String color2, String color3, String color4) {
+    public ProductModel(long id, String name, String battery, String myPrice, String ram, String front_camera, String rear_camera, String screen, String storage, String processor, String os, String img, int monster_of_processor, int artists, int super_hero, int kings_of_selfie, int without_stopping, int post_id, String error, int likes, String features, String youtubeLink, String color1, String color2, String color3, String color4) {
         this.id = id;
         this.name = name;
         this.battery = battery;
         this.myPrice = myPrice;
         this.ram = ram;
-        this.camera = camera;
+        this.front_camera = front_camera;
+        this.rear_camera = rear_camera;
         this.screen = screen;
         this.storage = storage;
         this.processor = processor;
@@ -59,14 +61,14 @@ public class ProductModel implements Parcelable {
         this.color4 = color4;
     }
 
-
     protected ProductModel(Parcel in) {
         id = in.readLong();
         name = in.readString();
         battery = in.readString();
         myPrice = in.readString();
         ram = in.readString();
-        camera = in.readString();
+        front_camera = in.readString();
+        rear_camera = in.readString();
         screen = in.readString();
         storage = in.readString();
         processor = in.readString();
@@ -140,12 +142,20 @@ public class ProductModel implements Parcelable {
         this.ram = ram;
     }
 
-    public String getCamera() {
-        return camera;
+    public String getFront_camera() {
+        return front_camera;
     }
 
-    public void setCamera(String camera) {
-        this.camera = camera;
+    public void setFront_camera(String front_camera) {
+        this.front_camera = front_camera;
+    }
+
+    public String getRear_camera() {
+        return rear_camera;
+    }
+
+    public void setRear_camera(String rear_camera) {
+        this.rear_camera = rear_camera;
     }
 
     public String getScreen() {
@@ -313,7 +323,8 @@ public class ProductModel implements Parcelable {
         dest.writeString(battery);
         dest.writeString(myPrice);
         dest.writeString(ram);
-        dest.writeString(camera);
+        dest.writeString(front_camera);
+        dest.writeString(rear_camera);
         dest.writeString(screen);
         dest.writeString(storage);
         dest.writeString(processor);
