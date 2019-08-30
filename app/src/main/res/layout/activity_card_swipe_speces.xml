@@ -77,13 +77,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <LinearLayout
-                android:layout_margin="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="20dp"
                 android:id="@+id/linear_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
                 <RelativeLayout
+                    android:id="@+id/imageLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
                     <ImageView
@@ -110,10 +113,13 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:gravity="center"
+                android:layout_toEndOf="@+id/linear_phone"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/linear_phone">
 <!--********************** prices Layout ********************** -->
             <LinearLayout
                 android:layout_marginLeft="20dp"
@@ -127,26 +133,29 @@
                 >
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+                        android:gravity="center"
+                        android:layout_weight="1"
                         android:id="@+id/Storage_Ram"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=""
+                        android:text="10 GB &amp; 4 GB"
                         android:textColor="@android:color/black"
-                        android:textSize="15dp"
                         android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
                     <TextView
+                        android:gravity="center"
+                        android:layout_weight="1"
                         android:id="@+id/Price"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=""
+                        android:text="2000 EGP"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="15dp"
                         android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
                 </LinearLayout>
 
@@ -159,6 +168,7 @@
 <!--********************** prices Layout ********************** -->
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/colors_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -181,44 +191,44 @@
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/color1"
                     app:backgroundTint="#F08DDF"
-                    android:layout_width="35dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:visibility="gone"/>
+                    android:layout_marginBottom="5dp"/>
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/color2"
                     app:backgroundTint="@android:color/black"
-                    android:layout_width="35dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:visibility="gone"/>
+                    android:layout_marginBottom="5dp"/>
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/color3"
                     app:backgroundTint="#4f83d9"
-                    android:layout_width="35dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:visibility="gone"/>
+                    android:layout_marginBottom="5dp"/>
 
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/color4"
                     app:backgroundTint="#4f83d9"
-                    android:layout_width="35dp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="35dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:visibility="gone"/>
+                    android:layout_marginBottom="5dp"/>
 
             </LinearLayout>
 

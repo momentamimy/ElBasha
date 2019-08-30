@@ -141,7 +141,7 @@ public class CardSwipeSpecesActivity extends AppCompatActivity {
         }
         if (!model.getMyPrice().isEmpty())
         {
-            productPrice.setText(model.getMyPrice()+"EGP");
+            productPrice.setText(model.getMyPrice());
         }
 
         if (!model.getColor1().isEmpty())
