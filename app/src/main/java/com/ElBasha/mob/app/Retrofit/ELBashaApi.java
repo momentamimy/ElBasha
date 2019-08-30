@@ -110,6 +110,7 @@ public interface ELBashaApi {
 
     @POST("products/id")
     Call<List<ProductModel>> getFavProduct(
+            @Header("Content-Type") String Accept,
             @Body favJSON favJSON);
 
 }

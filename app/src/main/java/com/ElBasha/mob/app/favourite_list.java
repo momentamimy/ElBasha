@@ -123,7 +123,7 @@ public class favourite_list extends AppCompatActivity {
 
                 Retrofit retrofit = retrofitHead.retrofitTimeOut();
                 ELBashaApi elBashaApi = retrofit.create(ELBashaApi.class);
-                Call<List<ProductModel>> dataByValue = elBashaApi.getFavProduct(favlist);
+                Call<List<ProductModel>> dataByValue = elBashaApi.getFavProduct("application/json",favlist);
 
                 dataByValue.enqueue(new Callback<List<ProductModel>>() {
                     @Override
