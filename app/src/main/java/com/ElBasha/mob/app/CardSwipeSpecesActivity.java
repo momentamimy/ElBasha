@@ -85,6 +85,7 @@ public class CardSwipeSpecesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), favourite_list.class));
                 overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+                finish();
             }
         });
 

@@ -1,5 +1,6 @@
 package com.ElBasha.mob.app.Controller;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -83,6 +84,7 @@ public class adapter_fav  extends RecyclerView.Adapter<Holder_fav> {
                 Intent i = new Intent(context, CardSwipeSpecesActivity.class);
                 i.putExtra("productModel",data.get(position));
                 context.startActivity(i);
+                ((Activity)context).finish();
             }
         });
 
