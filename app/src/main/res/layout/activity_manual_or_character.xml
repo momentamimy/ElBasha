@@ -78,27 +78,30 @@
 
         <RelativeLayout
             android:id="@+id/ManualButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="209dp"
+            android:layout_height="65dp"
             android:gravity="center"
-            android:background="@drawable/manual_button">
+            android:background="@drawable/bgd_new_charormanual">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/choose_manual"
+                android:textColor="@android:color/white"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
         </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/CharButton"
             android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="209dp"
+            android:layout_height="65dp"
             android:gravity="center"
-            android:background="@drawable/chars_button">
+            android:background="@drawable/bgd_new_charormanual">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/char_basha"
+                android:textColor="@android:color/white"
                 android:fontFamily="@font/bahij_the_sans_arabic_bold"/>
         </RelativeLayout>
 

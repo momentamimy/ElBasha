@@ -335,6 +335,18 @@ public class swipcards extends AppCompatActivity {
                 mProgressDialog.setCancelable(false);
                 mProgressDialog.show();
 
+                if(storage.equals("ROM/Storage")){
+                    storage=null;
+                }
+
+                if(battery.equals("Battery")){
+                    battery=null;
+                }
+
+                if(processor.equals("CPU")){
+                    processor=null;
+                }
+
                 if(screen.equals("Screen")){
                     screen=null;
                 }

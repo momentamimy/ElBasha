@@ -105,7 +105,7 @@
 
 
         <RelativeLayout
-            android:background="@drawable/rounded_bgd"
+            android:background="@drawable/bgd_round"
             android:id="@+id/next"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
