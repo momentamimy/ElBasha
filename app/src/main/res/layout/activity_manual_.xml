@@ -9,7 +9,7 @@
     android:id="@+id/parentM"
     tools:context="com.ElBasha.mob.app.Manual_Activity">
 
-
+     <!-- Toolbar !-->
     <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_marginTop="25dp"
@@ -82,6 +82,11 @@
             android:layout_marginBottom="10dp"
             app:cardCornerRadius="8dp">
 
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -90,90 +95,101 @@
                 <Spinner
                     android:id="@+id/spinner"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/HeightSpinnerManual"
                     android:layout_marginTop="20dp"
                     android:dropDownWidth="match_parent"
                     android:background="@drawable/ram_row"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="45dp"
-                    android:paddingLeft="45dp"/>
+                    android:paddingStart="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingLeft="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingEnd="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingRight="@dimen/PaddingStartTextSpinnerManual"/>
 
                 <Spinner
                     android:layout_below="@id/spinner"
                     android:id="@+id/spinnerRom"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/HeightSpinnerManual"
                     android:layout_marginTop="20dp"
                     android:dropDownWidth="match_parent"
                     android:background="@drawable/rom_row"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="45dp"
-                    android:paddingLeft="45dp"
+                    android:paddingStart="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingLeft="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingEnd="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingRight="@dimen/PaddingStartTextSpinnerManual"
                     />
 
                 <Spinner
                     android:layout_below="@id/spinnerRom"
                     android:id="@+id/spinnerCPU"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/HeightSpinnerManual"
                     android:layout_marginTop="20dp"
                     android:dropDownWidth="match_parent"
                     android:background="@drawable/processor_row"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="45dp"
-                    android:paddingLeft="45dp"
+                    android:paddingStart="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingLeft="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingEnd="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingRight="@dimen/PaddingStartTextSpinnerManual"
                     />
 
                 <Spinner
                     android:layout_below="@id/spinnerCPU"
                     android:id="@+id/spinnerBattery"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/HeightSpinnerManual"
                     android:layout_marginTop="20dp"
                     android:dropDownWidth="match_parent"
                     android:background="@drawable/battery_row"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="45dp"
-                    android:paddingLeft="45dp"
+                    android:paddingStart="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingLeft="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingEnd="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingRight="@dimen/PaddingStartTextSpinnerManual"
                     />
 
                 <Spinner
                     android:layout_below="@id/spinnerBattery"
                     android:id="@+id/spinnerScreen"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/HeightSpinnerManual"
                     android:layout_marginTop="20dp"
                     android:dropDownWidth="match_parent"
                     android:background="@drawable/smartphone_row"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="45dp"
-                    android:paddingLeft="45dp"
+                    android:paddingStart="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingLeft="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingEnd="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingRight="@dimen/PaddingStartTextSpinnerManual"
                     />
 
                 <Spinner
-
                     android:layout_below="@id/spinnerScreen"
                     android:id="@+id/spinnerOS"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/HeightSpinnerManual"
                     android:layout_marginTop="20dp"
                     android:dropDownWidth="match_parent"
                     android:background="@drawable/gearwheel_row"
                     android:layout_marginEnd="20dp"
                     android:layout_marginStart="20dp"
                     android:popupBackground="#efe5f0"
-                    android:paddingStart="45dp"
-                    android:paddingLeft="45dp"
+                    android:paddingStart="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingLeft="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingEnd="@dimen/PaddingStartTextSpinnerManual"
+                    android:paddingRight="@dimen/PaddingStartTextSpinnerManual"
                     />
 
 
@@ -182,11 +198,11 @@
                     android:id="@+id/searchbtn"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_width="@dimen/WidthButtonManual"
+                    android:layout_height="@dimen/HeightButtonManual"
                     android:background="@drawable/bgd_round"
                     android:text="بحث"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/TextButtonManual"
                     android:layout_below="@+id/spinnerOS"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
@@ -197,6 +213,7 @@
 
             </RelativeLayout>
 
+            </ScrollView>
 
         </android.support.v7.widget.CardView>
 

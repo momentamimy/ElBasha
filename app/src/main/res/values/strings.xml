@@ -193,5 +193,6 @@
 
     <string name="frontCamera">front Camera</string>
     <string name="rearCamera">rear Camera</string>
+    <string name="No_cards">There is no cards</string>
 
 </resources>

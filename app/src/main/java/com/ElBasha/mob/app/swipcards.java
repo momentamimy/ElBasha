@@ -62,6 +62,7 @@ public class swipcards extends AppCompatActivity {
 
     String priceRange;
     String charName;
+    int pos=0;
 
 
     @Override
@@ -103,16 +104,19 @@ public class swipcards extends AppCompatActivity {
             @Override
             public void cardSwipedLeft(int position) {
                 Log.i("swipcards", "card was swiped left, position in adapter: " + position);
+                pos++;
             }
 
             @Override
             public void cardSwipedRight(int position) {
                 Log.i("swipcards", "card was swiped right, position in adapter: " + position);
+                pos++;
             }
 
             @Override
             public void cardsDepleted() {
                 Log.i("swipcards", "no more cards");
+                pos=-1;
             }
 
             @Override
@@ -125,7 +129,9 @@ public class swipcards extends AppCompatActivity {
                 Log.i(TAG, "cardActionUp");
             }
 
+
         });
+
 
 
         reload.setOnClickListener(new View.OnClickListener() {
@@ -142,6 +148,57 @@ public class swipcards extends AppCompatActivity {
 //                SwipeDeckAdapter adapter = new SwipeDeckAdapter(newData, context);
 //                cardStack.setAdapter(adapter);
                   adapter.notifyDataSetChanged();
+
+                  //Return Position To Zero
+                  pos=0;
+
+            }
+        });
+
+
+        //Like button
+        setLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(pos==-1){
+                    Snackbar snackbar = Snackbar.make(parent, R.string.No_cards, Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }else {
+
+                    Log.w("what", String.valueOf(RealData.get(pos).getName()));
+                    if(db.CheckIsDataAlreadyInDBorNotLike(RealData.get(pos).getId())){
+                        //message to user
+                        Snackbar snackbar = Snackbar.make(parent, R.string.likealready, Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }else {
+                        //send request
+                        requestLike(RealData.get(pos).getId());
+
+                    }
+
+                }
+
+            }
+        });
+
+
+
+        //Fav Button
+        setFav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(pos==-1){
+                    Snackbar snackbar = Snackbar.make(parent, R.string.No_cards, Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }else {
+                    // Log.w("IDItem", String.valueOf(getItem(pos).getId())+"   "+getItem(pos).getName());
+                    Log.w("nameItem", String.valueOf(RealData.get(pos).getName())+"  "+RealData.get(pos).getId());
+                    // Log.w("whatnewItem", String.valueOf(cardStack.getSelectedView().get));
+
+                    addFav(RealData.get(pos).getId());
+                }
+
             }
         });
 
@@ -189,6 +246,7 @@ public class swipcards extends AppCompatActivity {
             priceRange = intent.getStringExtra("priceRange");
             charName=intent.getStringExtra("charName");
 
+
             //send Request
             callPriceRequest();
 
@@ -220,7 +278,7 @@ public class swipcards extends AppCompatActivity {
         }
 
         @Override
-        public Object getItem(int position) {
+        public ProductModel getItem(int position) {
             return data.get(position);
         }
 
@@ -238,6 +296,7 @@ public class swipcards extends AppCompatActivity {
                 // normally use a viewholder
                 v = inflater.inflate(R.layout.cardiremmobile, parent, false);
             }
+
 
             //((TextView) v.findViewById(R.id.textView2)).setText(data.get(position));
             ImageView imageView = (ImageView) v.findViewById(R.id.mobileimage);
@@ -273,33 +332,7 @@ public class swipcards extends AppCompatActivity {
             }
 
 
-            //Like button
-            setLike.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-                    Log.w("what", String.valueOf(data.get(position).getName()));
-                    if(db.CheckIsDataAlreadyInDBorNotLike(data.get(position).getId())){
-                        //message to user
-                        Snackbar snackbar = Snackbar.make(parent, R.string.likealready, Snackbar.LENGTH_LONG);
-                        snackbar.show();
-                    }else {
-                        //send request
-                        requestLike(data.get(position).getId());
-
-                    }
-                }
-            });
-
-
-
-            //Fav Button
-            setFav.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                   addFav(data.get(position).getId());
-                }
-            });
 
 
             v.setOnClickListener(new View.OnClickListener() {
@@ -315,6 +348,7 @@ public class swipcards extends AppCompatActivity {
 
                 }
             });
+
             return v;
         }
     }
@@ -426,12 +460,12 @@ public class swipcards extends AppCompatActivity {
 
     private void displayResultRecycleview(List<ProductModel> listMobile) {
 
-        testData = new ArrayList<>();
+       /* testData = new ArrayList<>();
         testData.add("0");
         testData.add("1");
         testData.add("2");
         testData.add("3");
-        testData.add("4");
+        testData.add("4");*/
 
         RealData =listMobile;
 

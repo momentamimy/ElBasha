@@ -77,7 +77,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
                 intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","wa7shelprocessor");
-                startActivity(intent,options.toBundle());
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    startActivity(intent,options.toBundle());
+                }else {
+                    startActivity(intent);
+                }
             }
         });
 
@@ -92,7 +96,12 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
                 intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","elfananeen");
-                startActivity(intent,options.toBundle());
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    startActivity(intent,options.toBundle());
+                }else {
+                    startActivity(intent);
+                }
+
             }
         });
 
@@ -107,7 +116,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
                 intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","superhero");
-                startActivity(intent,options.toBundle());
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    startActivity(intent,options.toBundle());
+                }else {
+                    startActivity(intent);
+                }
             }
         });
 
@@ -122,7 +135,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
                 intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","mlookelselfy");
-                startActivity(intent,options.toBundle());
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    startActivity(intent,options.toBundle());
+                }else {
+                    startActivity(intent);
+                }
             }
         });
 
@@ -137,7 +154,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent=new Intent(getApplicationContext(),Wa7shProccesseorTutorial.class);
                 intent.putExtra("priceRange",priceRange);
                 intent.putExtra("charName","mn8eerfslan");
-                startActivity(intent,options.toBundle());
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                    startActivity(intent,options.toBundle());
+                }else {
+                    startActivity(intent);
+                }
             }
         });
     }

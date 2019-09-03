@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logosizeIntro">550dp</dimen>
+    <dimen name="viewPagerIntro">118dp</dimen>
+    <dimen name="textintro">34sp</dimen>
+    <dimen name="textintro2">22sp</dimen>
+    <dimen name="merginintro">25dp</dimen>
+    <dimen name="merginSplash">40dp</dimen>
+    <dimen name="textintroNext">19dp</dimen>
+    <dimen name="textSplash1">50sp</dimen>
+    <dimen name="textSplash2">31sp</dimen>
+    <dimen name="HeightMain">150dp</dimen>
+    <dimen name="TextMain">25dp</dimen>
+    <dimen name="HeightCard">580dp</dimen>
+    <dimen name="HeightCardImage">420dp</dimen>
+    <dimen name="HeightCardText">28sp</dimen>
+    <dimen name="CardTopmergin">20dp</dimen>
+    <dimen name="CardTopmerginImage">20dp</dimen>
+    <dimen name="HeightAndWidthIconUnderCard">60dp</dimen>
+    <dimen name="paddingIconUnderCard1">12dp</dimen>
+    <dimen name="paddingIconUnderCard2">17dp</dimen>
+    <dimen name="paddingIconUnderCard3">14dp</dimen>
+    <dimen name="TopMerginIconUnderCard">35dp</dimen>
+    <dimen name="HeightSpinnerManual">60dp</dimen>
+    <dimen name="PaddingStartTextSpinnerManual">75dp</dimen>
+    <dimen name="HeightButtonManual">50dp</dimen>
+    <dimen name="WidthButtonManual">100dp</dimen>
+    <dimen name="TextButtonManual">22dp</dimen>
+</resources>

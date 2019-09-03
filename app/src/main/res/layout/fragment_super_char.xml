@@ -25,6 +25,7 @@
             />
 
         <ImageView
+            android:layout_centerHorizontal="true"
             android:id="@+id/char_superhero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

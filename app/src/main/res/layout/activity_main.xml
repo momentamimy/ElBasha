@@ -71,8 +71,8 @@
                 android:id="@+id/wa7shelprocessor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="5dp"
@@ -82,7 +82,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
+                    android:layout_height="@dimen/HeightMain"
                     android:background="@drawable/card_bgd_1">
                     <ImageView
                         android:layout_marginTop="5dp"
@@ -93,16 +93,17 @@
                         android:layout_height="wrap_content" />
                     <TextView
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="100dp"
-                        android:layout_marginRight="20dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="90dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/monster_of_processor"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textColor="@android:color/white"
                         android:shadowDx="1"
                         android:shadowDy="1"
                         android:shadowRadius="1"
+                        android:gravity="center"
                         android:shadowColor="@android:color/black"
                         android:fontFamily="@font/kufam_bold"
                         android:layout_alignParentEnd="true"
@@ -118,8 +119,8 @@
                 android:id="@+id/elfananeen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="5dp"
@@ -129,7 +130,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
+                    android:layout_height="@dimen/HeightMain"
                     android:background="@drawable/card_bgd_2">
                     <ImageView
                         android:background="@drawable/card_hint_2"
@@ -142,7 +143,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Artists"
-                        android:textSize="25dp"
+                        android:textSize="25sp"
                         android:textColor="@android:color/white"
                         android:shadowDx="1"
                         android:shadowDy="1"
@@ -159,8 +160,8 @@
                 android:id="@+id/superhero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="5dp"
@@ -170,7 +171,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
+                    android:layout_height="@dimen/HeightMain"
                     android:background="@drawable/card_bgd_3">
                     <ImageView
                         android:background="@drawable/card_hint_3"
@@ -183,7 +184,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/superhero"
-                        android:textSize="25dp"
+                        android:textSize="25sp"
                         android:textColor="@android:color/white"
                         android:shadowDx="1"
                         android:shadowDy="1"
@@ -201,8 +202,8 @@
                 android:id="@+id/mlookelselfy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="5dp"
@@ -212,7 +213,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
+                    android:layout_height="@dimen/HeightMain"
                     android:background="@drawable/card_bgd_4">
                     <ImageView
                         android:background="@drawable/card_hint_4"
@@ -225,7 +226,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/Kings_of_selfie"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textColor="@android:color/white"
                         android:shadowDx="1"
                         android:shadowDy="1"
@@ -242,8 +243,8 @@
                 android:id="@+id/mn8eerfslan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 app:cardCornerRadius="15dp"
@@ -254,7 +255,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
+                    android:layout_height="@dimen/HeightMain"
                     android:background="@drawable/card_bgd_5">
                     <ImageView
                         android:background="@drawable/card_hint_5"
@@ -267,11 +268,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/without_stopping"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:textColor="@android:color/white"
                         android:shadowDx="1"
                         android:shadowDy="1"
                         android:shadowRadius="1"
+                        android:gravity="center"
                         android:shadowColor="@android:color/black"
                         android:fontFamily="@font/kufam_bold"
                         android:layout_alignParentEnd="true"

@@ -13,12 +13,13 @@
     android:layout_marginTop="20dp"
     android:id="@+id/logo"
     android:layout_width="wrap_content"
-    android:layout_height="350dp"
+    android:layout_height="@dimen/logosizeIntro"
     android:transitionName="Transition_Animation">
 
 
 
     <pl.droidsonroids.gif.GifTextView
+        android:layout_centerHorizontal="true"
         android:id="@+id/circle_bgdgif"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,30 +27,36 @@
         />
 
     <ImageView
+        android:layout_centerHorizontal="true"
         android:id="@+id/basha"
         android:background="@drawable/basha"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <ImageView
+
         android:id="@+id/left_arm"
         android:background="@drawable/left_arm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        />
 
     <ImageView
         android:id="@+id/right_arm"
         android:background="@drawable/right_arm"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+         />
 </RelativeLayout>
+
+
     <TextView
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/merginSplash"
         android:layout_below="@id/logo"
         android:id="@+id/esaal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="45dp"
+        android:textSize="@dimen/textSplash1"
         android:gravity="center"
         android:textColor="@android:color/black"
         android:text="@string/title"
@@ -63,7 +70,7 @@
         android:id="@+id/esaal_en"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="@dimen/textSplash2"
         android:layout_centerHorizontal="true"
         android:textColor="@android:color/white"
         android:text="@string/ask_el_basha"

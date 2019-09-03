@@ -186,4 +186,5 @@
 
     <string name="frontCamera">الكاميرا الأمامية</string>
     <string name="rearCamera">الكاميرا الخلفية</string>
+    <string name="No_cards">لا يوجد منتجات</string>
 </resources>

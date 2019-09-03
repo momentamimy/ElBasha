@@ -12,11 +12,11 @@
 
         <ImageView
                android:id="@+id/mobileimage"
-               android:layout_marginTop="5dp"
+               android:layout_marginTop="@dimen/CardTopmerginImage"
                android:layout_marginStart="20dp"
                android:layout_marginEnd="20dp"
                android:layout_width="match_parent"
-               android:layout_height="300dp"
+               android:layout_height="@dimen/HeightCardImage"
                />
 
         <com.victor.loading.rotate.RotateLoading
@@ -34,10 +34,11 @@
             android:layout_below="@+id/mobileimage"
             android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="@dimen/CardTopmergin"
+            android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true"
             android:text="Redmi Note 7"
-            android:textSize="22sp"/>
+            android:textSize="@dimen/HeightCardText"/>
 
     </RelativeLayout>
 
